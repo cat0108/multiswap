@@ -1,1 +1,5 @@
-cscope.*
+*
+!*.c
+!*.h
+!*Makefile
+*mod*

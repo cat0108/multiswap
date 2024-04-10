@@ -5,7 +5,7 @@
 #include "fastswap_dram.h"
 
 #define ONEGB (1024UL*1024*1024)
-#define REMOTE_BUF_SIZE (ONEGB * 32) /* must match what server is allocating */
+#define REMOTE_BUF_SIZE (ONEGB * 2) /* must match what server is allocating */
 
 static void *drambuf;
 
@@ -16,6 +16,7 @@ int sswap_rdma_write(struct page *page, u64 roffset)
 	page_vaddr = kmap_atomic(page);
 	copy_page((void *) (drambuf + roffset), page_vaddr);
 	kunmap_atomic(page_vaddr);
+	printk("write over\n");
 	return 0;
 }
 EXPORT_SYMBOL(sswap_rdma_write);
@@ -35,11 +36,15 @@ int sswap_rdma_read_async(struct page *page, u64 roffset)
 	VM_BUG_ON_PAGE(PageUptodate(page), page);
 
 	page_vaddr = kmap_atomic(page);
+	printk("mapping page %p to %p\n", page, page_vaddr);
 	copy_page(page_vaddr, (void *) (drambuf + roffset));
+	printk("copied page %p to %p\n", (void *) (drambuf + roffset), page_vaddr);
 	kunmap_atomic(page_vaddr);
+	printk("unmapping page %p\n", page);
 
 	SetPageUptodate(page);
 	unlock_page(page);
+	printk("read over\n");
 	return 0;
 }
 EXPORT_SYMBOL(sswap_rdma_read_async);
@@ -59,6 +64,7 @@ EXPORT_SYMBOL(sswap_rdma_drain_loads_sync);
 static void __exit sswap_dram_cleanup_module(void)
 {
 	vfree(drambuf);
+	pr_info("DRAM backend is cleaned up\n");
 }
 
 static int __init sswap_dram_init_module(void)

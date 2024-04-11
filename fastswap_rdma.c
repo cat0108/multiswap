@@ -10,7 +10,7 @@ static int numqueues;
 static int numcpus;
 static char serverip[INET_ADDRSTRLEN];
 static char clientip[INET_ADDRSTRLEN];
-static struct 0 *req_cache;
+static struct kmem_cache *req_cache;
 //define module parameters:module_param_named
 //(name, variable, type, permissions)
 module_param_named(sport, serverport, int, 0644);

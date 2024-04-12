@@ -11,17 +11,14 @@ static int numcpus;
 static char serverip[INET_ADDRSTRLEN];
 static char clientip[INET_ADDRSTRLEN];
 static struct kmem_cache *req_cache;
-//define module parameters:module_param_named
-//(name, variable, type, permissions)
 module_param_named(sport, serverport, int, 0644);
 module_param_named(nq, numqueues, int, 0644);
-//module_param_named(name, string, len, permissions)
 module_param_string(sip, serverip, INET_ADDRSTRLEN, 0644);
 module_param_string(cip, clientip, INET_ADDRSTRLEN, 0644);
 
 // TODO: destroy ctrl
 
-#define CONNECTION_TIMEOUT_MS 60000
+#define CONNECTION_TIMEOUT_MS 6000
 #define QP_QUEUE_DEPTH 256
 /* we don't really use recv wrs, so any small number should do */
 #define QP_MAX_RECV_WR 4
@@ -30,10 +27,10 @@ module_param_string(cip, clientip, INET_ADDRSTRLEN, 0644);
 #define CQ_NUM_CQES	(QP_MAX_SEND_WR)
 #define POLL_BATCH_HIGH (QP_MAX_SEND_WR / 4)
 
-static void sswap_rdma_addone(struct ib_device *dev)
-{
-  pr_info("sswap_rdma_addone() = %s\n", dev->name);
-}
+// static void sswap_rdma_addone(struct ib_device *dev)
+// {
+//   pr_info("sswap_rdma_addone() = %s\n", dev->name);
+// }
 
 static void sswap_rdma_removeone(struct ib_device *ib_device, void *client_data)
 {
@@ -42,7 +39,8 @@ static void sswap_rdma_removeone(struct ib_device *ib_device, void *client_data)
 
 static struct ib_client sswap_rdma_ib_client = {
   .name   = "sswap_rdma",
-  .add    = sswap_rdma_addone,
+  //这个变量在Linux五点四版本中被删除，相关参考nvme/host/rdma.c中的实现
+  // .add    = sswap_rdma_addone,
   .remove = sswap_rdma_removeone
 };
 
@@ -50,7 +48,6 @@ static struct sswap_rdma_dev *sswap_rdma_get_device(struct rdma_queue *q)
 {
   struct sswap_rdma_dev *rdev = NULL;
 
-  //first,alloc memory for the rdma device
   if (!q->ctrl->rdev) {
     rdev = kzalloc(sizeof(*rdev), GFP_KERNEL);
     if (!rdev) {
@@ -61,13 +58,13 @@ static struct sswap_rdma_dev *sswap_rdma_get_device(struct rdma_queue *q)
     rdev->dev = q->cm_id->device;
 
     pr_info("selecting device %s\n", rdev->dev->name);
-    //alloc pd
+
     rdev->pd = ib_alloc_pd(rdev->dev, 0);
     if (IS_ERR(rdev->pd)) {
       pr_err("ib_alloc_pd\n");
       goto out_free_dev;
     }
-  //检查是否支持内存扩展管理？
+
     if (!(rdev->dev->attrs.device_cap_flags &
           IB_DEVICE_MEM_MGT_EXTENSIONS)) {
       pr_err("memory registrations not supported\n");
@@ -110,8 +107,8 @@ static int sswap_rdma_create_qp(struct rdma_queue *queue)
   init_attr.qp_type = IB_QPT_RC;
   init_attr.send_cq = queue->cq;
   init_attr.recv_cq = queue->cq;
-  /* just to check if we are compiling against the right headers */
-  init_attr.create_flags = IB_QP_EXP_CREATE_ATOMIC_BE_REPLY & 0;
+  /* 这个宏没有定义？*/
+  // init_attr.create_flags = IB_QP_EXP_CREATE_ATOMIC_BE_REPLY & 0;
 
   ret = rdma_create_qp(queue->cm_id, rdev->pd, &init_attr);
   if (ret) {
@@ -129,7 +126,7 @@ static void sswap_rdma_destroy_queue_ib(struct rdma_queue *q)
   struct ib_device *ibdev;
 
   pr_info("start: %s\n", __FUNCTION__);
-  //todo:why?
+
   rdev = q->ctrl->rdev;
   ibdev = rdev->dev;
   //rdma_destroy_qp(q->ctrl->cm_id);
@@ -223,13 +220,12 @@ static int sswap_rdma_route_resolved(struct rdma_queue *q,
   return 0;
 }
 
-static int 
-(struct rdma_queue *q)
+static int sswap_rdma_conn_established(struct rdma_queue *q)
 {
   pr_info("connection established\n");
   return 0;
 }
-//连接管理句柄
+
 static int sswap_rdma_cm_handler(struct rdma_cm_id *cm_id,
     struct rdma_cm_event *ev)
 {
@@ -472,7 +468,8 @@ static void sswap_rdma_read_done(struct ib_cq *cq, struct ib_wc *wc)
 inline static int sswap_rdma_post_rdma(struct rdma_queue *q, struct rdma_req *qe,
   struct ib_sge *sge, u64 roffset, enum ib_wr_opcode op)
 {
-  struct ib_send_wr *bad_wr;
+  //linux5.4bad_wr定义为const struct ib_send_wr，这里删除
+  //struct ib_send_wr *bad_wr;
   struct ib_rdma_wr rdma_wr = {};
   int ret;
 
@@ -494,7 +491,8 @@ inline static int sswap_rdma_post_rdma(struct rdma_queue *q, struct rdma_req *qe
   rdma_wr.rkey = q->ctrl->servermr.key;
 
   atomic_inc(&q->pending);
-  ret = ib_post_send(q->qp, &rdma_wr.wr, &bad_wr);
+  //第三个参数在linux5.4下应设置为NULL
+  ret = ib_post_send(q->qp, &rdma_wr.wr, NULL);
   if (unlikely(ret)) {
     pr_err("ib_post_send failed: %d\n", ret);
   }
@@ -524,7 +522,8 @@ static void sswap_rdma_recv_remotemr_done(struct ib_cq *cq, struct ib_wc *wc)
 static int sswap_rdma_post_recv(struct rdma_queue *q, struct rdma_req *qe,
   size_t bufsize)
 {
-  struct ib_recv_wr *bad_wr;
+  //recv同理
+  // struct ib_recv_wr *bad_wr;
   struct ib_recv_wr wr = {};
   struct ib_sge sge;
   int ret;
@@ -538,7 +537,7 @@ static int sswap_rdma_post_recv(struct rdma_queue *q, struct rdma_req *qe,
   wr.sg_list = &sge;
   wr.num_sge = 1;
 
-  ret = ib_post_recv(q->qp, &wr, &bad_wr);
+  ret = ib_post_recv(q->qp, &wr, NULL);
   if (ret) {
     pr_err("ib_post_recv failed: %d\n", ret);
   }

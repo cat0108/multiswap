@@ -1,4 +1,3 @@
-#include "linux/printk.h"
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
 
 #include "fastswap_rdma.h"
@@ -215,7 +214,8 @@ static int sswap_rdma_route_resolved(struct rdma_queue *q,
 
   //进行addr_resolved和route_resolved后，进行connect，
   //connect后会产生ESTABLISHED事件，然后会调用sswap_rdma_conn_established
-  ret = rdma_connect(q->cm_id, &param);
+  pr_info("begin RDMA connect\n");
+  ret = rdma_connect_locked(q->cm_id, &param);
   if (ret) {
     pr_err("rdma_connect failed (%d)\n", ret);
     sswap_rdma_destroy_queue_ib(q);
@@ -241,12 +241,15 @@ static int sswap_rdma_cm_handler(struct rdma_cm_id *cm_id,
 
   switch (ev->event) {
   case RDMA_CM_EVENT_ADDR_RESOLVED:
+    pr_info("RDMA_CM_EVENT_ADDR_RESOLVED\n");
     cm_error = sswap_rdma_addr_resolved(queue);
     break;
   case RDMA_CM_EVENT_ROUTE_RESOLVED:
+    pr_info("RDMA_CM_EVENT_ROUTE_RESOLVED\n");
     cm_error = sswap_rdma_route_resolved(queue, &ev->param.conn);
     break;
   case RDMA_CM_EVENT_ESTABLISHED:
+    pr_info("RDMA_CM_EVENT_ESTABLISHED");
     queue->cm_error = sswap_rdma_conn_established(queue);
     /* complete cm_done regardless of success/failure */
     complete(&queue->cm_done);
@@ -311,7 +314,7 @@ static int sswap_rdma_init_queue(struct sswap_rdma_ctrl *ctrl,
     pr_err("failed to create cm id: %ld\n", PTR_ERR(queue->cm_id));
     return -ENODEV;
   }
-  _printk("Log: rdma create cm_id success\n");
+  pr_info("Log: rdma create cm_id success\n");
 
   queue->cm_error = -ETIMEDOUT;
 
@@ -322,7 +325,7 @@ static int sswap_rdma_init_queue(struct sswap_rdma_ctrl *ctrl,
     pr_err("rdma_resolve_addr failed: %d\n", ret);
     goto out_destroy_cm_id;
   }
-  _printk("Log:rdma resolve addr success\n");
+  pr_info("Log:rdma resolve addr success\n");
 
   //todo:等待completion完成,在establish后产生的RDMA_CM_EVENT_ESTABLISHED会complete该completion
 
@@ -335,6 +338,7 @@ static int sswap_rdma_init_queue(struct sswap_rdma_ctrl *ctrl,
   return 0;
 
 out_destroy_cm_id:
+  pr_err("begin to destroy cm_id...\n");
   rdma_destroy_id(queue->cm_id);
   return ret;
 }

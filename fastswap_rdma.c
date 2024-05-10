@@ -1,3 +1,4 @@
+#include "linux/printk.h"
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
 
 #include "fastswap_rdma.h"
@@ -183,6 +184,7 @@ static int sswap_rdma_addr_resolved(struct rdma_queue *q)
     return ret;
   }
 
+  //rdma_resolve_route后会产生ROUTE_RESOLVED事件，然后会调用sswap_rdma_route_resolved
   ret = rdma_resolve_route(q->cm_id, CONNECTION_TIMEOUT_MS);
   if (ret) {
     pr_err("rdma_resolve_route failed\n");
@@ -211,6 +213,8 @@ static int sswap_rdma_route_resolved(struct rdma_queue *q,
       q->ctrl->rdev->dev->attrs.max_qp_rd_atom,
       q->ctrl->rdev->dev->attrs.max_qp_init_rd_atom);
 
+  //进行addr_resolved和route_resolved后，进行connect，
+  //connect后会产生ESTABLISHED事件，然后会调用sswap_rdma_conn_established
   ret = rdma_connect(q->cm_id, &param);
   if (ret) {
     pr_err("rdma_connect failed (%d)\n", ret);
@@ -295,26 +299,32 @@ static int sswap_rdma_init_queue(struct sswap_rdma_ctrl *ctrl,
 
   queue = &ctrl->queues[idx];
   queue->ctrl = ctrl;
-  init_completion(&queue->cm_done);
+  init_completion(&queue->cm_done);//done=0
   atomic_set(&queue->pending, 0);
-  spin_lock_init(&queue->cq_lock);
+  spin_lock_init(&queue->cq_lock);//初始化成unlocked状态
   queue->qp_type = get_queue_type(idx);
 
+  //创建一个cm_id，类似于socket
   queue->cm_id = rdma_create_id(&init_net, sswap_rdma_cm_handler, queue,
       RDMA_PS_TCP, IB_QPT_RC);
   if (IS_ERR(queue->cm_id)) {
     pr_err("failed to create cm id: %ld\n", PTR_ERR(queue->cm_id));
     return -ENODEV;
   }
+  _printk("Log: rdma create cm_id success\n");
 
   queue->cm_error = -ETIMEDOUT;
 
+  //在resolve后会产生ADDR_RESOLVED事件，然后会调用sswap_rdma_addr_resolved
   ret = rdma_resolve_addr(queue->cm_id, &ctrl->srcaddr, &ctrl->addr,
       CONNECTION_TIMEOUT_MS);
   if (ret) {
     pr_err("rdma_resolve_addr failed: %d\n", ret);
     goto out_destroy_cm_id;
   }
+  _printk("Log:rdma resolve addr success\n");
+
+  //todo:等待completion完成,在establish后产生的RDMA_CM_EVENT_ESTABLISHED会complete该completion
 
   ret = sswap_rdma_wait_for_cm(queue);
   if (ret) {
@@ -393,6 +403,7 @@ static int sswap_rdma_create_ctrl(struct sswap_rdma_ctrl **c)
   struct sswap_rdma_ctrl *ctrl;
   pr_info("will try to connect to %s:%d\n", serverip, serverport);
 
+  //alloc space for gctrl
   *c = kzalloc(sizeof(struct sswap_rdma_ctrl), GFP_KERNEL);
   if (!*c) {
     pr_err("no mem for ctrl\n");
@@ -400,12 +411,19 @@ static int sswap_rdma_create_ctrl(struct sswap_rdma_ctrl **c)
   }
   ctrl = *c;
 
+  //一次性为所有队列分配空间并返回首地址指针
   ctrl->queues = kzalloc(sizeof(struct rdma_queue) * numqueues, GFP_KERNEL);
+  if (!ctrl->queues) {
+    pr_err("no mem for queues\n");
+    return -ENOMEM;
+  }
+
   ret = sswap_rdma_parse_ipaddr(&(ctrl->addr_in), serverip);
   if (ret) {
     pr_err("sswap_rdma_parse_ipaddr failed: %d\n", ret);
     return -EINVAL;
   }
+
   ctrl->addr_in.sin_port = cpu_to_be16(serverport);
 
   ret = sswap_rdma_parse_ipaddr(&(ctrl->srcaddr_in), clientip);
@@ -525,7 +543,7 @@ static int sswap_rdma_post_recv(struct rdma_queue *q, struct rdma_req *qe,
   //recv同理
   // struct ib_recv_wr *bad_wr;
   struct ib_recv_wr wr = {};
-  struct ib_sge sge;
+  struct ib_sge sge;//sge实际上是一段内存区域的描述符
   int ret;
 
   sge.addr = qe->dma;

@@ -42,7 +42,7 @@ struct rdma_queue {
 
   struct rdma_cm_id *cm_id;
   int cm_error;
-  struct completion cm_done;
+  struct completion cm_done;//完成变量，用于同步
 
   atomic_t pending;
 };

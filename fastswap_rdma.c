@@ -1,3 +1,4 @@
+#include "linux/printk.h"
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
 
 #include "fastswap_rdma.h"
@@ -490,7 +491,7 @@ static void sswap_rdma_read_done(struct ib_cq *cq, struct ib_wc *wc)
 inline static int sswap_rdma_post_rdma(struct rdma_queue *q, struct rdma_req *qe,
   struct ib_sge *sge, u64 roffset, enum ib_wr_opcode op)
 {
-  //linux5.4bad_wr定义为const struct ib_send_wr，这里删除
+  //linux6.1bad_wr定义为const struct ib_send_wr，这里删除
   //struct ib_send_wr *bad_wr;
   struct ib_rdma_wr rdma_wr = {};
   int ret;
@@ -513,7 +514,7 @@ inline static int sswap_rdma_post_rdma(struct rdma_queue *q, struct rdma_req *qe
   rdma_wr.rkey = q->ctrl->servermr.key;
 
   atomic_inc(&q->pending);
-  //第三个参数在linux5.4下应设置为NULL
+  //第三个参数在linux6.1下应设置为NULL
   ret = ib_post_send(q->qp, &rdma_wr.wr, NULL);
   if (unlikely(ret)) {
     pr_err("ib_post_send failed: %d\n", ret);
@@ -723,7 +724,7 @@ int sswap_rdma_write(struct page *page, u64 roffset)
 {
   int ret;
   struct rdma_queue *q;
-
+  pr_info("sswap_rdma_write\n");
   VM_BUG_ON_PAGE(!PageSwapCache(page), page);
 
   q = sswap_rdma_get_queue(smp_processor_id(), QP_WRITE_SYNC);
@@ -786,6 +787,7 @@ int sswap_rdma_read_sync(struct page *page, u64 roffset)
   struct rdma_queue *q;
   int ret;
 
+  pr_info("sswap_rdma_read_sync\n");
   VM_BUG_ON_PAGE(!PageSwapCache(page), page);
   VM_BUG_ON_PAGE(!PageLocked(page), page);
   VM_BUG_ON_PAGE(PageUptodate(page), page);

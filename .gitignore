@@ -1,8 +1,8 @@
+!yokotest/
 *
 !*.c
 !*.h
 !*Makefile
 *mod*
 !*.sh
-!yokotest/
 !info

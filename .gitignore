@@ -4,5 +4,5 @@
 !*Makefile
 *mod*
 !*.sh
-!yokotest
+!yokotest/*
 !info

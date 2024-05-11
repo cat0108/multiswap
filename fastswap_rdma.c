@@ -1,4 +1,3 @@
-#include "linux/printk.h"
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
 
 #include "fastswap_rdma.h"
@@ -724,7 +723,7 @@ int sswap_rdma_write(struct page *page, u64 roffset)
 {
   int ret;
   struct rdma_queue *q;
-  pr_info("sswap_rdma_write\n");
+  printk("sswap_rdma_write\n");
   VM_BUG_ON_PAGE(!PageSwapCache(page), page);
 
   q = sswap_rdma_get_queue(smp_processor_id(), QP_WRITE_SYNC);
@@ -787,7 +786,7 @@ int sswap_rdma_read_sync(struct page *page, u64 roffset)
   struct rdma_queue *q;
   int ret;
 
-  pr_info("sswap_rdma_read_sync\n");
+  printk("sswap_rdma_read_sync\n");
   VM_BUG_ON_PAGE(!PageSwapCache(page), page);
   VM_BUG_ON_PAGE(!PageLocked(page), page);
   VM_BUG_ON_PAGE(PageUptodate(page), page);

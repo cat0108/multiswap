@@ -30,6 +30,7 @@
 static int sswap_store(unsigned type, pgoff_t pageid,
         struct page *page)
 {
+  pr_info("begin fastswap store\n");
   if (sswap_rdma_write(page, pageid << PAGE_SHIFT)) {
     pr_err("could not store page remotely\n");
     return -1;
@@ -54,6 +55,7 @@ static int sswap_load_async(unsigned type, pgoff_t pageid, struct page *page)
 
 static int sswap_load(unsigned type, pgoff_t pageid, struct page *page)
 {
+  pr_info("begin fastswap load\n");
   if (unlikely(sswap_rdma_read_sync(page, pageid << PAGE_SHIFT))) {
     pr_err("could not read page remotely\n");
     return -1;

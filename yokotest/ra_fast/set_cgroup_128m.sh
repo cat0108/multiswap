@@ -25,5 +25,5 @@ gcc pagewalker.c -lm -O0 -o pagewalker
 ./pagewalker
 echo "memory.peak is:"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
-dmesg > /home/cat23/RDMA-kernel5.4/info
+dmesg > ../../info
 echo "add test info to /home/cat23/RDMA-kernel5.4/info"

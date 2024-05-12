@@ -30,7 +30,7 @@
 static int sswap_store(unsigned type, pgoff_t pageid,
         struct page *page)
 {
-  pr_info("begin fastswap store\n");
+  printk("in sswap_store\n");
   if (sswap_rdma_write(page, pageid << PAGE_SHIFT)) {
     pr_err("could not store page remotely\n");
     return -1;
@@ -43,19 +43,18 @@ static int sswap_store(unsigned type, pgoff_t pageid,
  * return 0 if page is returned
  * return -1 otherwise
  */
-static int sswap_load_async(unsigned type, pgoff_t pageid, struct page *page)
-{
-  if (unlikely(sswap_rdma_read_async(page, pageid << PAGE_SHIFT))) {
-    pr_err("could not read page remotely\n");
-    return -1;
-  }
+// static int sswap_load_async(unsigned type, pgoff_t pageid, struct page *page)
+// {
+//   if (unlikely(sswap_rdma_read_async(page, pageid << PAGE_SHIFT))) {
+//     pr_err("could not read page remotely\n");
+//     return -1;
+//   }
 
-  return 0;
-}
+//   return 0;
+// }
 
 static int sswap_load(unsigned type, pgoff_t pageid, struct page *page)
 {
-  pr_info("begin fastswap load\n");
   if (unlikely(sswap_rdma_read_sync(page, pageid << PAGE_SHIFT))) {
     pr_err("could not read page remotely\n");
     return -1;
@@ -64,10 +63,10 @@ static int sswap_load(unsigned type, pgoff_t pageid, struct page *page)
   return 0;
 }
 
-static int sswap_poll_load(int cpu)
-{
-  return sswap_rdma_poll_load(cpu);
-}
+// static int sswap_poll_load(int cpu)
+// {
+//   return sswap_rdma_poll_load(cpu);
+// }
 
 static void sswap_invalidate_page(unsigned type, pgoff_t offset)
 {
@@ -102,7 +101,12 @@ static int __init sswap_init_debugfs(void)
 
 static int __init init_sswap(void)
 {
-  frontswap_register_ops(&sswap_frontswap_ops);
+  pr_info("begin init sswap\n");
+ if(frontswap_register_ops(&sswap_frontswap_ops))
+ {
+    pr_err("sswap register ops failed!\n");
+    return -1;
+ }
   if (sswap_init_debugfs())
     pr_err("sswap debugfs failed\n");
 

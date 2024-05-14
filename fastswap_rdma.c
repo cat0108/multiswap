@@ -215,6 +215,8 @@ static int sswap_rdma_route_resolved(struct rdma_queue *q,
   //进行addr_resolved和route_resolved后，进行connect，
   //connect后会产生ESTABLISHED事件，然后会调用sswap_rdma_conn_established
   pr_info("begin RDMA connect\n");
+  //这里不能直接调用rdma_connect
+  //在rdma_connect会尝试lock id_priv->handle_mutex导致死锁。
   ret = rdma_connect_locked(q->cm_id, &param);
   if (ret) {
     pr_err("rdma_connect failed (%d)\n", ret);
@@ -453,6 +455,7 @@ static void __exit sswap_rdma_cleanup_module(void)
 
 static void sswap_rdma_write_done(struct ib_cq *cq, struct ib_wc *wc)
 {
+  pr_info("handle write_done\n");
   struct rdma_req *req =
     container_of(wc->wr_cqe, struct rdma_req, cqe);
   struct rdma_queue *q = cq->cq_context;
@@ -468,8 +471,10 @@ static void sswap_rdma_write_done(struct ib_cq *cq, struct ib_wc *wc)
   kmem_cache_free(req_cache, req);
 }
 
+//todo:didn't handle read done
 static void sswap_rdma_read_done(struct ib_cq *cq, struct ib_wc *wc)
 {
+  pr_info("handle rdma_read_done\n");
   struct rdma_req *req =
     container_of(wc->wr_cqe, struct rdma_req, cqe);
   struct rdma_queue *q = cq->cq_context;
@@ -480,11 +485,13 @@ static void sswap_rdma_read_done(struct ib_cq *cq, struct ib_wc *wc)
 
   ib_dma_unmap_page(ibdev, req->dma, PAGE_SIZE, DMA_FROM_DEVICE);
 
+  pr_info("read_done update page");
   SetPageUptodate(req->page);
   unlock_page(req->page);
   complete(&req->done);
   atomic_dec(&q->pending);
   kmem_cache_free(req_cache, req);
+  pr_info("read_done update success");
 }
 
 inline static int sswap_rdma_post_rdma(struct rdma_queue *q, struct rdma_req *qe,
@@ -539,6 +546,7 @@ static void sswap_rdma_recv_remotemr_done(struct ib_cq *cq, struct ib_wc *wc)
   pr_info("servermr baseaddr=%llx, key=%u\n", ctrl->servermr.baseaddr,
 	  ctrl->servermr.key);
   complete_all(&qe->done);
+  pr_info("recv_remotemr_done success\n");
 }
 
 static int sswap_rdma_post_recv(struct rdma_queue *q, struct rdma_req *qe,
@@ -643,6 +651,7 @@ inline static void sswap_rdma_wait_completion(struct ib_cq *cq,
 /* polls queue until we reach target completed wrs or qp is empty */
 static inline int poll_target(struct rdma_queue *q, int target)
 {
+  pr_info("poll_target\n");
   unsigned long flags;
   int completed = 0;
 
@@ -661,8 +670,9 @@ static inline int drain_queue(struct rdma_queue *q)
   unsigned long flags;
 
   while (atomic_read(&q->pending) > 0) {
+    //pr_info("in drain_queue process\n");
     spin_lock_irqsave(&q->cq_lock, flags);
-    ib_process_cq_direct(q->cq, 16);
+    ib_process_cq_direct(q->cq, 4);
     spin_unlock_irqrestore(&q->cq_lock, flags);
     cpu_relax();
   }
@@ -680,6 +690,7 @@ static inline int write_queue_add(struct rdma_queue *q, struct page *page,
 
   while ((inflight = atomic_read(&q->pending)) >= QP_MAX_SEND_WR - 8) {
     BUG_ON(inflight > QP_MAX_SEND_WR);
+    pr_info("write_queue_add back pressure\n");
     poll_target(q, 2048);
     pr_info_ratelimited("back pressure writes");
   }
@@ -706,6 +717,7 @@ static inline int begin_read(struct rdma_queue *q, struct page *page,
    * QP_MAX_SEND_WR at a time */
   while ((inflight = atomic_read(&q->pending)) >= QP_MAX_SEND_WR) {
     BUG_ON(inflight > QP_MAX_SEND_WR); /* only valid case is == */
+    pr_info("begin_read back pressure\n");
     poll_target(q, 8);
     pr_info_ratelimited("back pressure happened on reads");
   }
@@ -787,12 +799,20 @@ int sswap_rdma_read_sync(struct page *page, u64 roffset)
   int ret;
 
   printk("sswap_rdma_read_sync\n");
+  pr_info("begin pageSwapCache \n");
   VM_BUG_ON_PAGE(!PageSwapCache(page), page);
+  pr_info("pageSwapCache checked\n");
   VM_BUG_ON_PAGE(!PageLocked(page), page);
+  pr_info("Pagelocked checked\n");
   VM_BUG_ON_PAGE(PageUptodate(page), page);
+  pr_info("pageuptodate checked\n");
 
   q = sswap_rdma_get_queue(smp_processor_id(), QP_READ_SYNC);
+  pr_info("begin_read\n");
   ret = begin_read(q, page, roffset);
+  //manual poll cq
+  drain_queue(q);
+  pr_info("read sync success\n");
   return ret;
 }
 EXPORT_SYMBOL(sswap_rdma_read_sync);

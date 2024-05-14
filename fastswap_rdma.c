@@ -798,14 +798,9 @@ int sswap_rdma_read_sync(struct page *page, u64 roffset)
   struct rdma_queue *q;
   int ret;
 
-  printk("sswap_rdma_read_sync\n");
-  pr_info("begin pageSwapCache \n");
   VM_BUG_ON_PAGE(!PageSwapCache(page), page);
-  pr_info("pageSwapCache checked\n");
   VM_BUG_ON_PAGE(!PageLocked(page), page);
-  pr_info("Pagelocked checked\n");
   VM_BUG_ON_PAGE(PageUptodate(page), page);
-  pr_info("pageuptodate checked\n");
 
   q = sswap_rdma_get_queue(smp_processor_id(), QP_READ_SYNC);
   pr_info("begin_read\n");

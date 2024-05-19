@@ -464,7 +464,7 @@ static void __exit sswap_rdma_cleanup_module(void)
 
 static void sswap_rdma_write_done(struct ib_cq *cq, struct ib_wc *wc)
 {
-  pr_info("handle write_done\n");
+  DEBUG_PRINT("handle write_done\n");
   struct rdma_req *req =
     container_of(wc->wr_cqe, struct rdma_req, cqe);
   struct rdma_queue *q = cq->cq_context;
@@ -483,7 +483,7 @@ static void sswap_rdma_write_done(struct ib_cq *cq, struct ib_wc *wc)
 //todo:didn't handle read done
 static void sswap_rdma_read_done(struct ib_cq *cq, struct ib_wc *wc)
 {
-  pr_info("handle rdma_read_done\n");
+  DEBUG_PRINT("handle rdma_read_done\n");
   struct rdma_req *req =
     container_of(wc->wr_cqe, struct rdma_req, cqe);
   struct rdma_queue *q = cq->cq_context;
@@ -494,13 +494,13 @@ static void sswap_rdma_read_done(struct ib_cq *cq, struct ib_wc *wc)
 
   ib_dma_unmap_page(ibdev, req->dma, PAGE_SIZE, DMA_FROM_DEVICE);
 
-  pr_info("read_done update page");
+  DEBUG_PRINT("read_done update page");
   SetPageUptodate(req->page);
   unlock_page(req->page);
   complete(&req->done);
   atomic_dec(&q->pending);
   kmem_cache_free(req_cache, req);
-  pr_info("read_done update success");
+  DEBUG_PRINT("read_done update success");
 }
 
 inline static int sswap_rdma_post_rdma(struct rdma_queue *q, struct rdma_req *qe,
@@ -682,7 +682,7 @@ static inline int drain_queue(struct rdma_queue *q)
   while (atomic_read(&q->pending) > 0) {
     //pr_info("in drain_queue process\n");
     spin_lock_irqsave(&q->cq_lock, flags);
-    ib_process_cq_direct(q->cq, 8);
+    ib_process_cq_direct(q->cq, 16);
     spin_unlock_irqrestore(&q->cq_lock, flags);
     cpu_relax();
   }
@@ -744,6 +744,8 @@ static inline int read_queue_add(struct rdma_queue *q, struct page *page,
 
 int sswap_rdma_write(struct page *page, u64 roffset)
 {
+  if(roffset >= REMOTE_BUF_SIZE)
+    return -1;
   int ret;
   struct rdma_queue *q;
   DEBUG_PRINT("sswap_rdma_write\n");
@@ -792,6 +794,9 @@ out:
 
 int sswap_rdma_read_sync(struct page *page, u64 roffset)
 {
+  if (roffset >= REMOTE_BUF_SIZE)
+    return -1;
+
   struct rdma_queue *q;
   int ret;
 
@@ -876,6 +881,12 @@ static int __init sswap_rdma_init_module(void)
   }
 
   pr_info("ctrl is ready for reqs\n");
+
+	if(SWAPFILE_SIZE > REMOTE_BUF_SIZE) {
+		pr_info("warning: swapfile size is larger than remote buffer size\n");
+		pr_info("this may cause a part of pages are not use frontswap\n");
+	}
+
   return 0;
 }
 

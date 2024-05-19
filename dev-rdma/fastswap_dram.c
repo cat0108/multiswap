@@ -24,7 +24,7 @@ static void *drambuf;
 int sswap_rdma_write(struct page *page, u64 roffset)
 {
 	//this part is not use frontswap
-	if(roffset > REMOTE_BUF_SIZE)
+	if(roffset >= REMOTE_BUF_SIZE)
 		return -1;
 	void *page_vaddr;
 	page_vaddr = kmap_atomic(page);
@@ -39,7 +39,7 @@ EXPORT_SYMBOL(sswap_rdma_write);
 int sswap_rdma_read_sync(struct page *page, u64 roffset)
 {
 	//this part is not use frontswap
-	if(roffset > REMOTE_BUF_SIZE)
+	if(roffset >= REMOTE_BUF_SIZE)
 		return -1;
 	void *page_vaddr;
 

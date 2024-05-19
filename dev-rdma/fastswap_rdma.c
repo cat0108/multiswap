@@ -1,9 +1,22 @@
-#include "linux/printk.h"
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
 
 #include "fastswap_rdma.h"
 #include <linux/slab.h>
 #include <linux/cpumask.h>
+
+//todo:进行检验，swapfile的size必须小于等于remote buffer size.
+#ifndef ONEGB
+#define ONEGB (1024UL*1024*1024)
+#endif
+#define SWAPFILE_SIZE (ONEGB * 4) 
+#define REMOTE_BUF_SIZE (ONEGB * 4) /*remote_buf_size 超过 swapfile_size 的部分将不会采用frontswap*/
+
+#define DEBUG_MODE
+#ifdef DEBUG_MODE
+#define DEBUG_PRINT(fmt, ...) pr_info(fmt, ##__VA_ARGS__)
+#else
+#define DEBUG_PRINT(x) do {} while (0)
+#endif
 
 static struct sswap_rdma_ctrl *gctrl;
 static int serverport;
@@ -28,10 +41,6 @@ module_param_string(cip, clientip, INET_ADDRSTRLEN, 0644);
 #define CQ_NUM_CQES	(QP_MAX_SEND_WR)
 #define POLL_BATCH_HIGH (QP_MAX_SEND_WR / 4)
 
-// static void sswap_rdma_addone(struct ib_device *dev)
-// {
-//   pr_info("sswap_rdma_addone() = %s\n", dev->name);
-// }
 
 static void sswap_rdma_removeone(struct ib_device *ib_device, void *client_data)
 {
@@ -40,8 +49,6 @@ static void sswap_rdma_removeone(struct ib_device *ib_device, void *client_data)
 
 static struct ib_client sswap_rdma_ib_client = {
   .name   = "sswap_rdma",
-  //这个变量在Linux五点四版本中被删除，相关参考nvme/host/rdma.c中的实现
-  // .add    = sswap_rdma_addone,
   .remove = sswap_rdma_removeone
 };
 
@@ -134,6 +141,7 @@ static void sswap_rdma_destroy_queue_ib(struct rdma_queue *q)
   ib_free_cq(q->cq);
 }
 
+/*create complete queue*/
 static int sswap_rdma_create_queue_ib(struct rdma_queue *q)
 {
   struct ib_device *ibdev = q->ctrl->rdev->dev;
@@ -178,13 +186,13 @@ static int sswap_rdma_addr_resolved(struct rdma_queue *q)
     pr_err("no device found\n");
     return -ENODEV;
   }
-
+  //create complete queue
   ret = sswap_rdma_create_queue_ib(q);
   if (ret) {
     return ret;
   }
 
-  //rdma_resolve_route后会产生ROUTE_RESOLVED事件，然后会调用sswap_rdma_route_resolved
+  //rdma_resolve_route后会产生ROUTE_RESOLVED事件
   ret = rdma_resolve_route(q->cm_id, CONNECTION_TIMEOUT_MS);
   if (ret) {
     pr_err("rdma_resolve_route failed\n");
@@ -214,7 +222,7 @@ static int sswap_rdma_route_resolved(struct rdma_queue *q,
       q->ctrl->rdev->dev->attrs.max_qp_init_rd_atom);
 
   //进行addr_resolved和route_resolved后，进行connect，
-  //connect后会产生ESTABLISHED事件，然后会调用sswap_rdma_conn_established
+  //connect后会产生ESTABLISHED事件
   pr_info("begin RDMA connect\n");
   //这里不能直接调用rdma_connect
   //在rdma_connect会尝试lock id_priv->handle_mutex导致死锁。
@@ -255,6 +263,7 @@ static int sswap_rdma_cm_handler(struct rdma_cm_id *cm_id,
     pr_info("RDMA_CM_EVENT_ESTABLISHED");
     queue->cm_error = sswap_rdma_conn_established(queue);
     /* complete cm_done regardless of success/failure */
+    /*唤醒该完成变量*/
     complete(&queue->cm_done);
     return 0;
   case RDMA_CM_EVENT_REJECTED:
@@ -310,7 +319,7 @@ static int sswap_rdma_init_queue(struct sswap_rdma_ctrl *ctrl,
   spin_lock_init(&queue->cq_lock);//初始化成unlocked状态
   queue->qp_type = get_queue_type(idx);
 
-  //创建一个cm_id，类似于socket
+  //创建一个cm_id，类似于socket,event_handler用于处理事件
   queue->cm_id = rdma_create_id(&init_net, sswap_rdma_cm_handler, queue,
       RDMA_PS_TCP, IB_QPT_RC);
   if (IS_ERR(queue->cm_id)) {
@@ -321,7 +330,7 @@ static int sswap_rdma_init_queue(struct sswap_rdma_ctrl *ctrl,
 
   queue->cm_error = -ETIMEDOUT;
 
-  //在resolve后会产生ADDR_RESOLVED事件，然后会调用sswap_rdma_addr_resolved
+  //在resolve后会产生ADDR_RESOLVED事件
   ret = rdma_resolve_addr(queue->cm_id, &ctrl->srcaddr, &ctrl->addr,
       CONNECTION_TIMEOUT_MS);
   if (ret) {
@@ -330,8 +339,7 @@ static int sswap_rdma_init_queue(struct sswap_rdma_ctrl *ctrl,
   }
   pr_info("Log:rdma resolve addr success\n");
 
-  //todo:等待completion完成,在establish后产生的RDMA_CM_EVENT_ESTABLISHED会complete该completion
-
+  //等待completion完成,在establish后产生的RDMA_CM_EVENT_ESTABLISHED会complete该completion
   ret = sswap_rdma_wait_for_cm(queue);
   if (ret) {
     pr_err("sswap_rdma_wait_for_cm failed\n");
@@ -498,8 +506,6 @@ static void sswap_rdma_read_done(struct ib_cq *cq, struct ib_wc *wc)
 inline static int sswap_rdma_post_rdma(struct rdma_queue *q, struct rdma_req *qe,
   struct ib_sge *sge, u64 roffset, enum ib_wr_opcode op)
 {
-  //linux6.1bad_wr定义为const struct ib_send_wr，这里删除
-  //struct ib_send_wr *bad_wr;
   struct ib_rdma_wr rdma_wr = {};
   int ret;
 
@@ -519,7 +525,7 @@ inline static int sswap_rdma_post_rdma(struct rdma_queue *q, struct rdma_req *qe
   rdma_wr.wr.send_flags = IB_SEND_SIGNALED;
   rdma_wr.remote_addr = q->ctrl->servermr.baseaddr + roffset;
   rdma_wr.rkey = q->ctrl->servermr.key;
-  printk("roffset is: %llu\n", roffset);
+  DEBUG_PRINT("roffset is: %llu\n", roffset);
 
   atomic_inc(&q->pending);
   //第三个参数在linux6.1下应设置为NULL
@@ -554,8 +560,7 @@ static void sswap_rdma_recv_remotemr_done(struct ib_cq *cq, struct ib_wc *wc)
 static int sswap_rdma_post_recv(struct rdma_queue *q, struct rdma_req *qe,
   size_t bufsize)
 {
-  //recv同理
-  // struct ib_recv_wr *bad_wr;
+
   struct ib_recv_wr wr = {};
   struct ib_sge sge;//sge实际上是一段内存区域的描述符
   int ret;
@@ -569,6 +574,7 @@ static int sswap_rdma_post_recv(struct rdma_queue *q, struct rdma_req *qe,
   wr.sg_list = &sge;
   wr.num_sge = 1;
 
+  //首先要通过cpu感知的recv操作获取远程的mr（远端主动发送本端主动接收）
   ret = ib_post_recv(q->qp, &wr, NULL);
   if (ret) {
     pr_err("ib_post_recv failed: %d\n", ret);
@@ -610,7 +616,8 @@ out:
   return ret;
 }
 
-/* the buffer needs to come from kernel (not high memory) */
+/* the buffer needs to come from kernel (not high memory) 
+prepare dma space to receive mr*/
 inline static int get_req_for_buf(struct rdma_req **req, struct ib_device *dev,
 				void *buf, size_t size,
 				enum dma_data_direction dir)
@@ -667,6 +674,7 @@ static inline int poll_target(struct rdma_queue *q, int target)
   return completed;
 }
 
+/*handle cq*/
 static inline int drain_queue(struct rdma_queue *q)
 {
   unsigned long flags;
@@ -708,7 +716,7 @@ static inline int write_queue_add(struct rdma_queue *q, struct page *page,
   return ret;
 }
 
-static inline int begin_read(struct rdma_queue *q, struct page *page,
+static inline int read_queue_add(struct rdma_queue *q, struct page *page,
 			     u64 roffset)
 {
   struct rdma_req *req;
@@ -720,7 +728,7 @@ static inline int begin_read(struct rdma_queue *q, struct page *page,
    * QP_MAX_SEND_WR at a time */
   while ((inflight = atomic_read(&q->pending)) >= QP_MAX_SEND_WR) {
     BUG_ON(inflight > QP_MAX_SEND_WR); /* only valid case is == */
-    pr_info("begin_read back pressure\n");
+    pr_info("read_queue_add back pressure\n");
     poll_target(q, 8);
     pr_info_ratelimited("back pressure happened on reads");
   }
@@ -738,7 +746,7 @@ int sswap_rdma_write(struct page *page, u64 roffset)
 {
   int ret;
   struct rdma_queue *q;
-  printk("sswap_rdma_write\n");
+  DEBUG_PRINT("sswap_rdma_write\n");
   VM_BUG_ON_PAGE(!PageSwapCache(page), page);
 
   q = sswap_rdma_get_queue(smp_processor_id(), QP_WRITE_SYNC);
@@ -749,6 +757,7 @@ int sswap_rdma_write(struct page *page, u64 roffset)
 }
 EXPORT_SYMBOL(sswap_rdma_write);
 
+/*recv rkey and memory region*/
 static int sswap_rdma_recv_remotemr(struct sswap_rdma_ctrl *ctrl)
 {
   struct rdma_req *qe;
@@ -763,6 +772,7 @@ static int sswap_rdma_recv_remotemr(struct sswap_rdma_ctrl *ctrl)
   if (unlikely(ret))
     goto out;
 
+  //complete event
   qe->cqe.done = sswap_rdma_recv_remotemr_done;
 
   ret = sswap_rdma_post_recv(&(ctrl->queues[0]), qe, sizeof(struct sswap_rdma_memregion));
@@ -779,22 +789,6 @@ out:
   return ret;
 }
 
-/* page is unlocked when the wr is done.
- * posts an RDMA read on this cpu's qp */
-int sswap_rdma_read_async(struct page *page, u64 roffset)
-{
-  struct rdma_queue *q;
-  int ret;
-
-  VM_BUG_ON_PAGE(!PageSwapCache(page), page);
-  VM_BUG_ON_PAGE(!PageLocked(page), page);
-  VM_BUG_ON_PAGE(PageUptodate(page), page);
-
-  q = sswap_rdma_get_queue(smp_processor_id(), QP_READ_ASYNC);
-  ret = begin_read(q, page, roffset);
-  return ret;
-}
-EXPORT_SYMBOL(sswap_rdma_read_async);
 
 int sswap_rdma_read_sync(struct page *page, u64 roffset)
 {
@@ -806,21 +800,15 @@ int sswap_rdma_read_sync(struct page *page, u64 roffset)
   VM_BUG_ON_PAGE(PageUptodate(page), page);
 
   q = sswap_rdma_get_queue(smp_processor_id(), QP_READ_SYNC);
-  pr_info("begin_read\n");
-  ret = begin_read(q, page, roffset);
+  DEBUG_PRINT("begin_read\n");
+  ret = read_queue_add(q, page, roffset);
   //manual poll cq
   drain_queue(q);
-  pr_info("read sync success\n");
+  DEBUG_PRINT("read sync success\n");
   return ret;
 }
 EXPORT_SYMBOL(sswap_rdma_read_sync);
 
-int sswap_rdma_poll_load(int cpu)
-{
-  struct rdma_queue *q = sswap_rdma_get_queue(cpu, QP_READ_SYNC);
-  return drain_queue(q);
-}
-EXPORT_SYMBOL(sswap_rdma_poll_load);
 
 /* idx is absolute id (i.e. > than number of cpus) */
 inline enum qp_type get_queue_type(unsigned int idx)

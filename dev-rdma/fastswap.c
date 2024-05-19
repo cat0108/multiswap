@@ -39,19 +39,6 @@ static int sswap_store(unsigned type, pgoff_t pageid,
   return 0;
 }
 
-/*
- * return 0 if page is returned
- * return -1 otherwise
- */
-// static int sswap_load_async(unsigned type, pgoff_t pageid, struct page *page)
-// {
-//   if (unlikely(sswap_rdma_read_async(page, pageid << PAGE_SHIFT))) {
-//     pr_err("could not read page remotely\n");
-//     return -1;
-//   }
-
-//   return 0;
-// }
 
 static int sswap_load(unsigned type, pgoff_t pageid, struct page *page)
 {
@@ -63,10 +50,6 @@ static int sswap_load(unsigned type, pgoff_t pageid, struct page *page)
   return 0;
 }
 
-// static int sswap_poll_load(int cpu)
-// {
-//   return sswap_rdma_poll_load(cpu);
-// }
 
 static void sswap_invalidate_page(unsigned type, pgoff_t offset)
 {
@@ -87,8 +70,6 @@ static struct frontswap_ops sswap_frontswap_ops = {
   .init = sswap_init,
   .store = sswap_store,
   .load = sswap_load,
-  // .poll_load = sswap_poll_load,
-  // .load_async = sswap_load_async,
   .invalidate_page = sswap_invalidate_page,
   .invalidate_area = sswap_invalidate_area,
 

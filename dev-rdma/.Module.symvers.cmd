@@ -1,1 +1,0 @@
-cmd_/home/cat22/gitRepo/dev-rdma/Module.symvers :=  sed 's/ko$$/o/'  /home/cat22/gitRepo/dev-rdma/modules.order | scripts/mod/modpost -m -a     -o /home/cat22/gitRepo/dev-rdma/Module.symvers -e -i Module.symvers -i /usr/src/ofa_kernel/default/Module.symvers -T - 

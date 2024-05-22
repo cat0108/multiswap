@@ -1,12 +1,17 @@
-.PHONY: clean
+.PHONY: clean all
 
-CFLAGS := -Wall -O2 -g -ggdb -Werror
+CFLAGS := -Wall -g
 LDLIBS := ${LDLIBS} -lrdmacm -libverbs -lpthread
-CC := g++
 
-APPS := rmserver
+APPS := client rmserver
 
 all: ${APPS}
+
+client:
+	gcc $(CFLAGS) -o client client.c $(LDLIBS)
+
+rmserver:
+	g++ $(CFLAGS) -O2 -g -ggdb -Werror -o rmserver rmserver.c $(LDLIBS)
 
 clean:
 	rm -f ${APPS}

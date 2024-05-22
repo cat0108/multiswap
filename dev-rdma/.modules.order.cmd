@@ -1,0 +1,1 @@
+cmd_/home/cat22/gitRepo/dev-rdma/modules.order := {   echo /home/cat22/gitRepo/dev-rdma/fastswap.ko;   echo /home/cat22/gitRepo/dev-rdma/fastswap_rdma.ko; :; } > /home/cat22/gitRepo/dev-rdma/modules.order

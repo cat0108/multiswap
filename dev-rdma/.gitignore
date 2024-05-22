@@ -4,3 +4,5 @@
 *.mod.c
 *.ko
 *.cmd
+modules.order
+Module.symvers

@@ -216,33 +216,33 @@ void on_completion(struct ibv_wc *wc)
   else
     die("on_completion: completion isn't a send or a receive.");
 
-  if (++conn->num_completions == 2)
+  if (++conn->num_completions == 1)
     rdma_disconnect(conn->id);
 }
 
 int on_connection(void *context)
 {
-  struct connection *conn = (struct connection *)context;
-  struct ibv_send_wr wr, *bad_wr = NULL;
-  struct ibv_sge sge;
+  // struct connection *conn = (struct connection *)context;
+  // struct ibv_send_wr wr, *bad_wr = NULL;
+  // struct ibv_sge sge;
 
-  snprintf(conn->send_region, BUFFER_SIZE, "message from active/client side with pid %d", getpid());
+  // snprintf(conn->send_region, BUFFER_SIZE, "message from active/client side with pid %d", getpid());
 
-  printf("connected. posting send...\n");
+  printf("connected\n");
 
-  memset(&wr, 0, sizeof(wr));
+  // memset(&wr, 0, sizeof(wr));
 
-  wr.wr_id = (uintptr_t)conn;
-  wr.opcode = IBV_WR_SEND;
-  wr.sg_list = &sge;
-  wr.num_sge = 1;
-  wr.send_flags = IBV_SEND_SIGNALED;
+  // wr.wr_id = (uintptr_t)conn;
+  // wr.opcode = IBV_WR_SEND;
+  // wr.sg_list = &sge;
+  // wr.num_sge = 1;
+  // wr.send_flags = IBV_SEND_SIGNALED;
 
-  sge.addr = (uintptr_t)conn->send_region;
-  sge.length = BUFFER_SIZE;
-  sge.lkey = conn->send_mr->lkey;
+  // sge.addr = (uintptr_t)conn->send_region;
+  // sge.length = BUFFER_SIZE;
+  // sge.lkey = conn->send_mr->lkey;
 
-  TEST_NZ(ibv_post_send(conn->qp, &wr, &bad_wr));
+  // TEST_NZ(ibv_post_send(conn->qp, &wr, &bad_wr));
 
   return 0;
 }

@@ -7,10 +7,9 @@
 #define TEST_NZ(x) do { if ( (x)) die("error: " #x " failed (returned non-zero)." ); } while (0)
 #define TEST_Z(x)  do { if (!(x)) die("error: " #x " failed (returned zero/null)."); } while (0)
 
-//todo:BUFFER_SIZE MUST >= swapfile size
 const size_t BUFFER_SIZE = 1024 * 1024 * 1024 * 4l;
-const unsigned int NUM_PROCS = 6;
-const unsigned int NUM_QUEUES_PER_PROC = 3;
+const unsigned int NUM_PROCS = 1;
+const unsigned int NUM_QUEUES_PER_PROC = 1;
 const unsigned int NUM_QUEUES = NUM_PROCS * NUM_QUEUES_PER_PROC;
 
 struct device {
@@ -78,19 +77,18 @@ int main(int argc, char **argv)
   TEST_NZ(rdma_listen(listener, NUM_QUEUES + 1));
   port = ntohs(rdma_get_src_port(listener));
   printf("listening on port %d.\n", port);
-  //todo:这部分执行逻辑有些疑问
+
   for (unsigned int i = 0; i < NUM_QUEUES; ++i) {
     printf("waiting for queue connection: %d\n", i);
     struct queue *q = &gctrl->queues[i];
 
     // handle connection requests
     while (rdma_get_cm_event(ec, &event) == 0) {
-      printf("got an event\n");
       struct rdma_cm_event event_copy;
 
       memcpy(&event_copy, event, sizeof(*event));
-      rdma_ack_cm_event(event); 
-      //on_event为1为未知请求或者断开连接，经过on_connection后变为Connected
+      rdma_ack_cm_event(event);
+
       if (on_event(&event_copy) || q->state == queue::CONNECTED)
         break;
     }
@@ -152,10 +150,9 @@ static device *get_device(struct queue *q)
     TEST_Z(dev->pd);
 
     struct ctrl *ctrl = q->ctrl;
-    //这对ctrl的buffer和mr_buffer进行了初始化
     ctrl->buffer = malloc(BUFFER_SIZE);
     TEST_Z(ctrl->buffer);
-    //用这块buffer注册mr
+
     TEST_Z(ctrl->mr_buffer = ibv_reg_mr(
       dev->pd,
       ctrl->buffer,
@@ -190,7 +187,7 @@ static void create_qp(struct queue *q)
   qp_attr.cap.max_send_wr = 10;
   qp_attr.cap.max_recv_wr = 10;
   qp_attr.cap.max_send_sge = 1;
-  qp_attr.cap.max_recv_sge = 1; 
+  qp_attr.cap.max_recv_sge = 1;
 
   TEST_NZ(rdma_create_qp(q->cm_id, q->ctrl->dev->pd, &qp_attr));
   q->qp = q->cm_id->qp;
@@ -261,7 +258,7 @@ int on_connection(struct queue *q)
     wr.sg_list = &sge;
     wr.num_sge = 1;
     wr.send_flags = IBV_SEND_SIGNALED | IBV_SEND_INLINE;
-    //client\server两端共同确定好格式读取信息
+
     sge.addr = (uint64_t) &servermr;
     sge.length = sizeof(servermr);
 
@@ -287,7 +284,6 @@ int on_disconnect(struct queue *q)
   return 0;
 }
 
-//return为1代表未知事件或者断开连接请求
 int on_event(struct rdma_cm_event *event)
 {
   printf("%s\n", __FUNCTION__);

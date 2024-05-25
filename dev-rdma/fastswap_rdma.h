@@ -54,7 +54,7 @@ struct sswap_rdma_memregion {
 
 //rdma controller
 struct sswap_rdma_ctrl {
-  struct sswap_rdma_dev *rdev; // TODO: move this to queue 
+  struct sswap_rdma_dev *rdev;
   struct rdma_queue *queues;
   struct sswap_rdma_memregion servermr;
 

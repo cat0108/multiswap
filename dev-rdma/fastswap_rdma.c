@@ -1,3 +1,4 @@
+#include "linux/dma-direction.h"
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
 
 #include "fastswap_rdma.h"
@@ -141,7 +142,7 @@ static void sswap_rdma_destroy_queue_ib(struct rdma_queue *q)
   ib_free_cq(q->cq);
 }
 
-/*create complete queue*/
+/*create complete queue and qp*/
 static int sswap_rdma_create_queue_ib(struct rdma_queue *q)
 {
   struct ib_device *ibdev = q->ctrl->rdev->dev;
@@ -186,7 +187,7 @@ static int sswap_rdma_addr_resolved(struct rdma_queue *q)
     pr_err("no device found\n");
     return -ENODEV;
   }
-  //create complete queue
+  //create queue
   ret = sswap_rdma_create_queue_ib(q);
   if (ret) {
     return ret;
@@ -480,7 +481,6 @@ static void sswap_rdma_write_done(struct ib_cq *cq, struct ib_wc *wc)
   kmem_cache_free(req_cache, req);
 }
 
-//todo:didn't handle read done
 static void sswap_rdma_read_done(struct ib_cq *cq, struct ib_wc *wc)
 {
   DEBUG_PRINT("handle rdma_read_done\n");
@@ -698,7 +698,7 @@ static inline int write_queue_add(struct rdma_queue *q, struct page *page,
   struct ib_sge sge = {};
   int ret, inflight;
 
-  //如果当前完成队列数量过多，就先poll
+  //如果当前待完成队列数量过多，就先poll
   while ((inflight = atomic_read(&q->pending)) >= QP_MAX_SEND_WR - 8) {
     BUG_ON(inflight > QP_MAX_SEND_WR);
     pr_info("write_queue_add back pressure\n");
@@ -733,7 +733,7 @@ static inline int read_queue_add(struct rdma_queue *q, struct page *page,
     pr_info_ratelimited("back pressure happened on reads");
   }
 
-  ret = get_req_for_page(&req, dev, page, DMA_TO_DEVICE);
+  ret = get_req_for_page(&req, dev, page, DMA_FROM_DEVICE);
   if (unlikely(ret))
     return ret;
 
@@ -768,7 +768,7 @@ static int sswap_rdma_recv_remotemr(struct sswap_rdma_ctrl *ctrl)
 
   pr_info("start: %s\n", __FUNCTION__);
   dev = ctrl->rdev->dev;
-
+  //req就是queue element
   ret = get_req_for_buf(&qe, dev, &(ctrl->servermr), sizeof(ctrl->servermr),
 			DMA_FROM_DEVICE);
   if (unlikely(ret))

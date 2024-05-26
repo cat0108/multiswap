@@ -44,7 +44,7 @@ RDMA是一种新型网络技术，CPU可以通过Infiniband RDMA网卡设备对�
 │  ├─ Makefile
 │  └─ rmmod.sh      # 卸载脚本
 ├─ farmemserver     # 远程内存服务端
-│  ├─ client.c
+│  ├─ client.c      # 用户态客户端测试
 │  ├─ Makefile
 │  └─ rmserver.c
 ├─ README.md

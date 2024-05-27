@@ -37,8 +37,8 @@ RDMA是一种新型网络技术，CPU可以通过Infiniband RDMA网卡设备对�
 ├─ dev-rdma         # RDMA驱动
 │  ├─ fastswap.c    # frontswap_ops接口实现
 │  ├─ fastswap_dram.c   # DRAM BACKEND
-│  ├─ fastswap_dram.h   # DRAM BACKEND
-│  ├─ fastswap_rdma.c
+│  ├─ fastswap_dram.h   
+│  ├─ fastswap_rdma.c   # DRAM BACKEND
 │  ├─ fastswap_rdma.h
 │  ├─ insmod.sh     # 安装脚本
 │  ├─ Makefile
@@ -46,7 +46,7 @@ RDMA是一种新型网络技术，CPU可以通过Infiniband RDMA网卡设备对�
 ├─ farmemserver     # 远程内存服务端
 │  ├─ client.c      # 用户态客户端测试
 │  ├─ Makefile
-│  └─ rmserver.c
+│  └─ rmserver.c    # server程序
 ├─ README.md
 └─ test
    ├─ memory_limit_test.sh  # 测试脚本

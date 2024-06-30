@@ -27,10 +27,16 @@
 #error "BACKEND can only be 1 (DRAM) or 2 (RDMA)"
 #endif
 
+//test swapfile
+//#define USESWAP
+
 static int sswap_store(unsigned type, pgoff_t pageid,
         struct page *page)
 {
-  printk("in sswap_store\n");
+#ifdef USESWAP
+  return -1;
+#endif
+  //printk("in sswap_store\n");
   if (sswap_rdma_write(page, pageid << PAGE_SHIFT)) {
     pr_err("could not store page remotely\n");
     return -1;
@@ -42,6 +48,9 @@ static int sswap_store(unsigned type, pgoff_t pageid,
 
 static int sswap_load(unsigned type, pgoff_t pageid, struct page *page)
 {
+#ifdef USESWAP
+  return -1;
+#endif
   if (unlikely(sswap_rdma_read_sync(page, pageid << PAGE_SHIFT))) {
     pr_err("could not read page remotely\n");
     return -1;

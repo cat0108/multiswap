@@ -12,11 +12,11 @@
 #define SWAPFILE_SIZE (ONEGB * 4) 
 #define REMOTE_BUF_SIZE (ONEGB * 4) /*remote_buf_size 超过 swapfile_size 的部分将不会采用frontswap*/
 
-#define DEBUG_MODE
+//#define DEBUG_MODE
 #ifdef DEBUG_MODE
 #define DEBUG_PRINT(fmt, ...) pr_info(fmt, ##__VA_ARGS__)
 #else
-#define DEBUG_PRINT(x) do {} while (0)
+#define DEBUG_PRINT(...) do {} while (0)
 #endif
 
 static struct sswap_rdma_ctrl *gctrl;

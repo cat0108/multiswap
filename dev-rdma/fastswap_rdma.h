@@ -44,7 +44,7 @@ struct rdma_queue {
   int cm_error;
   struct completion cm_done;//完成变量，用于同步
 
-  atomic_t pending;
+  atomic_t pending;//队列中未处理完的队列数量
 };
 
 struct sswap_rdma_memregion {
@@ -69,7 +69,17 @@ struct sswap_rdma_ctrl {
   };
 };
 
-struct rdma_queue *sswap_rdma_get_queue(unsigned int idx, enum qp_type type);
+//multi server node
+struct gctrl_entry {
+  struct sswap_rdma_ctrl *gctrl;
+  struct list_head list;
+  int serverport;
+  char serverip[INET_ADDRSTRLEN];
+  char clientip[INET_ADDRSTRLEN];
+};
+
+struct rdma_queue *sswap_rdma_get_queue(unsigned int idx,
+                 enum qp_type type,struct sswap_rdma_ctrl *gctrl);
 enum qp_type get_queue_type(unsigned int idx);
 int sswap_rdma_read_sync(struct page *page, u64 roffset);
 int sswap_rdma_write(struct page *page, u64 roffset);

@@ -1,9 +1,9 @@
-#include "linux/dma-direction.h"
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
 
 #include "fastswap_rdma.h"
 #include <linux/slab.h>
 #include <linux/cpumask.h>
+#include <linux/string.h>
 
 //todo:进行检验，swapfile的size必须小于等于remote buffer size.
 #ifndef ONEGB
@@ -11,6 +11,8 @@
 #endif
 #define SWAPFILE_SIZE (ONEGB * 4) 
 #define REMOTE_BUF_SIZE (ONEGB * 4) /*remote_buf_size 超过 swapfile_size 的部分将不会采用frontswap*/
+//修改此处来调整memory node的数量，需要同步修改serverip和serverport
+#define NUM_SERVER 1
 
 //#define DEBUG_MODE
 #ifdef DEBUG_MODE
@@ -19,17 +21,24 @@
 #define DEBUG_PRINT(...) do {} while (0)
 #endif
 
-static struct sswap_rdma_ctrl *gctrl;
-static int serverport;
+//todo:方便测试直接定死端口号和ip地址
+//static struct sswap_rdma_ctrl *gctrl;
+static int serverport[2] = {50000, 50001};
 static int numqueues;
+static int numqueues_perserver;
 static int numcpus;
-static char serverip[INET_ADDRSTRLEN];
-static char clientip[INET_ADDRSTRLEN];
+static char serverip[2][INET_ADDRSTRLEN] = {"10.10.10.2", "10.10.10.3"};
+static char clientip[INET_ADDRSTRLEN] = "10.10.10.1";
 static struct kmem_cache *req_cache;
-module_param_named(sport, serverport, int, 0644);
-module_param_named(nq, numqueues, int, 0644);
-module_param_string(sip, serverip, INET_ADDRSTRLEN, 0644);
-module_param_string(cip, clientip, INET_ADDRSTRLEN, 0644);
+static LIST_HEAD(gctrl_list);
+
+//减少在read和write过程中通过链表获取queue的时间，以两个节点为例
+static struct sswap_rdma_ctrl* gctrl1;
+static struct sswap_rdma_ctrl* gctrl2;
+// module_param_named(sport, serverport, int, 0644);
+// module_param_named(nq, numqueues, int, 0644);
+// module_param_string(sip, serverip, INET_ADDRSTRLEN, 0644);
+// module_param_string(cip, clientip, INET_ADDRSTRLEN, 0644);
 
 // TODO: destroy ctrl
 
@@ -151,6 +160,11 @@ static int sswap_rdma_create_queue_ib(struct rdma_queue *q)
 
   pr_info("start: %s\n", __FUNCTION__);
 
+  /*
+  *cq has two types of polling modes: softirq and direct.
+  *direct mode can be handled in the context of the caller, use ib_poll_cq_direct
+  *softirq mode can be handled in the context of a softirq, auto
+  */
   if (q->qp_type == QP_READ_ASYNC)
     q->cq = ib_alloc_cq(ibdev, q, CQ_NUM_CQES,
       comp_vector, IB_POLL_SOFTIRQ);
@@ -370,7 +384,7 @@ static void sswap_rdma_free_queue(struct rdma_queue *q)
 static int sswap_rdma_init_queues(struct sswap_rdma_ctrl *ctrl)
 {
   int ret, i;
-  for (i = 0; i < numqueues; ++i) {
+  for (i = 0; i < numqueues_perserver; ++i) {
     ret = sswap_rdma_init_queue(ctrl, i);
     if (ret) {
       pr_err("failed to initialized queue: %d\n", i);
@@ -392,7 +406,7 @@ out_free_queues:
 static void sswap_rdma_stopandfree_queues(struct sswap_rdma_ctrl *ctrl)
 {
   int i;
-  for (i = 0; i < numqueues; ++i) {
+  for (i = 0; i < numqueues_perserver; ++i) {
     sswap_rdma_stop_queue(&ctrl->queues[i]);
     sswap_rdma_free_queue(&ctrl->queues[i]);
   }
@@ -413,11 +427,19 @@ static int sswap_rdma_parse_ipaddr(struct sockaddr_in *saddr, char *ip)
   return 0;
 }
 
+
 static int sswap_rdma_create_ctrl(struct sswap_rdma_ctrl **c)
 {
   int ret;
   struct sswap_rdma_ctrl *ctrl;
-  pr_info("will try to connect to %s:%d\n", serverip, serverport);
+  struct gctrl_entry *entry;
+  entry = container_of(c, struct gctrl_entry, gctrl);
+  char* serverip = entry->serverip;
+  char* clientip = entry->clientip;
+  int serverport = entry->serverport;
+
+  pr_info("%d",serverport);
+  pr_info("will try to connect to %s,%d\n", serverip, serverport);
 
   //alloc space for gctrl
   *c = kzalloc(sizeof(struct sswap_rdma_ctrl), GFP_KERNEL);
@@ -427,8 +449,8 @@ static int sswap_rdma_create_ctrl(struct sswap_rdma_ctrl **c)
   }
   ctrl = *c;
 
-  //一次性为所有队列分配空间并返回首地址指针
-  ctrl->queues = kzalloc(sizeof(struct rdma_queue) * numqueues, GFP_KERNEL);
+  //一次性为单个gctrl所有队列分配空间
+  ctrl->queues = kzalloc(sizeof(struct rdma_queue) * numqueues_perserver, GFP_KERNEL);
   if (!ctrl->queues) {
     pr_err("no mem for queues\n");
     return -ENOMEM;
@@ -454,10 +476,19 @@ static int sswap_rdma_create_ctrl(struct sswap_rdma_ctrl **c)
 
 static void __exit sswap_rdma_cleanup_module(void)
 {
-  sswap_rdma_stopandfree_queues(gctrl);
+  //sswap_rdma_stopandfree_queues(gctrl);
+  struct gctrl_entry *entry, *tmp;
+  list_for_each_entry(entry, &gctrl_list, list) {
+    sswap_rdma_stopandfree_queues(entry->gctrl);
+  }
   ib_unregister_client(&sswap_rdma_ib_client);
-  kfree(gctrl);
-  gctrl = NULL;
+  //kfree(gctrl);
+  list_for_each_entry_safe(entry, tmp, &gctrl_list, list) {
+    list_del(&entry->list);
+    kfree(entry->gctrl);
+    kfree(entry);
+  }
+  //gctrl = NULL;
   if (req_cache) {
     kmem_cache_destroy(req_cache);
   }
@@ -751,7 +782,8 @@ int sswap_rdma_write(struct page *page, u64 roffset)
   DEBUG_PRINT("sswap_rdma_write\n");
   VM_BUG_ON_PAGE(!PageSwapCache(page), page);
 
-  q = sswap_rdma_get_queue(smp_processor_id(), QP_WRITE_SYNC);
+  //todo:进行调度思考，考虑不同内存结点
+  q = sswap_rdma_get_queue(smp_processor_id(), QP_WRITE_SYNC, gctrl1);
   ret = write_queue_add(q, page, roffset);
   BUG_ON(ret);
   drain_queue(q);
@@ -804,7 +836,8 @@ int sswap_rdma_read_sync(struct page *page, u64 roffset)
   VM_BUG_ON_PAGE(!PageLocked(page), page);
   VM_BUG_ON_PAGE(PageUptodate(page), page);
 
-  q = sswap_rdma_get_queue(smp_processor_id(), QP_READ_SYNC);
+  //todo:同write
+  q = sswap_rdma_get_queue(smp_processor_id(), QP_READ_SYNC, gctrl1);
   DEBUG_PRINT("begin_read\n");
   ret = read_queue_add(q, page, roffset);
   //manual poll cq
@@ -818,7 +851,7 @@ EXPORT_SYMBOL(sswap_rdma_read_sync);
 /* idx is absolute id (i.e. > than number of cpus) */
 inline enum qp_type get_queue_type(unsigned int idx)
 {
-  // numcpus = 8
+  // numcpus = 6
   if (idx < numcpus)
     return QP_READ_SYNC;
   else if (idx < numcpus * 2)
@@ -831,7 +864,7 @@ inline enum qp_type get_queue_type(unsigned int idx)
 }
 
 inline struct rdma_queue *sswap_rdma_get_queue(unsigned int cpuid,
-					       enum qp_type type)
+					       enum qp_type type, struct sswap_rdma_ctrl* gctrl)
 {
   BUG_ON(gctrl == NULL);
 
@@ -847,6 +880,52 @@ inline struct rdma_queue *sswap_rdma_get_queue(unsigned int cpuid,
   };
 }
 
+static int sswap_rdma_create_gctrl_list(int num)
+{
+  int i;
+  struct gctrl_entry *entry;
+  int ret;
+
+  for (i = 0; i < num; ++i) {
+    entry = kzalloc(sizeof(struct gctrl_entry), GFP_KERNEL);
+    if (!entry) {
+      pr_err("no memory for entry\n");
+      return -ENOMEM;
+    }
+
+    //bind port and ip
+    entry->serverport = serverport[i];
+    strscpy(entry->clientip, clientip, sizeof(entry->clientip));
+    strscpy(entry->serverip, serverip[i], sizeof(entry->serverip));
+
+    ret = sswap_rdma_create_ctrl(&entry->gctrl);
+    if (ret) {
+      pr_err("could not create ctrl, number %d\n", i);
+      return -ENODEV;
+    }
+
+    list_add(&entry->list, &gctrl_list);
+  }
+
+  return 0;
+}
+
+static int sswap_rdma_recv_multi_remotemr(void)
+{
+  struct gctrl_entry *entry;
+  int ret;
+  int count = 0;
+  list_for_each_entry(entry, &gctrl_list, list) {
+    ret = sswap_rdma_recv_remotemr(entry->gctrl);
+    if (ret) {
+      pr_err("could not setup remote memory region for ctrl %d\n", count);
+      return -ENODEV;
+    }
+    count++;
+  }
+  return 0;
+}
+
 static int __init sswap_rdma_init_module(void)
 {
   int ret;
@@ -855,7 +934,8 @@ static int __init sswap_rdma_init_module(void)
   pr_info("* RDMA BACKEND *");
 
   numcpus = num_online_cpus();
-  numqueues = numcpus * 3;
+  numqueues_perserver = numcpus * 3;
+  numqueues = NUM_SERVER * numqueues_perserver;
 
   req_cache = kmem_cache_create("sswap_req_cache", sizeof(struct rdma_req), 0,
                       SLAB_TEMPORARY | SLAB_HWCACHE_ALIGN, NULL);
@@ -866,18 +946,32 @@ static int __init sswap_rdma_init_module(void)
   }
 
   ib_register_client(&sswap_rdma_ib_client);
-  ret = sswap_rdma_create_ctrl(&gctrl);
+
+  ret = sswap_rdma_create_gctrl_list(NUM_SERVER);
+
   if (ret) {
     pr_err("could not create ctrl\n");
     ib_unregister_client(&sswap_rdma_ib_client);
     return -ENODEV;
   }
 
-  ret = sswap_rdma_recv_remotemr(gctrl);
+  ret = sswap_rdma_recv_multi_remotemr();
   if (ret) {
     pr_err("could not setup remote memory region\n");
     ib_unregister_client(&sswap_rdma_ib_client);
     return -ENODEV;
+  }
+
+  //事先取出两个ctrl，加速后续read和write
+  struct gctrl_entry* entry;
+  int iter = 0;
+  list_for_each_entry(entry, &gctrl_list, list) {
+    if (iter == 0) {
+      gctrl1 = entry->gctrl;
+    } else {
+      gctrl2 = entry->gctrl;
+    }
+    iter++;
   }
 
   pr_info("ctrl is ready for reqs\n");

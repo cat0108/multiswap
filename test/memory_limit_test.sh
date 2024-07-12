@@ -25,3 +25,4 @@ gcc pagewalker.c -lm -O0 -o pagewalker
 ./pagewalker
 echo "memory.peak is:"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
+

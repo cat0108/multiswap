@@ -1,1 +1,7 @@
 .cache/
+*.cmd
+*.ko
+*symvers
+*.mod.*
+*.order
+*.o

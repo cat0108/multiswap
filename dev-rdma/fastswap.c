@@ -28,7 +28,7 @@
 #endif
 
 //test swapfile
-//#define USESWAP
+#define USESWAP
 
 static int sswap_store(unsigned type, pgoff_t pageid,
         struct page *page)

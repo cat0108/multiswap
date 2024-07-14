@@ -51,7 +51,7 @@ object pagerank {
     //val graph = GraphLoader.edgeListFile(sc, "data/berkeley_stanford/web-BerkStan.txt")
     val graph = GraphLoader.edgeListFile(sc, data_file)
     // Run PageRank
-    val ranks = graph.pageRank(0.0001).vertices
+    val ranks = graph.pageRank(0.1).vertices
     // Join the ranks with the usernames
     //val users = sc.textFile("data/graphx/users.txt").map { line =>
 /*    val users = sc.textFile("users.txt").map { line =>

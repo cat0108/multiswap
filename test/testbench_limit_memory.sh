@@ -21,16 +21,16 @@ echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "adding current shell to pagerank_150M"
 echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
-/usr/bin/time -v ./testbench/quicksort/quicksort 2047
+/usr/bin/time -v ./testbench/quicksort/quicksort 6143
 echo "memory.peak is:"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 
 
-echo 3221225472 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
-echo "set memory.max to"
-cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
-echo "adding current shell to pagerank_150M"
-echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
-/usr/bin/time -v python3 testbench/kmeans/kmeans.py
-echo "memory.peak is:"
-cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
+# echo 3221225472 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
+# echo "set memory.max to"
+# cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
+# echo "adding current shell to pagerank_150M"
+# echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
+# /usr/bin/time -v python3 testbench/kmeans/kmeans.py
+# echo "memory.peak is:"
+# cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak

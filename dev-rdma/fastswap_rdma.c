@@ -27,8 +27,8 @@ static int serverport[2] = {50000, 50001};
 static int numqueues;
 static int numqueues_perserver;
 static int numcpus;
-static char serverip[2][INET_ADDRSTRLEN] = {"10.10.10.2", "10.10.10.3"};
-static char clientip[INET_ADDRSTRLEN] = "10.10.10.1";
+static char serverip[2][INET_ADDRSTRLEN] = {"10.10.10.1", "10.10.10.3"};
+static char clientip[INET_ADDRSTRLEN] = "10.10.10.5";
 static struct kmem_cache *req_cache;
 static LIST_HEAD(gctrl_list);
 

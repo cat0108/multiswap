@@ -1,0 +1,456 @@
+82036
+50% rdma
+set memory.max to
+4294967296
+adding current shell to pagerank_150M
+Iteration 1
+82036
+will sort 2147221504 integers (8191 MB)
+time 313583 ms
+	Command being timed: "./testbench/quicksort/quicksort 8191"
+	User time (seconds): 251.21
+	System time (seconds): 133.15
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 6:24.60
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4189108
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1253493
+	Minor (reclaiming a frame) page faults: 14921202
+	Voluntary context switches: 1
+	Involuntary context switches: 34539
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+4294967296
+Iteration 2
+82036
+will sort 2147221504 integers (8191 MB)
+time 309008 ms
+	Command being timed: "./testbench/quicksort/quicksort 8191"
+	User time (seconds): 252.46
+	System time (seconds): 127.60
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 6:20.28
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4189036
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1218027
+	Minor (reclaiming a frame) page faults: 14164717
+	Voluntary context switches: 1
+	Involuntary context switches: 32766
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+4294967296
+Iteration 3
+82036
+will sort 2147221504 integers (8191 MB)
+time 309751 ms
+	Command being timed: "./testbench/quicksort/quicksort 8191"
+	User time (seconds): 250.91
+	System time (seconds): 129.93
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 6:21.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4189004
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1215976
+	Minor (reclaiming a frame) page faults: 14563911
+	Voluntary context switches: 1
+	Involuntary context switches: 34859
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+4294967296
+60% rdma
+set memory.max to
+5153959936
+adding current shell to pagerank_150M
+Iteration 1
+82036
+will sort 2147221504 integers (8191 MB)
+time 287317 ms
+	Command being timed: "./testbench/quicksort/quicksort 8191"
+	User time (seconds): 252.44
+	System time (seconds): 104.70
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:57.34
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5026256
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 940062
+	Minor (reclaiming a frame) page faults: 11856064
+	Voluntary context switches: 1
+	Involuntary context switches: 27003
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+5153959936
+Iteration 2
+82036
+will sort 2147221504 integers (8191 MB)
+time 287141 ms
+	Command being timed: "./testbench/quicksort/quicksort 8191"
+	User time (seconds): 250.71
+	System time (seconds): 106.19
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:57.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5026236
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1022212
+	Minor (reclaiming a frame) page faults: 11842448
+	Voluntary context switches: 1
+	Involuntary context switches: 27687
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+5153959936
+Iteration 3
+82036
+will sort 2147221504 integers (8191 MB)
+time 292277 ms
+	Command being timed: "./testbench/quicksort/quicksort 8191"
+	User time (seconds): 251.66
+	System time (seconds): 110.42
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 6:02.28
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5026212
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 999192
+	Minor (reclaiming a frame) page faults: 12528115
+	Voluntary context switches: 2
+	Involuntary context switches: 27998
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+5153959936
+70% rdma
+set memory.max to
+6012952576
+adding current shell to pagerank_150M
+Iteration 1
+82036
+will sort 2147221504 integers (8191 MB)
+time 279938 ms
+	Command being timed: "./testbench/quicksort/quicksort 8191"
+	User time (seconds): 250.98
+	System time (seconds): 97.43
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:48.58
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5863516
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 858340
+	Minor (reclaiming a frame) page faults: 11159655
+	Voluntary context switches: 2
+	Involuntary context switches: 25244
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+6012952576
+Iteration 2
+82036
+will sort 2147221504 integers (8191 MB)
+time 275422 ms
+	Command being timed: "./testbench/quicksort/quicksort 8191"
+	User time (seconds): 252.84
+	System time (seconds): 91.09
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:44.12
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5863456
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 899056
+	Minor (reclaiming a frame) page faults: 10295534
+	Voluntary context switches: 2
+	Involuntary context switches: 24821
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+6012952576
+Iteration 3
+82036
+will sort 2147221504 integers (8191 MB)
+time 281563 ms
+	Command being timed: "./testbench/quicksort/quicksort 8191"
+	User time (seconds): 250.92
+	System time (seconds): 99.20
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:50.30
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5863496
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 891869
+	Minor (reclaiming a frame) page faults: 11318536
+	Voluntary context switches: 2
+	Involuntary context switches: 24865
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+6012952576
+80% rdma
+set memory.max to
+6871945216
+adding current shell to pagerank_150M
+Iteration 1
+82036
+will sort 2147221504 integers (8191 MB)
+time 241481 ms
+	Command being timed: "./testbench/quicksort/quicksort 8191"
+	User time (seconds): 248.55
+	System time (seconds): 60.58
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:09.25
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6700676
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 474671
+	Minor (reclaiming a frame) page faults: 6781974
+	Voluntary context switches: 2
+	Involuntary context switches: 15742
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+6871945216
+Iteration 2
+82036
+will sort 2147221504 integers (8191 MB)
+time 271562 ms
+	Command being timed: "./testbench/quicksort/quicksort 8191"
+	User time (seconds): 251.44
+	System time (seconds): 87.74
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:39.35
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6700676
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 733849
+	Minor (reclaiming a frame) page faults: 10109705
+	Voluntary context switches: 2
+	Involuntary context switches: 22129
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+6871945216
+Iteration 3
+82036
+will sort 2147221504 integers (8191 MB)
+time 242600 ms
+	Command being timed: "./testbench/quicksort/quicksort 8191"
+	User time (seconds): 250.39
+	System time (seconds): 59.73
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:10.25
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6700664
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 447977
+	Minor (reclaiming a frame) page faults: 6812960
+	Voluntary context switches: 2
+	Involuntary context switches: 16402
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+6871945216
+90% rdma
+set memory.max to
+6871945216
+adding current shell to pagerank_150M
+Iteration 1
+82036
+will sort 2147221504 integers (8191 MB)
+time 253915 ms
+	Command being timed: "./testbench/quicksort/quicksort 8191"
+	User time (seconds): 250.83
+	System time (seconds): 70.62
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:21.58
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6700720
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 640038
+	Minor (reclaiming a frame) page faults: 8053649
+	Voluntary context switches: 2
+	Involuntary context switches: 19171
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+6871945216
+Iteration 2
+82036
+will sort 2147221504 integers (8191 MB)
+time 243232 ms
+	Command being timed: "./testbench/quicksort/quicksort 8191"
+	User time (seconds): 250.44
+	System time (seconds): 60.37
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:10.92
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6700692
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 452140
+	Minor (reclaiming a frame) page faults: 6878309
+	Voluntary context switches: 1
+	Involuntary context switches: 16025
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+6871945216
+Iteration 3
+82036
+will sort 2147221504 integers (8191 MB)
+time 251434 ms
+	Command being timed: "./testbench/quicksort/quicksort 8191"
+	User time (seconds): 251.19
+	System time (seconds): 67.83
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:19.15
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6700716
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 574486
+	Minor (reclaiming a frame) page faults: 7705980
+	Voluntary context switches: 2
+	Involuntary context switches: 17928
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+6871945216

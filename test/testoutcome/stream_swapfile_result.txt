@@ -1,0 +1,921 @@
+61511
+50% swapfile
+set memory.max to
+2148540416
+adding current shell to pagerank_150M
+Iteration 1
+61511
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 178955000 (elements), Offset = 0 (elements)
+Memory per array = 1365.3 MiB (= 1.3 GiB).
+Total memory required = 4096.0 MiB (= 4.0 GiB).
+Each kernel will be executed 21 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 6
+Number of Threads counted = 6
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 3165793 microseconds.
+   (= 3165793 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Average Rate MB/s  Avg time     Min time     Max time
+Copy:             776.6     3.687004     2.814274     4.953570
+Scale:            641.6     4.462804     3.466014     5.842642
+Add:              660.2     6.505047     4.983767     8.205728
+Triad:            675.1     6.361784     4.894610     7.994246
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+	Command being timed: "./testbench/stream/stream_c.exe"
+	User time (seconds): 113.13
+	System time (seconds): 1039.16
+	Percent of CPU this job got: 241%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 7:56.32
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2094692
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 19353770
+	Minor (reclaiming a frame) page faults: 56438216
+	Voluntary context switches: 19331800
+	Involuntary context switches: 302077
+	Swaps: 0
+	File system inputs: 595104504
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2148540416
+Iteration 2
+61511
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 178955000 (elements), Offset = 0 (elements)
+Memory per array = 1365.3 MiB (= 1.3 GiB).
+Total memory required = 4096.0 MiB (= 4.0 GiB).
+Each kernel will be executed 21 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 6
+Number of Threads counted = 6
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 2674632 microseconds.
+   (= 2674632 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Average Rate MB/s  Avg time     Min time     Max time
+Copy:             762.5     3.755203     2.821295     4.834834
+Scale:            659.5     4.341508     3.465153     5.552677
+Add:              672.6     6.385318     4.999905     8.123889
+Triad:            690.6     6.219171     4.880445     7.332531
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+	Command being timed: "./testbench/stream/stream_c.exe"
+	User time (seconds): 106.77
+	System time (seconds): 965.51
+	Percent of CPU this job got: 230%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 7:45.13
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2094428
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 19291174
+	Minor (reclaiming a frame) page faults: 56471918
+	Voluntary context switches: 19274698
+	Involuntary context switches: 300335
+	Swaps: 0
+	File system inputs: 594874824
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2148540416
+Iteration 3
+61511
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 178955000 (elements), Offset = 0 (elements)
+Memory per array = 1365.3 MiB (= 1.3 GiB).
+Total memory required = 4096.0 MiB (= 4.0 GiB).
+Each kernel will be executed 21 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 6
+Number of Threads counted = 6
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 2785549 microseconds.
+   (= 2785549 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Average Rate MB/s  Avg time     Min time     Max time
+Copy:             690.7     4.145624     2.840639     5.004982
+Scale:            586.1     4.885547     3.753667     5.398714
+Add:              617.0     6.961089     5.062800     7.896377
+Triad:            649.1     6.616341     4.938082     7.383127
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+	Command being timed: "./testbench/stream/stream_c.exe"
+	User time (seconds): 130.22
+	System time (seconds): 1194.71
+	Percent of CPU this job got: 259%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:29.71
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2094960
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 19266193
+	Minor (reclaiming a frame) page faults: 56409529
+	Voluntary context switches: 19243995
+	Involuntary context switches: 314239
+	Swaps: 0
+	File system inputs: 594168528
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2148540416
+60% swapfile
+set memory.max to
+2578247680
+adding current shell to pagerank_150M
+Iteration 1
+61511
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 178955000 (elements), Offset = 0 (elements)
+Memory per array = 1365.3 MiB (= 1.3 GiB).
+Total memory required = 4096.0 MiB (= 4.0 GiB).
+Each kernel will be executed 21 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 6
+Number of Threads counted = 6
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 2658737 microseconds.
+   (= 2658737 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Average Rate MB/s  Avg time     Min time     Max time
+Copy:             736.2     3.889165     2.836348     5.179373
+Scale:            604.6     4.735521     3.518223     5.440378
+Add:              636.8     6.745003     5.639693     7.995866
+Triad:            694.7     6.181984     4.961209     7.797439
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+	Command being timed: "./testbench/stream/stream_c.exe"
+	User time (seconds): 112.48
+	System time (seconds): 1058.53
+	Percent of CPU this job got: 242%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:02.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2513660
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 19069569
+	Minor (reclaiming a frame) page faults: 56117712
+	Voluntary context switches: 19040694
+	Involuntary context switches: 311149
+	Swaps: 0
+	File system inputs: 589995224
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2578247680
+Iteration 2
+61511
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 178955000 (elements), Offset = 0 (elements)
+Memory per array = 1365.3 MiB (= 1.3 GiB).
+Total memory required = 4096.0 MiB (= 4.0 GiB).
+Each kernel will be executed 21 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 6
+Number of Threads counted = 6
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 3305171 microseconds.
+   (= 3305171 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Average Rate MB/s  Avg time     Min time     Max time
+Copy:             691.7     4.139594     2.859535     4.707150
+Scale:            585.6     4.889403     3.577287     5.406786
+Add:              636.8     6.744264     5.224453     7.736267
+Triad:            635.9     6.754485     4.978700     7.547121
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+	Command being timed: "./testbench/stream/stream_c.exe"
+	User time (seconds): 125.14
+	System time (seconds): 1186.87
+	Percent of CPU this job got: 259%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:24.83
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2513396
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 19109069
+	Minor (reclaiming a frame) page faults: 56146474
+	Voluntary context switches: 19076855
+	Involuntary context switches: 316305
+	Swaps: 0
+	File system inputs: 590432624
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2578247680
+Iteration 3
+61511
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 178955000 (elements), Offset = 0 (elements)
+Memory per array = 1365.3 MiB (= 1.3 GiB).
+Total memory required = 4096.0 MiB (= 4.0 GiB).
+Each kernel will be executed 21 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 6
+Number of Threads counted = 6
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 2280642 microseconds.
+   (= 2280642 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Average Rate MB/s  Avg time     Min time     Max time
+Copy:             685.5     4.176677     2.874911     4.729562
+Scale:            580.0     4.936542     3.588208     5.394452
+Add:              584.4     7.348967     6.399870     7.765348
+Triad:            618.9     6.940037     5.104855     7.574817
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+	Command being timed: "./testbench/stream/stream_c.exe"
+	User time (seconds): 131.56
+	System time (seconds): 1255.48
+	Percent of CPU this job got: 267%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:38.01
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2513396
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 19120652
+	Minor (reclaiming a frame) page faults: 56135958
+	Voluntary context switches: 19087788
+	Involuntary context switches: 320190
+	Swaps: 0
+	File system inputs: 590638504
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2578247680
+70% swapfile
+set memory.max to
+3007959040
+adding current shell to pagerank_150M
+Iteration 1
+61511
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 178955000 (elements), Offset = 0 (elements)
+Memory per array = 1365.3 MiB (= 1.3 GiB).
+Total memory required = 4096.0 MiB (= 4.0 GiB).
+Each kernel will be executed 21 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 6
+Number of Threads counted = 6
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 2794078 microseconds.
+   (= 2794078 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Average Rate MB/s  Avg time     Min time     Max time
+Copy:             833.2     3.436563     2.571932     4.463474
+Scale:           1185.4     2.415428     1.928865     2.762747
+Add:              652.6     6.581659     4.714111     7.422531
+Triad:            627.1     6.849032     5.184424     7.772477
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+	Command being timed: "./testbench/stream/stream_c.exe"
+	User time (seconds): 113.29
+	System time (seconds): 1012.59
+	Percent of CPU this job got: 260%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 7:11.87
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2932628
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 15717342
+	Minor (reclaiming a frame) page faults: 48524637
+	Voluntary context switches: 15670129
+	Involuntary context switches: 274982
+	Swaps: 0
+	File system inputs: 495546056
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3007959040
+Iteration 2
+61511
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 178955000 (elements), Offset = 0 (elements)
+Memory per array = 1365.3 MiB (= 1.3 GiB).
+Total memory required = 4096.0 MiB (= 4.0 GiB).
+Each kernel will be executed 21 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 6
+Number of Threads counted = 6
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 2170398 microseconds.
+   (= 2170398 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Average Rate MB/s  Avg time     Min time     Max time
+Copy:             775.0     3.694727     2.578223     4.497184
+Scale:           1180.7     2.425014     1.885027     2.778427
+Add:              685.5     6.264985     4.893746     7.227461
+Triad:            624.3     6.879930     5.117306     7.642515
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+	Command being timed: "./testbench/stream/stream_c.exe"
+	User time (seconds): 114.83
+	System time (seconds): 1004.19
+	Percent of CPU this job got: 260%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 7:10.36
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2932628
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 15735787
+	Minor (reclaiming a frame) page faults: 48459995
+	Voluntary context switches: 15687881
+	Involuntary context switches: 275032
+	Swaps: 0
+	File system inputs: 494992400
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3007959040
+Iteration 3
+61511
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 178955000 (elements), Offset = 0 (elements)
+Memory per array = 1365.3 MiB (= 1.3 GiB).
+Total memory required = 4096.0 MiB (= 4.0 GiB).
+Each kernel will be executed 21 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 6
+Number of Threads counted = 6
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 3065670 microseconds.
+   (= 3065670 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Average Rate MB/s  Avg time     Min time     Max time
+Copy:             804.0     3.561090     2.574492     4.548572
+Scale:           1181.7     2.423110     1.847075     2.772493
+Add:              676.4     6.349318     4.800552     7.435473
+Triad:            622.2     6.902702     5.152461     8.165923
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+	Command being timed: "./testbench/stream/stream_c.exe"
+	User time (seconds): 113.61
+	System time (seconds): 1005.71
+	Percent of CPU this job got: 259%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 7:10.92
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2932632
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 15765513
+	Minor (reclaiming a frame) page faults: 48559779
+	Voluntary context switches: 15718102
+	Involuntary context switches: 277283
+	Swaps: 0
+	File system inputs: 496324416
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3007959040
+80% swapfile
+set memory.max to
+3437666304
+adding current shell to pagerank_150M
+Iteration 1
+61511
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 178955000 (elements), Offset = 0 (elements)
+Memory per array = 1365.3 MiB (= 1.3 GiB).
+Total memory required = 4096.0 MiB (= 4.0 GiB).
+Each kernel will be executed 21 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 6
+Number of Threads counted = 6
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 1592356 microseconds.
+   (= 1592356 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Average Rate MB/s  Avg time     Min time     Max time
+Copy:            1281.4     2.234441     1.328402     2.804935
+Scale:            865.7     3.307344     2.229110     4.510987
+Add:              996.4     4.310422     2.548139     5.958954
+Triad:            624.9     6.873061     6.087500    10.692898
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+	Command being timed: "./testbench/stream/stream_c.exe"
+	User time (seconds): 78.16
+	System time (seconds): 528.17
+	Percent of CPU this job got: 160%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 6:17.67
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3351328
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 9655401
+	Minor (reclaiming a frame) page faults: 41030270
+	Voluntary context switches: 9612779
+	Involuntary context switches: 192637
+	Swaps: 0
+	File system inputs: 312924120
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3437666304
+Iteration 2
+61511
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 178955000 (elements), Offset = 0 (elements)
+Memory per array = 1365.3 MiB (= 1.3 GiB).
+Total memory required = 4096.0 MiB (= 4.0 GiB).
+Each kernel will be executed 21 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 6
+Number of Threads counted = 6
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 1403698 microseconds.
+   (= 1403698 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Average Rate MB/s  Avg time     Min time     Max time
+Copy:             944.4     3.031724     2.101430     4.465921
+Scale:            626.3     4.571661     2.235560     6.938040
+Add:              665.6     6.452303     3.294032     9.540938
+Triad:            508.6     8.445352     5.622504    11.523523
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+	Command being timed: "./testbench/stream/stream_c.exe"
+	User time (seconds): 100.53
+	System time (seconds): 712.79
+	Percent of CPU this job got: 165%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:10.57
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3351336
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 10258393
+	Minor (reclaiming a frame) page faults: 42767719
+	Voluntary context switches: 10212134
+	Involuntary context switches: 206140
+	Swaps: 0
+	File system inputs: 331367448
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3437666304
+Iteration 3
+61511
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 178955000 (elements), Offset = 0 (elements)
+Memory per array = 1365.3 MiB (= 1.3 GiB).
+Total memory required = 4096.0 MiB (= 4.0 GiB).
+Each kernel will be executed 21 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 6
+Number of Threads counted = 6
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 1070861 microseconds.
+   (= 1070861 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Average Rate MB/s  Avg time     Min time     Max time
+Copy:             849.9     3.368875     1.883037     4.822325
+Scale:            612.3     4.676607     2.751018     6.249483
+Add:              642.8     6.681722     3.230549    10.567844
+Triad:            461.7     9.302115     5.987753    12.153964
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+	Command being timed: "./testbench/stream/stream_c.exe"
+	User time (seconds): 108.51
+	System time (seconds): 778.96
+	Percent of CPU this job got: 170%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:41.38
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3351332
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 10013953
+	Minor (reclaiming a frame) page faults: 41522506
+	Voluntary context switches: 9968748
+	Involuntary context switches: 204214
+	Swaps: 0
+	File system inputs: 322889840
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3437666304
+90% swapfile
+set memory.max to
+3867373568
+adding current shell to pagerank_150M
+Iteration 1
+61511
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 178955000 (elements), Offset = 0 (elements)
+Memory per array = 1365.3 MiB (= 1.3 GiB).
+Total memory required = 4096.0 MiB (= 4.0 GiB).
+Each kernel will be executed 21 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 6
+Number of Threads counted = 6
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 133671 microseconds.
+   (= 133671 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Average Rate MB/s  Avg time     Min time     Max time
+Copy:            1593.1     1.797323     0.983462     2.885690
+Scale:           1224.5     2.338273     1.601393     3.352610
+Add:              802.9     5.349262     2.761760     8.432670
+Triad:            650.2     6.605073     4.315945     9.132939
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+	Command being timed: "./testbench/stream/stream_c.exe"
+	User time (seconds): 79.29
+	System time (seconds): 418.49
+	Percent of CPU this job got: 143%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:46.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3770300
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 5350210
+	Minor (reclaiming a frame) page faults: 29349985
+	Voluntary context switches: 5309298
+	Involuntary context switches: 136698
+	Swaps: 0
+	File system inputs: 182164824
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3867373568
+Iteration 2
+61511
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 178955000 (elements), Offset = 0 (elements)
+Memory per array = 1365.3 MiB (= 1.3 GiB).
+Total memory required = 4096.0 MiB (= 4.0 GiB).
+Each kernel will be executed 21 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 6
+Number of Threads counted = 6
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 181457 microseconds.
+   (= 181457 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Average Rate MB/s  Avg time     Min time     Max time
+Copy:            1289.2     2.221001     0.782605     3.904053
+Scale:           1093.9     2.617555     1.482365     4.019535
+Add:              827.2     5.192100     2.172892     7.898533
+Triad:            608.3     7.060060     3.758012     9.764490
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+	Command being timed: "./testbench/stream/stream_c.exe"
+	User time (seconds): 87.58
+	System time (seconds): 488.79
+	Percent of CPU this job got: 154%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 6:13.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3770028
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 5627912
+	Minor (reclaiming a frame) page faults: 30514993
+	Voluntary context switches: 5586304
+	Involuntary context switches: 142645
+	Swaps: 0
+	File system inputs: 187234168
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3867373568
+Iteration 3
+61511
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 178955000 (elements), Offset = 0 (elements)
+Memory per array = 1365.3 MiB (= 1.3 GiB).
+Total memory required = 4096.0 MiB (= 4.0 GiB).
+Each kernel will be executed 21 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 6
+Number of Threads counted = 6
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 178996 microseconds.
+   (= 178996 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Average Rate MB/s  Avg time     Min time     Max time
+Copy:            1288.5     2.222197     0.900256     3.848201
+Scale:           1028.5     2.784035     1.066549     4.262787
+Add:              807.7     5.317433     2.485516     7.471964
+Triad:            621.8     6.907024     3.612441     9.211674
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+	Command being timed: "./testbench/stream/stream_c.exe"
+	User time (seconds): 91.63
+	System time (seconds): 493.88
+	Percent of CPU this job got: 155%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 6:16.45
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3770036
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 5407225
+	Minor (reclaiming a frame) page faults: 29633086
+	Voluntary context switches: 5365626
+	Involuntary context switches: 140893
+	Swaps: 0
+	File system inputs: 181984104
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3867373568

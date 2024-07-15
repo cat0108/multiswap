@@ -1,0 +1,831 @@
+50% dram
+set memory.max to
+1051045888
+adding current shell to pagerank_150M
+Iteration 1
+35211
+	User time (seconds): 345.19
+	System time (seconds): 56.19
+	Percent of CPU this job got: 185%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:35.85
+	Maximum resident set size (kbytes): 1139008
+	Major (requiring I/O) page faults: 408118
+	Minor (reclaiming a frame) page faults: 29698835
+	Voluntary context switches: 18399
+	Involuntary context switches: 14725
+	Exit status: 0
+memory.peak is:
+1051045888
+Iteration 2
+35211
+	User time (seconds): 344.85
+	System time (seconds): 56.89
+	Percent of CPU this job got: 185%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:36.39
+	Maximum resident set size (kbytes): 1139220
+	Major (requiring I/O) page faults: 404759
+	Minor (reclaiming a frame) page faults: 30243168
+	Voluntary context switches: 19390
+	Involuntary context switches: 14823
+	Exit status: 0
+memory.peak is:
+1051045888
+Iteration 3
+35211
+	User time (seconds): 345.20
+	System time (seconds): 57.65
+	Percent of CPU this job got: 185%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:36.80
+	Maximum resident set size (kbytes): 1139264
+	Major (requiring I/O) page faults: 420589
+	Minor (reclaiming a frame) page faults: 30300970
+	Voluntary context switches: 19348
+	Involuntary context switches: 15235
+	Exit status: 0
+memory.peak is:
+1051045888
+Iteration 4
+35211
+	User time (seconds): 344.98
+	System time (seconds): 58.06
+	Percent of CPU this job got: 186%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:36.23
+	Maximum resident set size (kbytes): 1138928
+	Major (requiring I/O) page faults: 394964
+	Minor (reclaiming a frame) page faults: 31140863
+	Voluntary context switches: 18813
+	Involuntary context switches: 14546
+	Exit status: 0
+memory.peak is:
+1051045888
+Iteration 5
+35211
+	User time (seconds): 345.87
+	System time (seconds): 59.73
+	Percent of CPU this job got: 186%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:37.66
+	Maximum resident set size (kbytes): 1139148
+	Major (requiring I/O) page faults: 394560
+	Minor (reclaiming a frame) page faults: 32235032
+	Voluntary context switches: 20101
+	Involuntary context switches: 14628
+	Exit status: 0
+memory.peak is:
+1051045888
+Iteration 6
+35211
+	User time (seconds): 345.30
+	System time (seconds): 61.96
+	Percent of CPU this job got: 186%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:38.87
+	Maximum resident set size (kbytes): 1138496
+	Major (requiring I/O) page faults: 471102
+	Minor (reclaiming a frame) page faults: 31564972
+	Voluntary context switches: 20899
+	Involuntary context switches: 16555
+	Exit status: 0
+memory.peak is:
+1051045888
+Iteration 7
+35211
+	User time (seconds): 344.61
+	System time (seconds): 57.88
+	Percent of CPU this job got: 186%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:36.12
+	Maximum resident set size (kbytes): 1139044
+	Major (requiring I/O) page faults: 421082
+	Minor (reclaiming a frame) page faults: 30184517
+	Voluntary context switches: 19529
+	Involuntary context switches: 14891
+	Exit status: 0
+memory.peak is:
+1051045888
+Iteration 8
+35211
+	User time (seconds): 345.00
+	System time (seconds): 60.02
+	Percent of CPU this job got: 185%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:37.84
+	Maximum resident set size (kbytes): 1139164
+	Major (requiring I/O) page faults: 415436
+	Minor (reclaiming a frame) page faults: 31511009
+	Voluntary context switches: 22476
+	Involuntary context switches: 15159
+	Exit status: 0
+memory.peak is:
+1051045888
+Iteration 9
+35211
+	User time (seconds): 344.96
+	System time (seconds): 60.15
+	Percent of CPU this job got: 186%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:37.65
+	Maximum resident set size (kbytes): 1139288
+	Major (requiring I/O) page faults: 409502
+	Minor (reclaiming a frame) page faults: 32018727
+	Voluntary context switches: 20276
+	Involuntary context switches: 15201
+	Exit status: 0
+memory.peak is:
+1051045888
+Iteration 10
+35211
+	User time (seconds): 344.99
+	System time (seconds): 56.70
+	Percent of CPU this job got: 185%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:36.06
+	Maximum resident set size (kbytes): 1139088
+	Major (requiring I/O) page faults: 413424
+	Minor (reclaiming a frame) page faults: 30292743
+	Voluntary context switches: 19717
+	Involuntary context switches: 14898
+	Exit status: 0
+memory.peak is:
+1051045888
+60% dram
+set memory.max to
+1261252608
+adding current shell to pagerank_150M
+Iteration 1
+35211
+	User time (seconds): 344.44
+	System time (seconds): 53.78
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:31.12
+	Maximum resident set size (kbytes): 1344260
+	Major (requiring I/O) page faults: 277347
+	Minor (reclaiming a frame) page faults: 30609418
+	Voluntary context switches: 16331
+	Involuntary context switches: 10410
+	Exit status: 0
+memory.peak is:
+1261252608
+Iteration 2
+35211
+	User time (seconds): 343.57
+	System time (seconds): 53.52
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:30.19
+	Maximum resident set size (kbytes): 1344396
+	Major (requiring I/O) page faults: 257135
+	Minor (reclaiming a frame) page faults: 30300975
+	Voluntary context switches: 16488
+	Involuntary context switches: 10260
+	Exit status: 0
+memory.peak is:
+1261252608
+Iteration 3
+35211
+	User time (seconds): 343.52
+	System time (seconds): 54.65
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:30.94
+	Maximum resident set size (kbytes): 1343868
+	Major (requiring I/O) page faults: 265186
+	Minor (reclaiming a frame) page faults: 30724474
+	Voluntary context switches: 15846
+	Involuntary context switches: 10351
+	Exit status: 0
+memory.peak is:
+1261252608
+Iteration 4
+35211
+	User time (seconds): 344.38
+	System time (seconds): 54.44
+	Percent of CPU this job got: 187%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:32.23
+	Maximum resident set size (kbytes): 1344648
+	Major (requiring I/O) page faults: 318359
+	Minor (reclaiming a frame) page faults: 29732602
+	Voluntary context switches: 16379
+	Involuntary context switches: 11689
+	Exit status: 0
+memory.peak is:
+1261252608
+Iteration 5
+35211
+	User time (seconds): 343.83
+	System time (seconds): 56.30
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:32.28
+	Maximum resident set size (kbytes): 1344336
+	Major (requiring I/O) page faults: 342033
+	Minor (reclaiming a frame) page faults: 30320481
+	Voluntary context switches: 17267
+	Involuntary context switches: 12068
+	Exit status: 0
+memory.peak is:
+1261252608
+Iteration 6
+35211
+	User time (seconds): 343.52
+	System time (seconds): 52.66
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:30.27
+	Maximum resident set size (kbytes): 1344240
+	Major (requiring I/O) page faults: 254261
+	Minor (reclaiming a frame) page faults: 29867354
+	Voluntary context switches: 16324
+	Involuntary context switches: 9836
+	Exit status: 0
+memory.peak is:
+1261252608
+Iteration 7
+35211
+	User time (seconds): 344.24
+	System time (seconds): 52.90
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:30.70
+	Maximum resident set size (kbytes): 1344100
+	Major (requiring I/O) page faults: 257473
+	Minor (reclaiming a frame) page faults: 30369114
+	Voluntary context switches: 17690
+	Involuntary context switches: 10157
+	Exit status: 0
+memory.peak is:
+1261252608
+Iteration 8
+35211
+	User time (seconds): 342.84
+	System time (seconds): 52.14
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:29.15
+	Maximum resident set size (kbytes): 1344416
+	Major (requiring I/O) page faults: 273769
+	Minor (reclaiming a frame) page faults: 29006883
+	Voluntary context switches: 14833
+	Involuntary context switches: 10288
+	Exit status: 0
+memory.peak is:
+1261252608
+Iteration 9
+35211
+	User time (seconds): 343.37
+	System time (seconds): 52.91
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:30.19
+	Maximum resident set size (kbytes): 1344292
+	Major (requiring I/O) page faults: 260092
+	Minor (reclaiming a frame) page faults: 30042671
+	Voluntary context switches: 15091
+	Involuntary context switches: 9972
+	Exit status: 0
+memory.peak is:
+1261252608
+Iteration 10
+35211
+	User time (seconds): 343.95
+	System time (seconds): 54.06
+	Percent of CPU this job got: 189%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:30.56
+	Maximum resident set size (kbytes): 1344608
+	Major (requiring I/O) page faults: 268216
+	Minor (reclaiming a frame) page faults: 30787340
+	Voluntary context switches: 17261
+	Involuntary context switches: 10193
+	Exit status: 0
+memory.peak is:
+1261252608
+70% dram
+set memory.max to
+1471463424
+adding current shell to pagerank_150M
+Iteration 1
+35211
+	User time (seconds): 342.59
+	System time (seconds): 53.24
+	Percent of CPU this job got: 189%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:28.43
+	Maximum resident set size (kbytes): 1548852
+	Major (requiring I/O) page faults: 231189
+	Minor (reclaiming a frame) page faults: 29825435
+	Voluntary context switches: 14337
+	Involuntary context switches: 10070
+	Exit status: 0
+memory.peak is:
+1471463424
+Iteration 2
+35211
+	User time (seconds): 343.01
+	System time (seconds): 50.49
+	Percent of CPU this job got: 191%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:25.41
+	Maximum resident set size (kbytes): 1549312
+	Major (requiring I/O) page faults: 114563
+	Minor (reclaiming a frame) page faults: 31002658
+	Voluntary context switches: 12958
+	Involuntary context switches: 6895
+	Exit status: 0
+memory.peak is:
+1471463424
+Iteration 3
+35211
+	User time (seconds): 342.62
+	System time (seconds): 49.46
+	Percent of CPU this job got: 190%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:25.91
+	Maximum resident set size (kbytes): 1549168
+	Major (requiring I/O) page faults: 162861
+	Minor (reclaiming a frame) page faults: 29295313
+	Voluntary context switches: 11852
+	Involuntary context switches: 8480
+	Exit status: 0
+memory.peak is:
+1471463424
+Iteration 4
+35211
+	User time (seconds): 342.57
+	System time (seconds): 49.13
+	Percent of CPU this job got: 191%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:25.05
+	Maximum resident set size (kbytes): 1549420
+	Major (requiring I/O) page faults: 122871
+	Minor (reclaiming a frame) page faults: 29820715
+	Voluntary context switches: 11844
+	Involuntary context switches: 7573
+	Exit status: 0
+memory.peak is:
+1471463424
+Iteration 5
+35211
+	User time (seconds): 342.93
+	System time (seconds): 49.68
+	Percent of CPU this job got: 190%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:25.88
+	Maximum resident set size (kbytes): 1549324
+	Major (requiring I/O) page faults: 147399
+	Minor (reclaiming a frame) page faults: 29915658
+	Voluntary context switches: 12207
+	Involuntary context switches: 8480
+	Exit status: 0
+memory.peak is:
+1471463424
+Iteration 6
+35211
+	User time (seconds): 342.77
+	System time (seconds): 47.79
+	Percent of CPU this job got: 190%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:24.99
+	Maximum resident set size (kbytes): 1549816
+	Major (requiring I/O) page faults: 131404
+	Minor (reclaiming a frame) page faults: 28672794
+	Voluntary context switches: 11514
+	Involuntary context switches: 7186
+	Exit status: 0
+memory.peak is:
+1471463424
+Iteration 7
+35211
+	User time (seconds): 343.71
+	System time (seconds): 51.78
+	Percent of CPU this job got: 190%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:27.66
+	Maximum resident set size (kbytes): 1549176
+	Major (requiring I/O) page faults: 172695
+	Minor (reclaiming a frame) page faults: 30681632
+	Voluntary context switches: 13812
+	Involuntary context switches: 8864
+	Exit status: 0
+memory.peak is:
+1471463424
+Iteration 8
+35211
+	User time (seconds): 342.92
+	System time (seconds): 49.42
+	Percent of CPU this job got: 190%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:25.68
+	Maximum resident set size (kbytes): 1549272
+	Major (requiring I/O) page faults: 136396
+	Minor (reclaiming a frame) page faults: 29878643
+	Voluntary context switches: 13540
+	Involuntary context switches: 7185
+	Exit status: 0
+memory.peak is:
+1471463424
+Iteration 9
+35211
+	User time (seconds): 342.90
+	System time (seconds): 50.41
+	Percent of CPU this job got: 190%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:26.13
+	Maximum resident set size (kbytes): 1549188
+	Major (requiring I/O) page faults: 170169
+	Minor (reclaiming a frame) page faults: 29775280
+	Voluntary context switches: 13236
+	Involuntary context switches: 8482
+	Exit status: 0
+memory.peak is:
+1471463424
+Iteration 10
+35211
+	User time (seconds): 342.48
+	System time (seconds): 51.08
+	Percent of CPU this job got: 192%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:24.44
+	Maximum resident set size (kbytes): 1549544
+	Major (requiring I/O) page faults: 88674
+	Minor (reclaiming a frame) page faults: 31612258
+	Voluntary context switches: 12191
+	Involuntary context switches: 6325
+	Exit status: 0
+memory.peak is:
+1471463424
+80% dram
+set memory.max to
+1681670144
+adding current shell to pagerank_150M
+Iteration 1
+35211
+	User time (seconds): 340.63
+	System time (seconds): 43.00
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:17.63
+	Maximum resident set size (kbytes): 1754648
+	Major (requiring I/O) page faults: 29756
+	Minor (reclaiming a frame) page faults: 28874965
+	Voluntary context switches: 8771
+	Involuntary context switches: 2433
+	Exit status: 0
+memory.peak is:
+1681670144
+Iteration 2
+35211
+	User time (seconds): 340.88
+	System time (seconds): 46.30
+	Percent of CPU this job got: 193%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:19.83
+	Maximum resident set size (kbytes): 1754852
+	Major (requiring I/O) page faults: 53733
+	Minor (reclaiming a frame) page faults: 29893493
+	Voluntary context switches: 10664
+	Involuntary context switches: 3681
+	Exit status: 0
+memory.peak is:
+1681670144
+Iteration 3
+35211
+	User time (seconds): 340.73
+	System time (seconds): 42.77
+	Percent of CPU this job got: 193%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:17.70
+	Maximum resident set size (kbytes): 1754416
+	Major (requiring I/O) page faults: 31276
+	Minor (reclaiming a frame) page faults: 28682502
+	Voluntary context switches: 9333
+	Involuntary context switches: 2424
+	Exit status: 0
+memory.peak is:
+1681670144
+Iteration 4
+35211
+	User time (seconds): 342.68
+	System time (seconds): 48.65
+	Percent of CPU this job got: 192%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:22.94
+	Maximum resident set size (kbytes): 1754316
+	Major (requiring I/O) page faults: 124944
+	Minor (reclaiming a frame) page faults: 29523625
+	Voluntary context switches: 11266
+	Involuntary context switches: 7383
+	Exit status: 0
+memory.peak is:
+1681670144
+Iteration 5
+35211
+	User time (seconds): 340.24
+	System time (seconds): 42.84
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:17.39
+	Maximum resident set size (kbytes): 1754860
+	Major (requiring I/O) page faults: 34700
+	Minor (reclaiming a frame) page faults: 28508051
+	Voluntary context switches: 8731
+	Involuntary context switches: 2647
+	Exit status: 0
+memory.peak is:
+1681670144
+Iteration 6
+35211
+	User time (seconds): 341.56
+	System time (seconds): 48.32
+	Percent of CPU this job got: 192%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:22.46
+	Maximum resident set size (kbytes): 1754208
+	Major (requiring I/O) page faults: 127827
+	Minor (reclaiming a frame) page faults: 29000962
+	Voluntary context switches: 10575
+	Involuntary context switches: 7522
+	Exit status: 0
+memory.peak is:
+1681670144
+Iteration 7
+35211
+	User time (seconds): 340.44
+	System time (seconds): 45.55
+	Percent of CPU this job got: 193%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:19.19
+	Maximum resident set size (kbytes): 1754448
+	Major (requiring I/O) page faults: 53477
+	Minor (reclaiming a frame) page faults: 29625714
+	Voluntary context switches: 10264
+	Involuntary context switches: 3007
+	Exit status: 0
+memory.peak is:
+1681670144
+Iteration 8
+35211
+	User time (seconds): 341.18
+	System time (seconds): 44.90
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:18.94
+	Maximum resident set size (kbytes): 1754216
+	Major (requiring I/O) page faults: 24846
+	Minor (reclaiming a frame) page faults: 30385956
+	Voluntary context switches: 9178
+	Involuntary context switches: 1992
+	Exit status: 0
+memory.peak is:
+1681670144
+Iteration 9
+35211
+	User time (seconds): 341.02
+	System time (seconds): 46.59
+	Percent of CPU this job got: 193%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:19.85
+	Maximum resident set size (kbytes): 1754172
+	Major (requiring I/O) page faults: 32647
+	Minor (reclaiming a frame) page faults: 30841317
+	Voluntary context switches: 10872
+	Involuntary context switches: 2658
+	Exit status: 0
+memory.peak is:
+1681670144
+Iteration 10
+35211
+	User time (seconds): 340.47
+	System time (seconds): 44.07
+	Percent of CPU this job got: 193%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:18.31
+	Maximum resident set size (kbytes): 1754392
+	Major (requiring I/O) page faults: 36283
+	Minor (reclaiming a frame) page faults: 29321309
+	Voluntary context switches: 9168
+	Involuntary context switches: 2480
+	Exit status: 0
+memory.peak is:
+1681670144
+90% dram
+set memory.max to
+1891880960
+adding current shell to pagerank_150M
+Iteration 1
+35211
+	User time (seconds): 340.18
+	System time (seconds): 42.99
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:17.29
+	Maximum resident set size (kbytes): 1959968
+	Major (requiring I/O) page faults: 3797
+	Minor (reclaiming a frame) page faults: 29624577
+	Voluntary context switches: 9301
+	Involuntary context switches: 1759
+	Exit status: 0
+memory.peak is:
+1891880960
+Iteration 2
+35211
+	User time (seconds): 339.44
+	System time (seconds): 41.84
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:16.30
+	Maximum resident set size (kbytes): 1959720
+	Major (requiring I/O) page faults: 7828
+	Minor (reclaiming a frame) page faults: 28619428
+	Voluntary context switches: 8219
+	Involuntary context switches: 1904
+	Exit status: 0
+memory.peak is:
+1891880960
+Iteration 3
+35211
+	User time (seconds): 340.21
+	System time (seconds): 44.12
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:17.90
+	Maximum resident set size (kbytes): 1959804
+	Major (requiring I/O) page faults: 30233
+	Minor (reclaiming a frame) page faults: 29204783
+	Voluntary context switches: 8766
+	Involuntary context switches: 2521
+	Exit status: 0
+memory.peak is:
+1891880960
+Iteration 4
+35211
+	User time (seconds): 340.16
+	System time (seconds): 42.96
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:17.29
+	Maximum resident set size (kbytes): 1959120
+	Major (requiring I/O) page faults: 23969
+	Minor (reclaiming a frame) page faults: 29103877
+	Voluntary context switches: 8803
+	Involuntary context switches: 2053
+	Exit status: 0
+memory.peak is:
+1891880960
+Iteration 5
+35211
+	User time (seconds): 340.16
+	System time (seconds): 43.36
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:17.46
+	Maximum resident set size (kbytes): 1960000
+	Major (requiring I/O) page faults: 14218
+	Minor (reclaiming a frame) page faults: 29242958
+	Voluntary context switches: 8744
+	Involuntary context switches: 1994
+	Exit status: 0
+memory.peak is:
+1891880960
+Iteration 6
+35211
+	User time (seconds): 340.60
+	System time (seconds): 44.48
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:18.39
+	Maximum resident set size (kbytes): 1959628
+	Major (requiring I/O) page faults: 2504
+	Minor (reclaiming a frame) page faults: 30557150
+	Voluntary context switches: 10485
+	Involuntary context switches: 2044
+	Exit status: 0
+memory.peak is:
+1891880960
+Iteration 7
+35211
+	User time (seconds): 340.10
+	System time (seconds): 43.79
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:17.79
+	Maximum resident set size (kbytes): 1959300
+	Major (requiring I/O) page faults: 30966
+	Minor (reclaiming a frame) page faults: 29287578
+	Voluntary context switches: 9221
+	Involuntary context switches: 2559
+	Exit status: 0
+memory.peak is:
+1891880960
+Iteration 8
+35211
+	User time (seconds): 341.45
+	System time (seconds): 45.64
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:19.51
+	Maximum resident set size (kbytes): 1959536
+	Major (requiring I/O) page faults: 51050
+	Minor (reclaiming a frame) page faults: 29742972
+	Voluntary context switches: 9683
+	Involuntary context switches: 3779
+	Exit status: 0
+memory.peak is:
+1891880960
+Iteration 9
+35211
+	User time (seconds): 339.56
+	System time (seconds): 43.43
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:17.13
+	Maximum resident set size (kbytes): 1959768
+	Major (requiring I/O) page faults: 8202
+	Minor (reclaiming a frame) page faults: 29398451
+	Voluntary context switches: 9744
+	Involuntary context switches: 1807
+	Exit status: 0
+memory.peak is:
+1891880960
+Iteration 10
+35211
+	User time (seconds): 339.55
+	System time (seconds): 42.15
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:16.63
+	Maximum resident set size (kbytes): 1959088
+	Major (requiring I/O) page faults: 44905
+	Minor (reclaiming a frame) page faults: 27550487
+	Voluntary context switches: 8711
+	Involuntary context switches: 3268
+	Exit status: 0
+memory.peak is:
+1891880960
+不限制内存
+Iteration 1
+	User time (seconds): 339.86
+	System time (seconds): 43.26
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:17.25
+	Maximum resident set size (kbytes): 1959916
+	Major (requiring I/O) page faults: 23791
+	Minor (reclaiming a frame) page faults: 28933065
+	Voluntary context switches: 8625
+	Involuntary context switches: 2289
+	Exit status: 0
+Iteration 2
+	User time (seconds): 340.11
+	System time (seconds): 43.21
+	Percent of CPU this job got: 193%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:17.78
+	Maximum resident set size (kbytes): 1959852
+	Major (requiring I/O) page faults: 35410
+	Minor (reclaiming a frame) page faults: 28764348
+	Voluntary context switches: 10720
+	Involuntary context switches: 2468
+	Exit status: 0
+Iteration 3
+	User time (seconds): 339.76
+	System time (seconds): 43.76
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:17.46
+	Maximum resident set size (kbytes): 1959984
+	Major (requiring I/O) page faults: 24078
+	Minor (reclaiming a frame) page faults: 29232064
+	Voluntary context switches: 9089
+	Involuntary context switches: 2227
+	Exit status: 0
+Iteration 4
+	User time (seconds): 340.79
+	System time (seconds): 43.79
+	Percent of CPU this job got: 193%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:18.26
+	Maximum resident set size (kbytes): 1959912
+	Major (requiring I/O) page faults: 52904
+	Minor (reclaiming a frame) page faults: 28655320
+	Voluntary context switches: 8845
+	Involuntary context switches: 3745
+	Exit status: 0
+Iteration 5
+	User time (seconds): 339.17
+	System time (seconds): 42.62
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:16.58
+	Maximum resident set size (kbytes): 1959804
+	Major (requiring I/O) page faults: 8284
+	Minor (reclaiming a frame) page faults: 28845530
+	Voluntary context switches: 9039
+	Involuntary context switches: 1889
+	Exit status: 0
+Iteration 6
+	User time (seconds): 338.46
+	System time (seconds): 42.47
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:16.11
+	Maximum resident set size (kbytes): 1959984
+	Major (requiring I/O) page faults: 12312
+	Minor (reclaiming a frame) page faults: 28532035
+	Voluntary context switches: 8044
+	Involuntary context switches: 1909
+	Exit status: 0
+Iteration 7
+	User time (seconds): 339.59
+	System time (seconds): 41.27
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:16.12
+	Maximum resident set size (kbytes): 1959872
+	Major (requiring I/O) page faults: 24700
+	Minor (reclaiming a frame) page faults: 27982292
+	Voluntary context switches: 8831
+	Involuntary context switches: 1870
+	Exit status: 0
+Iteration 8
+	User time (seconds): 339.63
+	System time (seconds): 40.84
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:15.81
+	Maximum resident set size (kbytes): 1959676
+	Major (requiring I/O) page faults: 13493
+	Minor (reclaiming a frame) page faults: 28010778
+	Voluntary context switches: 7869
+	Involuntary context switches: 1801
+	Exit status: 0
+Iteration 9
+	User time (seconds): 340.17
+	System time (seconds): 41.77
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:16.64
+	Maximum resident set size (kbytes): 1959828
+	Major (requiring I/O) page faults: 25423
+	Minor (reclaiming a frame) page faults: 28317907
+	Voluntary context switches: 8945
+	Involuntary context switches: 2323
+	Exit status: 0
+Iteration 10
+	User time (seconds): 341.12
+	System time (seconds): 45.05
+	Percent of CPU this job got: 193%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:19.25
+	Maximum resident set size (kbytes): 1959480
+	Major (requiring I/O) page faults: 54141
+	Minor (reclaiming a frame) page faults: 29296132
+	Voluntary context switches: 9770
+	Involuntary context switches: 3624
+	Exit status: 0

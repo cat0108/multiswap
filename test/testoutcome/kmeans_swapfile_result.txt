@@ -1,0 +1,1612 @@
+23205
+50% swapfile
+set memory.max to
+2458836992
+adding current shell to pagerank_150M
+Iteration 1
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 40.42
+	System time (seconds): 50.46
+	Percent of CPU this job got: 124%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:12.80
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2448784
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 610606
+	Minor (reclaiming a frame) page faults: 3623035
+	Voluntary context switches: 609033
+	Involuntary context switches: 27657
+	Swaps: 0
+	File system inputs: 29825072
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2458836992
+Iteration 2
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 40.26
+	System time (seconds): 50.65
+	Percent of CPU this job got: 127%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:11.37
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2448732
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 605565
+	Minor (reclaiming a frame) page faults: 3502345
+	Voluntary context switches: 604209
+	Involuntary context switches: 27519
+	Swaps: 0
+	File system inputs: 29094120
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2458836992
+Iteration 3
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 39.16
+	System time (seconds): 50.09
+	Percent of CPU this job got: 127%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:09.90
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2448992
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 585796
+	Minor (reclaiming a frame) page faults: 3367714
+	Voluntary context switches: 584880
+	Involuntary context switches: 26454
+	Swaps: 0
+	File system inputs: 28214640
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2458836992
+Iteration 4
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 38.06
+	System time (seconds): 48.62
+	Percent of CPU this job got: 121%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:11.19
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2448916
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 589756
+	Minor (reclaiming a frame) page faults: 3402555
+	Voluntary context switches: 589244
+	Involuntary context switches: 32359
+	Swaps: 0
+	File system inputs: 28690168
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2458836992
+Iteration 5
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 40.90
+	System time (seconds): 54.83
+	Percent of CPU this job got: 127%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:14.92
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2449364
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 621012
+	Minor (reclaiming a frame) page faults: 3654956
+	Voluntary context switches: 619503
+	Involuntary context switches: 28416
+	Swaps: 0
+	File system inputs: 29967976
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2458836992
+Iteration 6
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 41.11
+	System time (seconds): 54.95
+	Percent of CPU this job got: 128%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:14.66
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2449148
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 606097
+	Minor (reclaiming a frame) page faults: 3571626
+	Voluntary context switches: 604681
+	Involuntary context switches: 27554
+	Swaps: 0
+	File system inputs: 29335264
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2458836992
+Iteration 7
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 40.71
+	System time (seconds): 53.01
+	Percent of CPU this job got: 128%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:13.22
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2449020
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 595678
+	Minor (reclaiming a frame) page faults: 3411254
+	Voluntary context switches: 594209
+	Involuntary context switches: 25947
+	Swaps: 0
+	File system inputs: 28661896
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2458836992
+Iteration 8
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 40.18
+	System time (seconds): 51.33
+	Percent of CPU this job got: 121%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:15.25
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2449108
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 608490
+	Minor (reclaiming a frame) page faults: 3572756
+	Voluntary context switches: 607389
+	Involuntary context switches: 27188
+	Swaps: 0
+	File system inputs: 29511600
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2458836992
+Iteration 9
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 40.07
+	System time (seconds): 54.10
+	Percent of CPU this job got: 125%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:14.86
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2448424
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 599364
+	Minor (reclaiming a frame) page faults: 3565425
+	Voluntary context switches: 597896
+	Involuntary context switches: 27193
+	Swaps: 0
+	File system inputs: 29048360
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2458836992
+Iteration 10
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 39.24
+	System time (seconds): 50.39
+	Percent of CPU this job got: 122%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:13.21
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2449156
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 585106
+	Minor (reclaiming a frame) page faults: 3405532
+	Voluntary context switches: 584229
+	Involuntary context switches: 26728
+	Swaps: 0
+	File system inputs: 28349120
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2458836992
+60% swapfile
+set memory.max to
+2950606848
+adding current shell to pagerank_150M
+Iteration 1
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 37.92
+	System time (seconds): 42.85
+	Percent of CPU this job got: 131%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:01.45
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2928808
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 489598
+	Minor (reclaiming a frame) page faults: 2762553
+	Voluntary context switches: 489494
+	Involuntary context switches: 20781
+	Swaps: 0
+	File system inputs: 23825304
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2950606848
+Iteration 2
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 37.61
+	System time (seconds): 42.16
+	Percent of CPU this job got: 125%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:03.69
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2928212
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 525931
+	Minor (reclaiming a frame) page faults: 2898055
+	Voluntary context switches: 525674
+	Involuntary context switches: 21222
+	Swaps: 0
+	File system inputs: 25391736
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2950606848
+Iteration 3
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 39.57
+	System time (seconds): 45.27
+	Percent of CPU this job got: 128%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:06.25
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2928476
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 537830
+	Minor (reclaiming a frame) page faults: 2987631
+	Voluntary context switches: 537473
+	Involuntary context switches: 20892
+	Swaps: 0
+	File system inputs: 26155736
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2950606848
+Iteration 4
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 38.68
+	System time (seconds): 41.59
+	Percent of CPU this job got: 130%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:01.43
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2928644
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 502573
+	Minor (reclaiming a frame) page faults: 2747290
+	Voluntary context switches: 504820
+	Involuntary context switches: 21218
+	Swaps: 0
+	File system inputs: 23889624
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2950606848
+Iteration 5
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 37.47
+	System time (seconds): 39.60
+	Percent of CPU this job got: 121%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:03.48
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2928344
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 508654
+	Minor (reclaiming a frame) page faults: 2800521
+	Voluntary context switches: 509631
+	Involuntary context switches: 21011
+	Swaps: 0
+	File system inputs: 24661616
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2950606848
+Iteration 6
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 39.47
+	System time (seconds): 43.29
+	Percent of CPU this job got: 132%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:02.25
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2928024
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 521250
+	Minor (reclaiming a frame) page faults: 2830521
+	Voluntary context switches: 523850
+	Involuntary context switches: 21514
+	Swaps: 0
+	File system inputs: 24586496
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2950606848
+Iteration 7
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 39.37
+	System time (seconds): 43.28
+	Percent of CPU this job got: 129%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:03.66
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2927832
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 507481
+	Minor (reclaiming a frame) page faults: 2788183
+	Voluntary context switches: 507634
+	Involuntary context switches: 21620
+	Swaps: 0
+	File system inputs: 24105456
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2950606848
+Iteration 8
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 37.93
+	System time (seconds): 44.72
+	Percent of CPU this job got: 124%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:06.51
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2928844
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 534566
+	Minor (reclaiming a frame) page faults: 3026745
+	Voluntary context switches: 533775
+	Involuntary context switches: 21542
+	Swaps: 0
+	File system inputs: 25787312
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2950606848
+Iteration 9
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 37.59
+	System time (seconds): 40.30
+	Percent of CPU this job got: 126%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:01.80
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2928724
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 509704
+	Minor (reclaiming a frame) page faults: 2862953
+	Voluntary context switches: 509815
+	Involuntary context switches: 21192
+	Swaps: 0
+	File system inputs: 24794432
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2950606848
+Iteration 10
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 39.66
+	System time (seconds): 45.42
+	Percent of CPU this job got: 138%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:01.31
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2928828
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 486569
+	Minor (reclaiming a frame) page faults: 2610313
+	Voluntary context switches: 486360
+	Involuntary context switches: 22060
+	Swaps: 0
+	File system inputs: 22552000
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+2950606848
+70% swapfile
+set memory.max to
+3442372608
+adding current shell to pagerank_150M
+Iteration 1
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.77
+	System time (seconds): 26.58
+	Percent of CPU this job got: 130%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:47.71
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3408424
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 262130
+	Minor (reclaiming a frame) page faults: 1510108
+	Voluntary context switches: 263611
+	Involuntary context switches: 12713
+	Swaps: 0
+	File system inputs: 13170608
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3442372608
+Iteration 2
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 34.94
+	System time (seconds): 26.96
+	Percent of CPU this job got: 121%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:51.05
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3408060
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 310993
+	Minor (reclaiming a frame) page faults: 1819958
+	Voluntary context switches: 312439
+	Involuntary context switches: 13909
+	Swaps: 0
+	File system inputs: 15776632
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3442372608
+Iteration 3
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.73
+	System time (seconds): 27.58
+	Percent of CPU this job got: 126%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:50.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3408264
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 302190
+	Minor (reclaiming a frame) page faults: 1762663
+	Voluntary context switches: 303567
+	Involuntary context switches: 13088
+	Swaps: 0
+	File system inputs: 15479184
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3442372608
+Iteration 4
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.02
+	System time (seconds): 27.56
+	Percent of CPU this job got: 124%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:50.43
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3409224
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 292156
+	Minor (reclaiming a frame) page faults: 1731727
+	Voluntary context switches: 293528
+	Involuntary context switches: 13094
+	Swaps: 0
+	File system inputs: 15088040
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3442372608
+Iteration 5
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.01
+	System time (seconds): 28.53
+	Percent of CPU this job got: 131%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:48.94
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3408356
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 306092
+	Minor (reclaiming a frame) page faults: 1722949
+	Voluntary context switches: 307273
+	Involuntary context switches: 13717
+	Swaps: 0
+	File system inputs: 15144728
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3442372608
+Iteration 6
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.34
+	System time (seconds): 30.84
+	Percent of CPU this job got: 123%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:53.50
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3408504
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 304495
+	Minor (reclaiming a frame) page faults: 1799696
+	Voluntary context switches: 307486
+	Involuntary context switches: 14165
+	Swaps: 0
+	File system inputs: 15515832
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3442372608
+Iteration 7
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 34.42
+	System time (seconds): 23.74
+	Percent of CPU this job got: 125%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:46.26
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3408604
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 228839
+	Minor (reclaiming a frame) page faults: 1406105
+	Voluntary context switches: 230003
+	Involuntary context switches: 11762
+	Swaps: 0
+	File system inputs: 12072688
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3442372608
+Iteration 8
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.18
+	System time (seconds): 30.26
+	Percent of CPU this job got: 136%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:48.57
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3407772
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 353540
+	Minor (reclaiming a frame) page faults: 1885959
+	Voluntary context switches: 355019
+	Involuntary context switches: 14090
+	Swaps: 0
+	File system inputs: 16776688
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3442372608
+Iteration 9
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.40
+	System time (seconds): 28.91
+	Percent of CPU this job got: 129%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:50.55
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3407780
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 298330
+	Minor (reclaiming a frame) page faults: 1730180
+	Voluntary context switches: 299270
+	Involuntary context switches: 13971
+	Swaps: 0
+	File system inputs: 14892536
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3442372608
+Iteration 10
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.92
+	System time (seconds): 31.15
+	Percent of CPU this job got: 133%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:50.41
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3408428
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 363580
+	Minor (reclaiming a frame) page faults: 1956445
+	Voluntary context switches: 364997
+	Involuntary context switches: 14230
+	Swaps: 0
+	File system inputs: 17500368
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3442372608
+80% swapfile
+set memory.max to
+3934142464
+adding current shell to pagerank_150M
+Iteration 1
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.21
+	System time (seconds): 14.05
+	Percent of CPU this job got: 169%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:29.66
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3887112
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 79640
+	Minor (reclaiming a frame) page faults: 468793
+	Voluntary context switches: 83147
+	Involuntary context switches: 6446
+	Swaps: 0
+	File system inputs: 3595296
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3934142464
+Iteration 2
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.10
+	System time (seconds): 11.97
+	Percent of CPU this job got: 176%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:27.25
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3887668
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 49681
+	Minor (reclaiming a frame) page faults: 332829
+	Voluntary context switches: 51338
+	Involuntary context switches: 4806
+	Swaps: 0
+	File system inputs: 2080944
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3934142464
+Iteration 3
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.20
+	System time (seconds): 14.91
+	Percent of CPU this job got: 172%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:29.57
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3888220
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 72304
+	Minor (reclaiming a frame) page faults: 464094
+	Voluntary context switches: 73929
+	Involuntary context switches: 48760
+	Swaps: 0
+	File system inputs: 3151296
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3934142464
+Iteration 4
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.07
+	System time (seconds): 14.45
+	Percent of CPU this job got: 163%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:30.81
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3888324
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 70980
+	Minor (reclaiming a frame) page faults: 448741
+	Voluntary context switches: 72844
+	Involuntary context switches: 16020
+	Swaps: 0
+	File system inputs: 3185904
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3934142464
+Iteration 5
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.88
+	System time (seconds): 13.90
+	Percent of CPU this job got: 169%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:29.39
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3887832
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 63274
+	Minor (reclaiming a frame) page faults: 405277
+	Voluntary context switches: 65463
+	Involuntary context switches: 5884
+	Swaps: 0
+	File system inputs: 2778464
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3934142464
+Iteration 6
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.16
+	System time (seconds): 14.11
+	Percent of CPU this job got: 166%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:30.22
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3887504
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 67915
+	Minor (reclaiming a frame) page faults: 436167
+	Voluntary context switches: 71461
+	Involuntary context switches: 6097
+	Swaps: 0
+	File system inputs: 3044464
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3934142464
+Iteration 7
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.00
+	System time (seconds): 13.36
+	Percent of CPU this job got: 164%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:30.04
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3887892
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 73574
+	Minor (reclaiming a frame) page faults: 476542
+	Voluntary context switches: 75048
+	Involuntary context switches: 5975
+	Swaps: 0
+	File system inputs: 3492488
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3934142464
+Iteration 8
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.86
+	System time (seconds): 14.97
+	Percent of CPU this job got: 164%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:30.85
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3887536
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 76907
+	Minor (reclaiming a frame) page faults: 472521
+	Voluntary context switches: 78516
+	Involuntary context switches: 6504
+	Swaps: 0
+	File system inputs: 3433432
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3934142464
+Iteration 9
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.78
+	System time (seconds): 14.02
+	Percent of CPU this job got: 171%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:29.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3888224
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 68767
+	Minor (reclaiming a frame) page faults: 435738
+	Voluntary context switches: 70522
+	Involuntary context switches: 6269
+	Swaps: 0
+	File system inputs: 3002416
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3934142464
+Iteration 10
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.59
+	System time (seconds): 13.99
+	Percent of CPU this job got: 167%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:29.60
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3887424
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 71965
+	Minor (reclaiming a frame) page faults: 479936
+	Voluntary context switches: 73701
+	Involuntary context switches: 6128
+	Swaps: 0
+	File system inputs: 3276184
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+3934142464
+90% swapfile
+set memory.max to
+4425908224
+adding current shell to pagerank_150M
+Iteration 1
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.05
+	System time (seconds): 10.92
+	Percent of CPU this job got: 187%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.06
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4367200
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 25989
+	Minor (reclaiming a frame) page faults: 196415
+	Voluntary context switches: 28662
+	Involuntary context switches: 3477
+	Swaps: 0
+	File system inputs: 1062608
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+4425908224
+Iteration 2
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.35
+	System time (seconds): 10.13
+	Percent of CPU this job got: 185%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4366564
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 27599
+	Minor (reclaiming a frame) page faults: 210820
+	Voluntary context switches: 30539
+	Involuntary context switches: 3279
+	Swaps: 0
+	File system inputs: 1138080
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+4425908224
+Iteration 3
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.28
+	System time (seconds): 9.75
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:24.39
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4367204
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 19276
+	Minor (reclaiming a frame) page faults: 158486
+	Voluntary context switches: 22629
+	Involuntary context switches: 2868
+	Swaps: 0
+	File system inputs: 701488
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+4425908224
+Iteration 4
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.92
+	System time (seconds): 11.08
+	Percent of CPU this job got: 181%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.86
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4366600
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 35946
+	Minor (reclaiming a frame) page faults: 248703
+	Voluntary context switches: 39027
+	Involuntary context switches: 3769
+	Swaps: 0
+	File system inputs: 1580840
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+4425908224
+Iteration 5
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.96
+	System time (seconds): 11.35
+	Percent of CPU this job got: 177%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:26.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4366616
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 45817
+	Minor (reclaiming a frame) page faults: 294797
+	Voluntary context switches: 48857
+	Involuntary context switches: 4205
+	Swaps: 0
+	File system inputs: 1930368
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+4425908224
+Iteration 6
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.90
+	System time (seconds): 12.59
+	Percent of CPU this job got: 173%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:27.91
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4366848
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 49648
+	Minor (reclaiming a frame) page faults: 341111
+	Voluntary context switches: 51430
+	Involuntary context switches: 4630
+	Swaps: 0
+	File system inputs: 2283544
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+4425908224
+Iteration 7
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.84
+	System time (seconds): 10.36
+	Percent of CPU this job got: 187%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:24.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4366552
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 23677
+	Minor (reclaiming a frame) page faults: 179874
+	Voluntary context switches: 26603
+	Involuntary context switches: 3206
+	Swaps: 0
+	File system inputs: 841640
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+4425908224
+Iteration 8
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.30
+	System time (seconds): 10.17
+	Percent of CPU this job got: 187%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:24.75
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4366384
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 26025
+	Minor (reclaiming a frame) page faults: 195401
+	Voluntary context switches: 28211
+	Involuntary context switches: 3513
+	Swaps: 0
+	File system inputs: 982808
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+4425908224
+Iteration 9
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.36
+	System time (seconds): 9.83
+	Percent of CPU this job got: 187%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:24.65
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4367340
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 19496
+	Minor (reclaiming a frame) page faults: 166309
+	Voluntary context switches: 21915
+	Involuntary context switches: 2912
+	Swaps: 0
+	File system inputs: 710256
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+4425908224
+Iteration 10
+23205
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.38
+	System time (seconds): 10.79
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.03
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4366688
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 22051
+	Minor (reclaiming a frame) page faults: 171563
+	Voluntary context switches: 24909
+	Involuntary context switches: 3251
+	Swaps: 0
+	File system inputs: 828304
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+memory.peak is:
+4425908224
+不限制内存
+Iteration 1
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.82
+	System time (seconds): 10.89
+	Percent of CPU this job got: 179%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:26.04
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4367344
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 32186
+	Minor (reclaiming a frame) page faults: 220278
+	Voluntary context switches: 35215
+	Involuntary context switches: 4012
+	Swaps: 0
+	File system inputs: 1334304
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 2
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.51
+	System time (seconds): 10.70
+	Percent of CPU this job got: 184%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.60
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4366432
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 28075
+	Minor (reclaiming a frame) page faults: 215601
+	Voluntary context switches: 30936
+	Involuntary context switches: 3086
+	Swaps: 0
+	File system inputs: 1155608
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 3
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.05
+	System time (seconds): 9.74
+	Percent of CPU this job got: 185%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:24.70
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4367068
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 23075
+	Minor (reclaiming a frame) page faults: 172131
+	Voluntary context switches: 26303
+	Involuntary context switches: 3449
+	Swaps: 0
+	File system inputs: 900488
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 4
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.59
+	System time (seconds): 11.05
+	Percent of CPU this job got: 185%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.72
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4366600
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 27321
+	Minor (reclaiming a frame) page faults: 210340
+	Voluntary context switches: 30143
+	Involuntary context switches: 3217
+	Swaps: 0
+	File system inputs: 1156272
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 5
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.28
+	System time (seconds): 11.54
+	Percent of CPU this job got: 185%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.73
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4366944
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 29511
+	Minor (reclaiming a frame) page faults: 219569
+	Voluntary context switches: 31726
+	Involuntary context switches: 3827
+	Swaps: 0
+	File system inputs: 1171584
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 6
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.55
+	System time (seconds): 11.67
+	Percent of CPU this job got: 179%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:26.35
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4366828
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 36304
+	Minor (reclaiming a frame) page faults: 250002
+	Voluntary context switches: 38984
+	Involuntary context switches: 3897
+	Swaps: 0
+	File system inputs: 1535152
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 7
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.12
+	System time (seconds): 11.44
+	Percent of CPU this job got: 171%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:27.74
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4366460
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 45175
+	Minor (reclaiming a frame) page faults: 313315
+	Voluntary context switches: 47702
+	Involuntary context switches: 4000
+	Swaps: 0
+	File system inputs: 2112168
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 8
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 35.99
+	System time (seconds): 11.44
+	Percent of CPU this job got: 176%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:26.85
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4366320
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 41196
+	Minor (reclaiming a frame) page faults: 282881
+	Voluntary context switches: 44049
+	Involuntary context switches: 4261
+	Swaps: 0
+	File system inputs: 1842864
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 9
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.12
+	System time (seconds): 10.99
+	Percent of CPU this job got: 177%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:26.56
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4366248
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 37212
+	Minor (reclaiming a frame) page faults: 270128
+	Voluntary context switches: 40146
+	Involuntary context switches: 3782
+	Swaps: 0
+	File system inputs: 1607888
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 10
+	Command being timed: "python3 testbench/kmeans/kmeans.py"
+	User time (seconds): 36.40
+	System time (seconds): 9.56
+	Percent of CPU this job got: 188%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:24.41
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4366964
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 20207
+	Minor (reclaiming a frame) page faults: 165252
+	Voluntary context switches: 22940
+	Involuntary context switches: 2707
+	Swaps: 0
+	File system inputs: 725256
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

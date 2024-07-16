@@ -8,8 +8,8 @@
 #ifndef ONEGB
 #define ONEGB (1024UL*1024*1024)
 #endif
-#define SWAPFILE_SIZE (ONEGB * 4) 
-#define REMOTE_BUF_SIZE (ONEGB * 4) /*remote_buf_size 超过 swapfile_size 的部分将不会采用frontswap*/
+#define SWAPFILE_SIZE (ONEGB * 8) 
+#define REMOTE_BUF_SIZE (ONEGB * 8) /*remote_buf_size 超过 swapfile_size 的部分将不会采用frontswap*/
 
 //#define DEBUG_MODE
 
@@ -21,7 +21,7 @@
 
 static void *drambuf;
 
-int sswap_rdma_write(struct page *page, u64 roffset)
+int sswap_rdma_write(struct page *page, u64 roffset, unsigned int dev)
 {
 	//this part is not use frontswap
 	if(roffset >= REMOTE_BUF_SIZE)
@@ -36,7 +36,7 @@ int sswap_rdma_write(struct page *page, u64 roffset)
 EXPORT_SYMBOL(sswap_rdma_write);
 
 
-int sswap_rdma_read_sync(struct page *page, u64 roffset)
+int sswap_rdma_read_sync(struct page *page, u64 roffset, unsigned int dev)
 {
 	//this part is not use frontswap
 	if(roffset >= REMOTE_BUF_SIZE)

@@ -81,8 +81,8 @@ struct gctrl_entry {
 struct rdma_queue *sswap_rdma_get_queue(unsigned int idx,
                  enum qp_type type,struct sswap_rdma_ctrl *gctrl);
 enum qp_type get_queue_type(unsigned int idx);
-int sswap_rdma_read_sync(struct page *page, u64 roffset);
-int sswap_rdma_write(struct page *page, u64 roffset);
+int sswap_rdma_read_sync(struct page *page, u64 roffset, unsigned int dev);
+int sswap_rdma_write(struct page *page, u64 roffset, unsigned int dev);
 
 
 #endif

@@ -12,6 +12,8 @@
 
 #define B_DRAM 1
 #define B_RDMA 2
+//使用dram backend时将NUM_SERVERS设置为1
+#define NUM_SERVERS 2
 
 #ifndef BACKEND
 #error "Need to define BACKEND flag"
@@ -28,7 +30,7 @@
 #endif
 
 //test swapfile
-#define USESWAP
+//#define USESWAP
 
 static int sswap_store(unsigned type, pgoff_t pageid,
         struct page *page)
@@ -37,7 +39,8 @@ static int sswap_store(unsigned type, pgoff_t pageid,
   return -1;
 #endif
   //printk("in sswap_store\n");
-  if (sswap_rdma_write(page, pageid << PAGE_SHIFT)) {
+  pgoff_t roffset = pageid / NUM_SERVERS;
+  if (sswap_rdma_write(page, roffset << PAGE_SHIFT, pageid % NUM_SERVERS)) {
     pr_err("could not store page remotely\n");
     return -1;
   }
@@ -51,7 +54,8 @@ static int sswap_load(unsigned type, pgoff_t pageid, struct page *page)
 #ifdef USESWAP
   return -1;
 #endif
-  if (unlikely(sswap_rdma_read_sync(page, pageid << PAGE_SHIFT))) {
+  pgoff_t roffset = pageid / NUM_SERVERS;
+  if (unlikely(sswap_rdma_read_sync(page, roffset << PAGE_SHIFT, pageid % NUM_SERVERS))) {
     pr_err("could not read page remotely\n");
     return -1;
   }

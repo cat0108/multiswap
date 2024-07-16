@@ -9,10 +9,10 @@
 #ifndef ONEGB
 #define ONEGB (1024UL*1024*1024)
 #endif
-#define SWAPFILE_SIZE (ONEGB * 4) 
-#define REMOTE_BUF_SIZE (ONEGB * 4) /*remote_buf_size 超过 swapfile_size 的部分将不会采用frontswap*/
+#define SWAPFILE_SIZE (ONEGB * 8) 
+#define REMOTE_BUF_SIZE (ONEGB * 8) /*remote_buf_size 超过 swapfile_size 的部分将不会采用frontswap*/
 //修改此处来调整memory node的数量，需要同步修改serverip和serverport
-#define NUM_SERVER 1
+#define NUM_SERVER 2
 
 //#define DEBUG_MODE
 #ifdef DEBUG_MODE
@@ -27,14 +27,14 @@ static int serverport[2] = {50000, 50001};
 static int numqueues;
 static int numqueues_perserver;
 static int numcpus;
-static char serverip[2][INET_ADDRSTRLEN] = {"10.10.10.1", "10.10.10.3"};
+static char serverip[2][INET_ADDRSTRLEN] = {"10.10.10.1", "10.10.10.7"};
 static char clientip[INET_ADDRSTRLEN] = "10.10.10.5";
 static struct kmem_cache *req_cache;
 static LIST_HEAD(gctrl_list);
 
 //减少在read和write过程中通过链表获取queue的时间，以两个节点为例
-static struct sswap_rdma_ctrl* gctrl1;
-static struct sswap_rdma_ctrl* gctrl2;
+static struct sswap_rdma_ctrl** gctrl;
+
 // module_param_named(sport, serverport, int, 0644);
 // module_param_named(nq, numqueues, int, 0644);
 // module_param_string(sip, serverip, INET_ADDRSTRLEN, 0644);
@@ -488,7 +488,7 @@ static void __exit sswap_rdma_cleanup_module(void)
     kfree(entry->gctrl);
     kfree(entry);
   }
-  //gctrl = NULL;
+  kfree(gctrl);
   if (req_cache) {
     kmem_cache_destroy(req_cache);
   }
@@ -773,7 +773,7 @@ static inline int read_queue_add(struct rdma_queue *q, struct page *page,
   return ret;
 }
 
-int sswap_rdma_write(struct page *page, u64 roffset)
+int sswap_rdma_write(struct page *page, u64 roffset, unsigned int dev)
 {
   if(roffset >= REMOTE_BUF_SIZE)
     return -1;
@@ -783,7 +783,7 @@ int sswap_rdma_write(struct page *page, u64 roffset)
   VM_BUG_ON_PAGE(!PageSwapCache(page), page);
 
   //todo:进行调度思考，考虑不同内存结点
-  q = sswap_rdma_get_queue(smp_processor_id(), QP_WRITE_SYNC, gctrl1);
+  q = sswap_rdma_get_queue(smp_processor_id(), QP_WRITE_SYNC, gctrl[dev]);
   ret = write_queue_add(q, page, roffset);
   BUG_ON(ret);
   drain_queue(q);
@@ -824,7 +824,7 @@ out:
 }
 
 
-int sswap_rdma_read_sync(struct page *page, u64 roffset)
+int sswap_rdma_read_sync(struct page *page, u64 roffset, unsigned int dev)
 {
   if (roffset >= REMOTE_BUF_SIZE)
     return -1;
@@ -837,7 +837,7 @@ int sswap_rdma_read_sync(struct page *page, u64 roffset)
   VM_BUG_ON_PAGE(PageUptodate(page), page);
 
   //todo:同write
-  q = sswap_rdma_get_queue(smp_processor_id(), QP_READ_SYNC, gctrl1);
+  q = sswap_rdma_get_queue(smp_processor_id(), QP_READ_SYNC, gctrl[dev]);
   DEBUG_PRINT("begin_read\n");
   ret = read_queue_add(q, page, roffset);
   //manual poll cq
@@ -962,15 +962,12 @@ static int __init sswap_rdma_init_module(void)
     return -ENODEV;
   }
 
+  gctrl = kzalloc(sizeof(struct sswap_rdma_ctrl*) * NUM_SERVER, GFP_KERNEL);
+  unsigned int iter = 0;
   //事先取出两个ctrl，加速后续read和write
   struct gctrl_entry* entry;
-  int iter = 0;
   list_for_each_entry(entry, &gctrl_list, list) {
-    if (iter == 0) {
-      gctrl1 = entry->gctrl;
-    } else {
-      gctrl2 = entry->gctrl;
-    }
+    gctrl[iter] = entry->gctrl;
     iter++;
   }
 

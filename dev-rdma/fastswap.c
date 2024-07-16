@@ -10,10 +10,16 @@
 #include <linux/memcontrol.h>
 #include <linux/smp.h>
 
+#ifndef ONEGB
+#define ONEGB (1024UL*1024*1024)
+#endif
 #define B_DRAM 1
 #define B_RDMA 2
 //使用dram backend时将NUM_SERVERS设置为1
 #define NUM_SERVERS 2
+//粗粒度细粒度分配远程内存，选择其一
+//#define FINE_GRAINED
+#define COARSE_GRAINED
 
 #ifndef BACKEND
 #error "Need to define BACKEND flag"
@@ -39,13 +45,23 @@ static int sswap_store(unsigned type, pgoff_t pageid,
   return -1;
 #endif
   //printk("in sswap_store\n");
+#ifdef FINE_GRAINED
   pgoff_t roffset = pageid / NUM_SERVERS;
   if (sswap_rdma_write(page, roffset << PAGE_SHIFT, pageid % NUM_SERVERS)) {
     pr_err("could not store page remotely\n");
     return -1;
   }
-
   return 0;
+#endif
+
+#ifdef COARSE_GRAINED
+  unsigned int dev = ((pageid << PAGE_SHIFT) > ONEGB * 4) ? 1 : 0;
+  if (sswap_rdma_write(page, pageid << PAGE_SHIFT, dev)) {
+    pr_err("could not store page remotely\n");
+    return -1;
+  }
+  return 0;
+#endif
 }
 
 
@@ -54,13 +70,24 @@ static int sswap_load(unsigned type, pgoff_t pageid, struct page *page)
 #ifdef USESWAP
   return -1;
 #endif
+
+#ifdef FINE_GRAINED
   pgoff_t roffset = pageid / NUM_SERVERS;
   if (unlikely(sswap_rdma_read_sync(page, roffset << PAGE_SHIFT, pageid % NUM_SERVERS))) {
     pr_err("could not read page remotely\n");
     return -1;
   }
-
   return 0;
+#endif
+
+#ifdef COARSE_GRAINED
+  unsigned int dev = ((pageid << PAGE_SHIFT) > ONEGB * 4) ? 1 : 0;
+  if (unlikely(sswap_rdma_read_sync(page, pageid << PAGE_SHIFT, dev))) {
+    pr_err("could not read page remotely\n");
+    return -1;
+  }
+  return 0;
+#endif
 }
 
 

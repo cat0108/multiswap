@@ -14,6 +14,7 @@
 //修改此处来调整memory node的数量，需要同步修改serverip和serverport
 #define NUM_SERVER 2
 
+//debug模式，非必要不打开，拖慢运行速度
 //#define DEBUG_MODE
 #ifdef DEBUG_MODE
 #define DEBUG_PRINT(fmt, ...) pr_info(fmt, ##__VA_ARGS__)
@@ -31,6 +32,13 @@ static char serverip[2][INET_ADDRSTRLEN] = {"10.10.10.1", "10.10.10.7"};
 static char clientip[INET_ADDRSTRLEN] = "10.10.10.5";
 static struct kmem_cache *req_cache;
 static LIST_HEAD(gctrl_list);
+
+//换页计数测试，非必要不打开，在卸载模块时打印出各个节点的换页次数
+//#define PAGECOUNT
+
+#ifdef  PAGECOUNT
+static u64 page_count_dev[2] = {0, 0};
+#endif
 
 //减少在read和write过程中通过链表获取queue的时间，以两个节点为例
 static struct sswap_rdma_ctrl** gctrl;
@@ -492,6 +500,9 @@ static void __exit sswap_rdma_cleanup_module(void)
   if (req_cache) {
     kmem_cache_destroy(req_cache);
   }
+#ifdef PAGECOUNT
+  printk("page_count_dev[0]=%llu, page_count_dev[1]=%llu\n", page_count_dev[0], page_count_dev[1]);
+#endif
 }
 
 static void sswap_rdma_write_done(struct ib_cq *cq, struct ib_wc *wc)
@@ -787,6 +798,9 @@ int sswap_rdma_write(struct page *page, u64 roffset, unsigned int dev)
   ret = write_queue_add(q, page, roffset);
   BUG_ON(ret);
   drain_queue(q);
+#ifdef PAGECOUNT
+  page_count_dev[dev]++;
+#endif
   return ret;
 }
 EXPORT_SYMBOL(sswap_rdma_write);

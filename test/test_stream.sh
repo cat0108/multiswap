@@ -1,9 +1,10 @@
 #!/bin/bash
 
-exec &> ./testoutcome/stream_dram_result.txt
+# exec &> ./testoutcome/stream_dram_result.txt
 # exec &> ./testoutcome/stream_swapfile_result.txt
 # exec &> ./testoutcome/stream_nolimit_result.txt
-
+# exec &> ./testoutcome/stream_rdma_result.txt
+exec &> ./testoutcome/stream_2nodeaverage_result.txt
 
 echo $$ >> /sys/fs/cgroup/cgroup.procs
 sleep 1
@@ -24,8 +25,10 @@ fi
 
 #4196372
 
-echo "50% dram"
+# echo "50% dram"
 # echo "50% swapfile"
+# echo "50% rdma"
+echo "50% 2nodeaverage"
 echo 2148542464 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
@@ -38,8 +41,10 @@ for i in {1..3}; do
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
 
-echo "60% dram"
+# echo "60% dram"
 # echo "60% swapfile"
+# echo "60% rdma"
+echo "60% 2nodeaverage"
 echo 2578250956 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
@@ -52,8 +57,10 @@ for i in {1..3}; do
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
 
-echo "70% dram"
+# echo "70% dram"
 # echo "70% swapfile"
+# echo "70% rdma"
+echo "70% 2nodeaverage"
 echo 3007959449 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
@@ -67,8 +74,10 @@ for i in {1..3}; do
 done
 
 
-echo "80% dram"
+# echo "80% dram"
 # echo "80% swapfile"
+# echo "80% rdma"
+echo "80% 2nodeaverage"
 echo 3437667942 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
@@ -81,8 +90,10 @@ for i in {1..3}; do
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
 
-echo "90% dram"
+# echo "90% dram"
 # echo "90% swapfile"
+# echo "90% rdma"
+echo "90% 2nodeaverage"
 echo 3867376435 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max

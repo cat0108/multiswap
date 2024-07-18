@@ -19,10 +19,10 @@
 #define NUM_SERVERS 2
 
 //四选一
-//#define FINE_GRAINED
+#define FINE_GRAINED
 //#define COARSE_GRAINED
 // #define USESWAP
-#define USEDRAM
+//#define USEDRAM
 
 #ifndef BACKEND
 #error "Need to define BACKEND flag"

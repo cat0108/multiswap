@@ -965,6 +965,11 @@ static int __init sswap_rdma_init_module(void)
 
   if (ret) {
     pr_err("could not create ctrl\n");
+    //todo:在此处若是后续几个node分配失败，要将先前节点建立的队列连接资源释放！
+    struct gctrl_entry *entry;
+    list_for_each_entry(entry, &gctrl_list, list) {
+      sswap_rdma_stopandfree_queues(entry->gctrl);
+    }
     ib_unregister_client(&sswap_rdma_ib_client);
     return -ENODEV;
   }
@@ -972,6 +977,11 @@ static int __init sswap_rdma_init_module(void)
   ret = sswap_rdma_recv_multi_remotemr();
   if (ret) {
     pr_err("could not setup remote memory region\n");
+    //todo:同理，否则将产生严重的资源泄露无法挽回！
+    struct gctrl_entry *entry;
+    list_for_each_entry(entry, &gctrl_list, list) {
+      sswap_rdma_stopandfree_queues(entry->gctrl);
+    }
     ib_unregister_client(&sswap_rdma_ib_client);
     return -ENODEV;
   }

@@ -22,11 +22,11 @@ clean:
 	$(MAKE) -C $(KDIR) M=$$PWD clean
 endif
 
-obj-m  := fastswap.o
+obj-m  := multiswap.o
 ifeq ($(BACKEND),RDMA)
-	obj-m += fastswap_rdma.o
-	CFLAGS_fastswap.o=-DBACKEND=2
+	obj-m += multiswap_rdma.o
+	CFLAGS_multiswap.o=-DBACKEND=2
 else
-	obj-m += fastswap_dram.o
-	CFLAGS_fastswap.o=-DBACKEND=1
+	obj-m += multiswap_dram.o
+	CFLAGS_multiswap.o=-DBACKEND=1
 endif

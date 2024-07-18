@@ -1,6 +1,6 @@
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
 
-#include "fastswap_rdma.h"
+#include "multiswap_rdma.h"
 #include <linux/slab.h>
 #include <linux/cpumask.h>
 #include <linux/string.h>

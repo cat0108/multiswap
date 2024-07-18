@@ -2,7 +2,7 @@
 
 #include <linux/highmem.h>
 #include <linux/pagemap.h>
-#include "fastswap_dram.h"
+#include "multiswap_dram.h"
 
 //todo:进行检验，swapfile的size必须小于等于remote buffer size.
 #ifndef ONEGB

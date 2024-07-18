@@ -30,10 +30,10 @@
 
 #if BACKEND == B_DRAM
 #define DRAM
-#include "fastswap_dram.h"
+#include "multiswap_dram.h"
 #elif BACKEND == B_RDMA
 #define RDMA
-#include "fastswap_rdma.h"
+#include "multiswap_rdma.h"
 #else
 #error "BACKEND can only be 1 (DRAM) or 2 (RDMA)"
 #endif
@@ -160,4 +160,4 @@ module_init(init_sswap);
 module_exit(exit_sswap);
 
 MODULE_LICENSE("GPL v2");
-MODULE_DESCRIPTION("Fastswap driver");
+MODULE_DESCRIPTION("multiswap driver");

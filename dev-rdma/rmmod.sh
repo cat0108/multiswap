@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sudo rmmod fastswap.ko
-sudo rmmod fastswap_rdma.ko
+sudo rmmod multiswap.ko
+sudo rmmod multiswap_rdma.ko

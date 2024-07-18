@@ -1,2 +1,2 @@
-sudo rmmod fastswap.ko
-sudo rmmod fastswap_dram.ko
+sudo rmmod multiswap.ko
+sudo rmmod multiswap_dram.ko

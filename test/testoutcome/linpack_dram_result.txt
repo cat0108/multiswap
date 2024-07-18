@@ -1,0 +1,951 @@
+468597
+50% dram
+set memory.max to
+805335040
+adding current shell to pagerank_150M
+Iteration 1
+468597
+开始执行 xlinpack_xeon64: 2024年 07月 17日 星期三 19:12:56 CST
+Intel(R) Optimized LINPACK Benchmark data
+
+Current date/time: Wed Jul 17 19:12:56 2024
+
+CPU frequency:    3.890 GHz
+Number of CPUs: 1
+Number of cores: 6
+Number of threads: 6
+
+Parameters are set to:
+
+Number of tests: 1
+Number of equations to solve (problem size) : 14000
+Leading dimension of array                  : 14000
+Number of trials to run                     : 1    
+Data alignment value (in Kbytes)            : 4    
+
+Maximum memory requested that can be used=1568284096, at the size=14000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+14000  14000  4      29.240     62.5758  2.105651e-10 3.802581e-02   pass
+
+Performance Summary (GFlops)
+
+Size   LDA    Align.  Average  Maximal
+14000  14000  4       62.5758  62.5758 
+
+Residual checks PASSED
+
+End of tests
+
+	Command being timed: "/home/cat22/gitRepo/test/testbench/linpack/xlinpack_xeon64 /home/cat22/gitRepo/test/testbench/linpack/lininput_xeon64"
+	User time (seconds): 115.75
+	System time (seconds): 83.29
+	Percent of CPU this job got: 546%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:36.42
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 787880
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 3611058
+	Minor (reclaiming a frame) page faults: 14198835
+	Voluntary context switches: 2936
+	Involuntary context switches: 42382
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+执行完成: 2024年 07月 17日 星期三 19:13:33 CST
+memory.peak is:
+805335040
+Iteration 2
+468597
+开始执行 xlinpack_xeon64: 2024年 07月 17日 星期三 19:13:33 CST
+Intel(R) Optimized LINPACK Benchmark data
+
+Current date/time: Wed Jul 17 19:13:33 2024
+
+CPU frequency:    3.989 GHz
+Number of CPUs: 1
+Number of cores: 6
+Number of threads: 6
+
+Parameters are set to:
+
+Number of tests: 1
+Number of equations to solve (problem size) : 14000
+Leading dimension of array                  : 14000
+Number of trials to run                     : 1    
+Data alignment value (in Kbytes)            : 4    
+
+Maximum memory requested that can be used=1568284096, at the size=14000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+14000  14000  4      30.113     60.7628  2.070880e-10 3.739789e-02   pass
+
+Performance Summary (GFlops)
+
+Size   LDA    Align.  Average  Maximal
+14000  14000  4       60.7628  60.7628 
+
+Residual checks PASSED
+
+End of tests
+
+	Command being timed: "/home/cat22/gitRepo/test/testbench/linpack/xlinpack_xeon64 /home/cat22/gitRepo/test/testbench/linpack/lininput_xeon64"
+	User time (seconds): 119.05
+	System time (seconds): 82.90
+	Percent of CPU this job got: 536%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:37.62
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 787900
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 3622507
+	Minor (reclaiming a frame) page faults: 14178052
+	Voluntary context switches: 3319
+	Involuntary context switches: 48126
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+执行完成: 2024年 07月 17日 星期三 19:14:10 CST
+memory.peak is:
+805335040
+Iteration 3
+468597
+开始执行 xlinpack_xeon64: 2024年 07月 17日 星期三 19:14:10 CST
+Intel(R) Optimized LINPACK Benchmark data
+
+Current date/time: Wed Jul 17 19:14:10 2024
+
+CPU frequency:    2.693 GHz
+Number of CPUs: 1
+Number of cores: 6
+Number of threads: 6
+
+Parameters are set to:
+
+Number of tests: 1
+Number of equations to solve (problem size) : 14000
+Leading dimension of array                  : 14000
+Number of trials to run                     : 1    
+Data alignment value (in Kbytes)            : 4    
+
+Maximum memory requested that can be used=1568284096, at the size=14000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+14000  14000  4      30.231     60.5246  2.105651e-10 3.802581e-02   pass
+
+Performance Summary (GFlops)
+
+Size   LDA    Align.  Average  Maximal
+14000  14000  4       60.5246  60.5246 
+
+Residual checks PASSED
+
+End of tests
+
+	Command being timed: "/home/cat22/gitRepo/test/testbench/linpack/xlinpack_xeon64 /home/cat22/gitRepo/test/testbench/linpack/lininput_xeon64"
+	User time (seconds): 118.98
+	System time (seconds): 83.35
+	Percent of CPU this job got: 545%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:37.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 787804
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 3622998
+	Minor (reclaiming a frame) page faults: 14188428
+	Voluntary context switches: 3238
+	Involuntary context switches: 51543
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+执行完成: 2024年 07月 17日 星期三 19:14:48 CST
+memory.peak is:
+805335040
+60% dram
+set memory.max to
+966402048
+adding current shell to pagerank_150M
+Iteration 1
+468597
+开始执行 xlinpack_xeon64: 2024年 07月 17日 星期三 19:14:48 CST
+Intel(R) Optimized LINPACK Benchmark data
+
+Current date/time: Wed Jul 17 19:14:48 2024
+
+CPU frequency:    3.889 GHz
+Number of CPUs: 1
+Number of cores: 6
+Number of threads: 6
+
+Parameters are set to:
+
+Number of tests: 1
+Number of equations to solve (problem size) : 14000
+Leading dimension of array                  : 14000
+Number of trials to run                     : 1    
+Data alignment value (in Kbytes)            : 4    
+
+Maximum memory requested that can be used=1568284096, at the size=14000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+14000  14000  4      25.365     72.1347  2.105651e-10 3.802581e-02   pass
+
+Performance Summary (GFlops)
+
+Size   LDA    Align.  Average  Maximal
+14000  14000  4       72.1347  72.1347 
+
+Residual checks PASSED
+
+End of tests
+
+	Command being timed: "/home/cat22/gitRepo/test/testbench/linpack/xlinpack_xeon64 /home/cat22/gitRepo/test/testbench/linpack/lininput_xeon64"
+	User time (seconds): 107.72
+	System time (seconds): 71.27
+	Percent of CPU this job got: 539%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:33.15
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 944588
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2997612
+	Minor (reclaiming a frame) page faults: 12119092
+	Voluntary context switches: 2426
+	Involuntary context switches: 39205
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+执行完成: 2024年 07月 17日 星期三 19:15:21 CST
+memory.peak is:
+966402048
+Iteration 2
+468597
+开始执行 xlinpack_xeon64: 2024年 07月 17日 星期三 19:15:21 CST
+Intel(R) Optimized LINPACK Benchmark data
+
+Current date/time: Wed Jul 17 19:15:21 2024
+
+CPU frequency:    3.989 GHz
+Number of CPUs: 1
+Number of cores: 6
+Number of threads: 6
+
+Parameters are set to:
+
+Number of tests: 1
+Number of equations to solve (problem size) : 14000
+Leading dimension of array                  : 14000
+Number of trials to run                     : 1    
+Data alignment value (in Kbytes)            : 4    
+
+Maximum memory requested that can be used=1568284096, at the size=14000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+14000  14000  4      25.205     72.5925  2.105651e-10 3.802581e-02   pass
+
+Performance Summary (GFlops)
+
+Size   LDA    Align.  Average  Maximal
+14000  14000  4       72.5925  72.5925 
+
+Residual checks PASSED
+
+End of tests
+
+	Command being timed: "/home/cat22/gitRepo/test/testbench/linpack/xlinpack_xeon64 /home/cat22/gitRepo/test/testbench/linpack/lininput_xeon64"
+	User time (seconds): 107.85
+	System time (seconds): 69.75
+	Percent of CPU this job got: 545%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:32.54
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 944580
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2995223
+	Minor (reclaiming a frame) page faults: 11945940
+	Voluntary context switches: 2285
+	Involuntary context switches: 41279
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+执行完成: 2024年 07月 17日 星期三 19:15:53 CST
+memory.peak is:
+966402048
+Iteration 3
+468597
+开始执行 xlinpack_xeon64: 2024年 07月 17日 星期三 19:15:53 CST
+Intel(R) Optimized LINPACK Benchmark data
+
+Current date/time: Wed Jul 17 19:15:53 2024
+
+CPU frequency:    3.989 GHz
+Number of CPUs: 1
+Number of cores: 6
+Number of threads: 6
+
+Parameters are set to:
+
+Number of tests: 1
+Number of equations to solve (problem size) : 14000
+Leading dimension of array                  : 14000
+Number of trials to run                     : 1    
+Data alignment value (in Kbytes)            : 4    
+
+Maximum memory requested that can be used=1568284096, at the size=14000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+14000  14000  4      25.312     72.2861  2.105651e-10 3.802581e-02   pass
+
+Performance Summary (GFlops)
+
+Size   LDA    Align.  Average  Maximal
+14000  14000  4       72.2861  72.2861 
+
+Residual checks PASSED
+
+End of tests
+
+	Command being timed: "/home/cat22/gitRepo/test/testbench/linpack/xlinpack_xeon64 /home/cat22/gitRepo/test/testbench/linpack/lininput_xeon64"
+	User time (seconds): 107.14
+	System time (seconds): 70.12
+	Percent of CPU this job got: 552%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:32.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 944572
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 3002115
+	Minor (reclaiming a frame) page faults: 11987051
+	Voluntary context switches: 2355
+	Involuntary context switches: 36067
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+执行完成: 2024年 07月 17日 星期三 19:16:25 CST
+memory.peak is:
+966402048
+70% dram
+set memory.max to
+1127469056
+adding current shell to pagerank_150M
+Iteration 1
+468597
+开始执行 xlinpack_xeon64: 2024年 07月 17日 星期三 19:16:25 CST
+Intel(R) Optimized LINPACK Benchmark data
+
+Current date/time: Wed Jul 17 19:16:25 2024
+
+CPU frequency:    1.396 GHz
+Number of CPUs: 1
+Number of cores: 6
+Number of threads: 6
+
+Parameters are set to:
+
+Number of tests: 1
+Number of equations to solve (problem size) : 14000
+Leading dimension of array                  : 14000
+Number of trials to run                     : 1    
+Data alignment value (in Kbytes)            : 4    
+
+Maximum memory requested that can be used=1568284096, at the size=14000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+14000  14000  4      22.115     82.7353  2.105651e-10 3.802581e-02   pass
+
+Performance Summary (GFlops)
+
+Size   LDA    Align.  Average  Maximal
+14000  14000  4       82.7353  82.7353 
+
+Residual checks PASSED
+
+End of tests
+
+	Command being timed: "/home/cat22/gitRepo/test/testbench/linpack/xlinpack_xeon64 /home/cat22/gitRepo/test/testbench/linpack/lininput_xeon64"
+	User time (seconds): 102.53
+	System time (seconds): 55.63
+	Percent of CPU this job got: 551%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:28.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1101824
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2319114
+	Minor (reclaiming a frame) page faults: 9434234
+	Voluntary context switches: 2212
+	Involuntary context switches: 28265
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+执行完成: 2024年 07月 17日 星期三 19:16:54 CST
+memory.peak is:
+1127469056
+Iteration 2
+468597
+开始执行 xlinpack_xeon64: 2024年 07月 17日 星期三 19:16:54 CST
+Intel(R) Optimized LINPACK Benchmark data
+
+Current date/time: Wed Jul 17 19:16:54 2024
+
+CPU frequency:    3.890 GHz
+Number of CPUs: 1
+Number of cores: 6
+Number of threads: 6
+
+Parameters are set to:
+
+Number of tests: 1
+Number of equations to solve (problem size) : 14000
+Leading dimension of array                  : 14000
+Number of trials to run                     : 1    
+Data alignment value (in Kbytes)            : 4    
+
+Maximum memory requested that can be used=1568284096, at the size=14000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+14000  14000  4      21.695     84.3397  2.105651e-10 3.802581e-02   pass
+
+Performance Summary (GFlops)
+
+Size   LDA    Align.  Average  Maximal
+14000  14000  4       84.3397  84.3397 
+
+Residual checks PASSED
+
+End of tests
+
+	Command being timed: "/home/cat22/gitRepo/test/testbench/linpack/xlinpack_xeon64 /home/cat22/gitRepo/test/testbench/linpack/lininput_xeon64"
+	User time (seconds): 99.46
+	System time (seconds): 54.62
+	Percent of CPU this job got: 546%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:28.19
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1101716
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2275937
+	Minor (reclaiming a frame) page faults: 9272404
+	Voluntary context switches: 2132
+	Involuntary context switches: 29164
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+执行完成: 2024年 07月 17日 星期三 19:17:22 CST
+memory.peak is:
+1127469056
+Iteration 3
+468597
+开始执行 xlinpack_xeon64: 2024年 07月 17日 星期三 19:17:22 CST
+Intel(R) Optimized LINPACK Benchmark data
+
+Current date/time: Wed Jul 17 19:17:22 2024
+
+CPU frequency:    3.092 GHz
+Number of CPUs: 1
+Number of cores: 6
+Number of threads: 6
+
+Parameters are set to:
+
+Number of tests: 1
+Number of equations to solve (problem size) : 14000
+Leading dimension of array                  : 14000
+Number of trials to run                     : 1    
+Data alignment value (in Kbytes)            : 4    
+
+Maximum memory requested that can be used=1568284096, at the size=14000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+14000  14000  4      21.926     83.4512  2.105651e-10 3.802581e-02   pass
+
+Performance Summary (GFlops)
+
+Size   LDA    Align.  Average  Maximal
+14000  14000  4       83.4512  83.4512 
+
+Residual checks PASSED
+
+End of tests
+
+	Command being timed: "/home/cat22/gitRepo/test/testbench/linpack/xlinpack_xeon64 /home/cat22/gitRepo/test/testbench/linpack/lininput_xeon64"
+	User time (seconds): 100.91
+	System time (seconds): 55.94
+	Percent of CPU this job got: 551%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:28.46
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1101764
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2332610
+	Minor (reclaiming a frame) page faults: 9424840
+	Voluntary context switches: 2162
+	Involuntary context switches: 29906
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+执行完成: 2024年 07月 17日 星期三 19:17:51 CST
+memory.peak is:
+1127469056
+80% dram
+set memory.max to
+1288536064
+adding current shell to pagerank_150M
+Iteration 1
+468597
+开始执行 xlinpack_xeon64: 2024年 07月 17日 星期三 19:17:51 CST
+Intel(R) Optimized LINPACK Benchmark data
+
+Current date/time: Wed Jul 17 19:17:51 2024
+
+CPU frequency:    3.989 GHz
+Number of CPUs: 1
+Number of cores: 6
+Number of threads: 6
+
+Parameters are set to:
+
+Number of tests: 1
+Number of equations to solve (problem size) : 14000
+Leading dimension of array                  : 14000
+Number of trials to run                     : 1    
+Data alignment value (in Kbytes)            : 4    
+
+Maximum memory requested that can be used=1568284096, at the size=14000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+14000  14000  4      16.056     113.9594 2.105651e-10 3.802581e-02   pass
+
+Performance Summary (GFlops)
+
+Size   LDA    Align.  Average  Maximal
+14000  14000  4       113.9594 113.9594
+
+Residual checks PASSED
+
+End of tests
+
+	Command being timed: "/home/cat22/gitRepo/test/testbench/linpack/xlinpack_xeon64 /home/cat22/gitRepo/test/testbench/linpack/lininput_xeon64"
+	User time (seconds): 92.42
+	System time (seconds): 26.51
+	Percent of CPU this job got: 530%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:22.40
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1259012
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1209486
+	Minor (reclaiming a frame) page faults: 3961398
+	Voluntary context switches: 1976
+	Involuntary context switches: 19050
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+执行完成: 2024年 07月 17日 星期三 19:18:13 CST
+memory.peak is:
+1288536064
+Iteration 2
+468597
+开始执行 xlinpack_xeon64: 2024年 07月 17日 星期三 19:18:13 CST
+Intel(R) Optimized LINPACK Benchmark data
+
+Current date/time: Wed Jul 17 19:18:13 2024
+
+CPU frequency:    3.889 GHz
+Number of CPUs: 1
+Number of cores: 6
+Number of threads: 6
+
+Parameters are set to:
+
+Number of tests: 1
+Number of equations to solve (problem size) : 14000
+Leading dimension of array                  : 14000
+Number of trials to run                     : 1    
+Data alignment value (in Kbytes)            : 4    
+
+Maximum memory requested that can be used=1568284096, at the size=14000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+14000  14000  4      15.688     116.6350 2.105651e-10 3.802581e-02   pass
+
+Performance Summary (GFlops)
+
+Size   LDA    Align.  Average  Maximal
+14000  14000  4       116.6350 116.6350
+
+Residual checks PASSED
+
+End of tests
+
+	Command being timed: "/home/cat22/gitRepo/test/testbench/linpack/xlinpack_xeon64 /home/cat22/gitRepo/test/testbench/linpack/lininput_xeon64"
+	User time (seconds): 92.60
+	System time (seconds): 24.67
+	Percent of CPU this job got: 541%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:21.66
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1259192
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1208530
+	Minor (reclaiming a frame) page faults: 3773600
+	Voluntary context switches: 1944
+	Involuntary context switches: 16901
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+执行完成: 2024年 07月 17日 星期三 19:18:35 CST
+memory.peak is:
+1288536064
+Iteration 3
+468597
+开始执行 xlinpack_xeon64: 2024年 07月 17日 星期三 19:18:35 CST
+Intel(R) Optimized LINPACK Benchmark data
+
+Current date/time: Wed Jul 17 19:18:35 2024
+
+CPU frequency:    3.989 GHz
+Number of CPUs: 1
+Number of cores: 6
+Number of threads: 6
+
+Parameters are set to:
+
+Number of tests: 1
+Number of equations to solve (problem size) : 14000
+Leading dimension of array                  : 14000
+Number of trials to run                     : 1    
+Data alignment value (in Kbytes)            : 4    
+
+Maximum memory requested that can be used=1568284096, at the size=14000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+14000  14000  4      16.008     114.2990 2.105651e-10 3.802581e-02   pass
+
+Performance Summary (GFlops)
+
+Size   LDA    Align.  Average  Maximal
+14000  14000  4       114.2990 114.2990
+
+Residual checks PASSED
+
+End of tests
+
+	Command being timed: "/home/cat22/gitRepo/test/testbench/linpack/xlinpack_xeon64 /home/cat22/gitRepo/test/testbench/linpack/lininput_xeon64"
+	User time (seconds): 91.01
+	System time (seconds): 26.71
+	Percent of CPU this job got: 534%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:22.03
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1259028
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1264904
+	Minor (reclaiming a frame) page faults: 3982362
+	Voluntary context switches: 1995
+	Involuntary context switches: 17827
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+执行完成: 2024年 07月 17日 星期三 19:18:57 CST
+memory.peak is:
+1288536064
+90% dram
+set memory.max to
+1449603072
+adding current shell to pagerank_150M
+Iteration 1
+468597
+开始执行 xlinpack_xeon64: 2024年 07月 17日 星期三 19:18:57 CST
+Intel(R) Optimized LINPACK Benchmark data
+
+Current date/time: Wed Jul 17 19:18:57 2024
+
+CPU frequency:    3.889 GHz
+Number of CPUs: 1
+Number of cores: 6
+Number of threads: 6
+
+Parameters are set to:
+
+Number of tests: 1
+Number of equations to solve (problem size) : 14000
+Leading dimension of array                  : 14000
+Number of trials to run                     : 1    
+Data alignment value (in Kbytes)            : 4    
+
+Maximum memory requested that can be used=1568284096, at the size=14000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+14000  14000  4      12.776     143.2212 2.105651e-10 3.802581e-02   pass
+
+Performance Summary (GFlops)
+
+Size   LDA    Align.  Average  Maximal
+14000  14000  4       143.2212 143.2212
+
+Residual checks PASSED
+
+End of tests
+
+	Command being timed: "/home/cat22/gitRepo/test/testbench/linpack/xlinpack_xeon64 /home/cat22/gitRepo/test/testbench/linpack/lininput_xeon64"
+	User time (seconds): 84.60
+	System time (seconds): 12.46
+	Percent of CPU this job got: 538%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.04
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1416220
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 530952
+	Minor (reclaiming a frame) page faults: 1738820
+	Voluntary context switches: 1608
+	Involuntary context switches: 12892
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+执行完成: 2024年 07月 17日 星期三 19:19:15 CST
+memory.peak is:
+1449603072
+Iteration 2
+468597
+开始执行 xlinpack_xeon64: 2024年 07月 17日 星期三 19:19:15 CST
+Intel(R) Optimized LINPACK Benchmark data
+
+Current date/time: Wed Jul 17 19:19:15 2024
+
+CPU frequency:    3.889 GHz
+Number of CPUs: 1
+Number of cores: 6
+Number of threads: 6
+
+Parameters are set to:
+
+Number of tests: 1
+Number of equations to solve (problem size) : 14000
+Leading dimension of array                  : 14000
+Number of trials to run                     : 1    
+Data alignment value (in Kbytes)            : 4    
+
+Maximum memory requested that can be used=1568284096, at the size=14000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+14000  14000  4      12.840     142.5037 2.105651e-10 3.802581e-02   pass
+
+Performance Summary (GFlops)
+
+Size   LDA    Align.  Average  Maximal
+14000  14000  4       142.5037 142.5037
+
+Residual checks PASSED
+
+End of tests
+
+	Command being timed: "/home/cat22/gitRepo/test/testbench/linpack/xlinpack_xeon64 /home/cat22/gitRepo/test/testbench/linpack/lininput_xeon64"
+	User time (seconds): 83.78
+	System time (seconds): 11.65
+	Percent of CPU this job got: 539%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:17.67
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1416576
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 515971
+	Minor (reclaiming a frame) page faults: 1690764
+	Voluntary context switches: 1617
+	Involuntary context switches: 11154
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+执行完成: 2024年 07月 17日 星期三 19:19:33 CST
+memory.peak is:
+1449603072
+Iteration 3
+468597
+开始执行 xlinpack_xeon64: 2024年 07月 17日 星期三 19:19:33 CST
+Intel(R) Optimized LINPACK Benchmark data
+
+Current date/time: Wed Jul 17 19:19:33 2024
+
+CPU frequency:    3.889 GHz
+Number of CPUs: 1
+Number of cores: 6
+Number of threads: 6
+
+Parameters are set to:
+
+Number of tests: 1
+Number of equations to solve (problem size) : 14000
+Leading dimension of array                  : 14000
+Number of trials to run                     : 1    
+Data alignment value (in Kbytes)            : 4    
+
+Maximum memory requested that can be used=1568284096, at the size=14000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+14000  14000  4      13.114     139.5280 2.105651e-10 3.802581e-02   pass
+
+Performance Summary (GFlops)
+
+Size   LDA    Align.  Average  Maximal
+14000  14000  4       139.5280 139.5280
+
+Residual checks PASSED
+
+End of tests
+
+	Command being timed: "/home/cat22/gitRepo/test/testbench/linpack/xlinpack_xeon64 /home/cat22/gitRepo/test/testbench/linpack/lininput_xeon64"
+	User time (seconds): 85.86
+	System time (seconds): 12.58
+	Percent of CPU this job got: 531%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.51
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1416416
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 511434
+	Minor (reclaiming a frame) page faults: 1749973
+	Voluntary context switches: 1597
+	Involuntary context switches: 11438
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+执行完成: 2024年 07月 17日 星期三 19:19:52 CST
+memory.peak is:
+1449603072

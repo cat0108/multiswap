@@ -17,9 +17,12 @@
 #define B_RDMA 2
 //使用dram backend时将NUM_SERVERS设置为1
 #define NUM_SERVERS 2
-//粗粒度细粒度分配远程内存，选择其一
+
+//四选一
 //#define FINE_GRAINED
-#define COARSE_GRAINED
+//#define COARSE_GRAINED
+// #define USESWAP
+#define USEDRAM
 
 #ifndef BACKEND
 #error "Need to define BACKEND flag"
@@ -35,8 +38,6 @@
 #error "BACKEND can only be 1 (DRAM) or 2 (RDMA)"
 #endif
 
-//test swapfile
-//#define USESWAP
 
 static int sswap_store(unsigned type, pgoff_t pageid,
         struct page *page)
@@ -44,7 +45,14 @@ static int sswap_store(unsigned type, pgoff_t pageid,
 #ifdef USESWAP
   return -1;
 #endif
-  //printk("in sswap_store\n");
+
+#ifdef USEDRAM
+  if (sswap_rdma_write(page, pageid << PAGE_SHIFT,0)) {
+    pr_err("could not store page in dram\n");
+    return -1;
+  }
+  return 0;
+#endif
 #ifdef FINE_GRAINED
   pgoff_t roffset = pageid / NUM_SERVERS;
   if (sswap_rdma_write(page, roffset << PAGE_SHIFT, pageid % NUM_SERVERS)) {
@@ -69,6 +77,14 @@ static int sswap_load(unsigned type, pgoff_t pageid, struct page *page)
 {
 #ifdef USESWAP
   return -1;
+#endif
+
+#ifdef USEDRAM
+  if (unlikely(sswap_rdma_read_sync(page, pageid << PAGE_SHIFT,0))) {
+    pr_err("could not read page in dram\n");
+    return -1;
+  }
+  return 0;
 #endif
 
 #ifdef FINE_GRAINED

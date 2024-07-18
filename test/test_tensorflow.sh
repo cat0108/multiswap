@@ -28,12 +28,13 @@ fi
 # exec > >(tee -a $DIR/testoutcome/tensorflow_dram_result.txt) 2>&1
 # exec > >(tee -a $DIR/testoutcome/tensorflow_swapfile_result.txt) 2>&1
 # exec > >(tee -a $DIR/testoutcome/tensorflow_nolimit_result.txt) 2>&1
-exec > >(tee -a $DIR/testoutcome/tensorflow_rdma_result.txt) 2>&1
+# exec > >(tee -a $DIR/testoutcome/tensorflow_rdma_result.txt) 2>&1
+exec > >(tee -a $DIR/testoutcome/tensorflow_2nodeaverage_result.txt) 2>&1
 
-
-# echo "50% dram"
 # echo "50% swapfile"
-echo "50% rdma"
+# echo "50% dram"
+# echo "50% rdma"
+echo "50% 2nodeaverage"
 echo 1051045888 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
@@ -48,7 +49,8 @@ done
 
 # echo "60% swapfile"
 # echo "60% dram"
-echo "60% rdma"
+# echo "60% rdma"
+echo "60% 2nodeaverage"
 echo 1261255065 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
@@ -64,7 +66,8 @@ done
 
 # echo "70% swapfile"
 # echo "70% dram"
-echo "70% rdma"
+# echo "70% rdma"
+echo "70% 2nodeaverage"
 echo 1471464243 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
@@ -79,7 +82,8 @@ done
 
 # echo "80% swapfile"
 # echo "80% dram"
-echo "80% rdma"
+# echo "80% rdma"
+echo "80% 2nodeaverage"
 echo 1681673420 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
@@ -95,7 +99,8 @@ done
 
 # echo "90% swapfile"
 # echo "90% dram"
-echo "90% rdma"
+# echo "90% rdma"
+echo "90% 2nodeaverage"
 echo 1891882598 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max

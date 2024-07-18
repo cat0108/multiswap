@@ -1,0 +1,602 @@
+501337
+不限制内存
+Iteration 1
+Long uses 8 bytes. Allocating 2*393216000 elements = 6291456000 bytes of memory.
+Using 262144 bytes as blocks for memcpy block copy test.
+Getting down to business... Doing 10 runs per test.
+0	Method: MEMCPY	Elapsed: 0.20790	MiB: 3000.00000	Copy: 14430.084 MiB/s
+1	Method: MEMCPY	Elapsed: 0.20646	MiB: 3000.00000	Copy: 14530.378 MiB/s
+2	Method: MEMCPY	Elapsed: 0.20859	MiB: 3000.00000	Copy: 14382.488 MiB/s
+3	Method: MEMCPY	Elapsed: 0.20664	MiB: 3000.00000	Copy: 14518.213 MiB/s
+4	Method: MEMCPY	Elapsed: 0.20830	MiB: 3000.00000	Copy: 14401.959 MiB/s
+5	Method: MEMCPY	Elapsed: 0.20716	MiB: 3000.00000	Copy: 14481.700 MiB/s
+6	Method: MEMCPY	Elapsed: 0.20649	MiB: 3000.00000	Copy: 14528.549 MiB/s
+7	Method: MEMCPY	Elapsed: 0.20804	MiB: 3000.00000	Copy: 14420.234 MiB/s
+8	Method: MEMCPY	Elapsed: 0.20726	MiB: 3000.00000	Copy: 14474.363 MiB/s
+9	Method: MEMCPY	Elapsed: 0.20782	MiB: 3000.00000	Copy: 14435.847 MiB/s
+AVG	Method: MEMCPY	Elapsed: 0.20747	MiB: 3000.00000	Copy: 14460.201 MiB/s
+0	Method: DUMB	Elapsed: 0.64882	MiB: 3000.00000	Copy: 4623.793 MiB/s
+1	Method: DUMB	Elapsed: 0.64486	MiB: 3000.00000	Copy: 4652.144 MiB/s
+2	Method: DUMB	Elapsed: 0.64666	MiB: 3000.00000	Copy: 4639.230 MiB/s
+3	Method: DUMB	Elapsed: 0.64436	MiB: 3000.00000	Copy: 4655.790 MiB/s
+4	Method: DUMB	Elapsed: 0.64478	MiB: 3000.00000	Copy: 4652.771 MiB/s
+5	Method: DUMB	Elapsed: 0.64497	MiB: 3000.00000	Copy: 4651.408 MiB/s
+6	Method: DUMB	Elapsed: 0.64459	MiB: 3000.00000	Copy: 4654.128 MiB/s
+7	Method: DUMB	Elapsed: 0.64657	MiB: 3000.00000	Copy: 4639.898 MiB/s
+8	Method: DUMB	Elapsed: 0.64750	MiB: 3000.00000	Copy: 4633.212 MiB/s
+9	Method: DUMB	Elapsed: 0.64212	MiB: 3000.00000	Copy: 4672.002 MiB/s
+AVG	Method: DUMB	Elapsed: 0.64552	MiB: 3000.00000	Copy: 4647.402 MiB/s
+0	Method: MCBLOCK	Elapsed: 0.28994	MiB: 3000.00000	Copy: 10346.968 MiB/s
+1	Method: MCBLOCK	Elapsed: 0.28806	MiB: 3000.00000	Copy: 10414.605 MiB/s
+2	Method: MCBLOCK	Elapsed: 0.28814	MiB: 3000.00000	Copy: 10411.750 MiB/s
+3	Method: MCBLOCK	Elapsed: 0.29003	MiB: 3000.00000	Copy: 10343.829 MiB/s
+4	Method: MCBLOCK	Elapsed: 0.28945	MiB: 3000.00000	Copy: 10364.628 MiB/s
+5	Method: MCBLOCK	Elapsed: 0.28758	MiB: 3000.00000	Copy: 10431.735 MiB/s
+6	Method: MCBLOCK	Elapsed: 0.28821	MiB: 3000.00000	Copy: 10409.077 MiB/s
+7	Method: MCBLOCK	Elapsed: 0.28987	MiB: 3000.00000	Copy: 10349.538 MiB/s
+8	Method: MCBLOCK	Elapsed: 0.28720	MiB: 3000.00000	Copy: 10445.610 MiB/s
+9	Method: MCBLOCK	Elapsed: 0.28790	MiB: 3000.00000	Copy: 10420.430 MiB/s
+AVG	Method: MCBLOCK	Elapsed: 0.28864	MiB: 3000.00000	Copy: 10393.689 MiB/s
+	Command being timed: "testbench/mbw/mbw 3000"
+	User time (seconds): 13.71
+	System time (seconds): 1.95
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.67
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6145728
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1536079
+	Voluntary context switches: 1
+	Involuntary context switches: 111
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 2
+Long uses 8 bytes. Allocating 2*393216000 elements = 6291456000 bytes of memory.
+Using 262144 bytes as blocks for memcpy block copy test.
+Getting down to business... Doing 10 runs per test.
+0	Method: MEMCPY	Elapsed: 0.20688	MiB: 3000.00000	Copy: 14500.880 MiB/s
+1	Method: MEMCPY	Elapsed: 0.20549	MiB: 3000.00000	Copy: 14598.966 MiB/s
+2	Method: MEMCPY	Elapsed: 0.20604	MiB: 3000.00000	Copy: 14560.350 MiB/s
+3	Method: MEMCPY	Elapsed: 0.20576	MiB: 3000.00000	Copy: 14580.235 MiB/s
+4	Method: MEMCPY	Elapsed: 0.20618	MiB: 3000.00000	Copy: 14550.393 MiB/s
+5	Method: MEMCPY	Elapsed: 0.20544	MiB: 3000.00000	Copy: 14602.662 MiB/s
+6	Method: MEMCPY	Elapsed: 0.20575	MiB: 3000.00000	Copy: 14581.156 MiB/s
+7	Method: MEMCPY	Elapsed: 0.20600	MiB: 3000.00000	Copy: 14562.965 MiB/s
+8	Method: MEMCPY	Elapsed: 0.20600	MiB: 3000.00000	Copy: 14563.248 MiB/s
+9	Method: MEMCPY	Elapsed: 0.20678	MiB: 3000.00000	Copy: 14507.892 MiB/s
+AVG	Method: MEMCPY	Elapsed: 0.20603	MiB: 3000.00000	Copy: 14560.803 MiB/s
+0	Method: DUMB	Elapsed: 0.64543	MiB: 3000.00000	Copy: 4648.050 MiB/s
+1	Method: DUMB	Elapsed: 0.64820	MiB: 3000.00000	Copy: 4628.223 MiB/s
+2	Method: DUMB	Elapsed: 0.64207	MiB: 3000.00000	Copy: 4672.366 MiB/s
+3	Method: DUMB	Elapsed: 0.64524	MiB: 3000.00000	Copy: 4649.433 MiB/s
+4	Method: DUMB	Elapsed: 0.64530	MiB: 3000.00000	Copy: 4648.972 MiB/s
+5	Method: DUMB	Elapsed: 0.64440	MiB: 3000.00000	Copy: 4655.493 MiB/s
+6	Method: DUMB	Elapsed: 0.64580	MiB: 3000.00000	Copy: 4645.437 MiB/s
+7	Method: DUMB	Elapsed: 0.64470	MiB: 3000.00000	Copy: 4653.363 MiB/s
+8	Method: DUMB	Elapsed: 0.64333	MiB: 3000.00000	Copy: 4663.237 MiB/s
+9	Method: DUMB	Elapsed: 0.64738	MiB: 3000.00000	Copy: 4634.035 MiB/s
+AVG	Method: DUMB	Elapsed: 0.64519	MiB: 3000.00000	Copy: 4649.829 MiB/s
+0	Method: MCBLOCK	Elapsed: 0.28283	MiB: 3000.00000	Copy: 10607.228 MiB/s
+1	Method: MCBLOCK	Elapsed: 0.28619	MiB: 3000.00000	Copy: 10482.437 MiB/s
+2	Method: MCBLOCK	Elapsed: 0.28492	MiB: 3000.00000	Copy: 10529.308 MiB/s
+3	Method: MCBLOCK	Elapsed: 0.28375	MiB: 3000.00000	Copy: 10572.575 MiB/s
+4	Method: MCBLOCK	Elapsed: 0.28415	MiB: 3000.00000	Copy: 10557.841 MiB/s
+5	Method: MCBLOCK	Elapsed: 0.28534	MiB: 3000.00000	Copy: 10513.810 MiB/s
+6	Method: MCBLOCK	Elapsed: 0.28450	MiB: 3000.00000	Copy: 10544.704 MiB/s
+7	Method: MCBLOCK	Elapsed: 0.28382	MiB: 3000.00000	Copy: 10570.005 MiB/s
+8	Method: MCBLOCK	Elapsed: 0.28421	MiB: 3000.00000	Copy: 10555.538 MiB/s
+9	Method: MCBLOCK	Elapsed: 0.28607	MiB: 3000.00000	Copy: 10487.054 MiB/s
+AVG	Method: MCBLOCK	Elapsed: 0.28458	MiB: 3000.00000	Copy: 10541.918 MiB/s
+	Command being timed: "testbench/mbw/mbw 3000"
+	User time (seconds): 13.80
+	System time (seconds): 1.78
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.59
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6145728
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1536078
+	Voluntary context switches: 1
+	Involuntary context switches: 78
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 3
+Long uses 8 bytes. Allocating 2*393216000 elements = 6291456000 bytes of memory.
+Using 262144 bytes as blocks for memcpy block copy test.
+Getting down to business... Doing 10 runs per test.
+0	Method: MEMCPY	Elapsed: 0.20402	MiB: 3000.00000	Copy: 14704.657 MiB/s
+1	Method: MEMCPY	Elapsed: 0.20346	MiB: 3000.00000	Copy: 14745.203 MiB/s
+2	Method: MEMCPY	Elapsed: 0.20438	MiB: 3000.00000	Copy: 14678.396 MiB/s
+3	Method: MEMCPY	Elapsed: 0.20313	MiB: 3000.00000	Copy: 14769.013 MiB/s
+4	Method: MEMCPY	Elapsed: 0.20371	MiB: 3000.00000	Copy: 14726.962 MiB/s
+5	Method: MEMCPY	Elapsed: 0.20360	MiB: 3000.00000	Copy: 14734.919 MiB/s
+6	Method: MEMCPY	Elapsed: 0.20323	MiB: 3000.00000	Copy: 14761.891 MiB/s
+7	Method: MEMCPY	Elapsed: 0.20461	MiB: 3000.00000	Copy: 14661.968 MiB/s
+8	Method: MEMCPY	Elapsed: 0.20319	MiB: 3000.00000	Copy: 14764.361 MiB/s
+9	Method: MEMCPY	Elapsed: 0.20340	MiB: 3000.00000	Copy: 14749.480 MiB/s
+AVG	Method: MEMCPY	Elapsed: 0.20367	MiB: 3000.00000	Copy: 14729.601 MiB/s
+0	Method: DUMB	Elapsed: 0.64728	MiB: 3000.00000	Copy: 4634.772 MiB/s
+1	Method: DUMB	Elapsed: 0.64316	MiB: 3000.00000	Copy: 4664.440 MiB/s
+2	Method: DUMB	Elapsed: 0.64850	MiB: 3000.00000	Copy: 4626.060 MiB/s
+3	Method: DUMB	Elapsed: 0.65080	MiB: 3000.00000	Copy: 4609.747 MiB/s
+4	Method: DUMB	Elapsed: 0.64753	MiB: 3000.00000	Copy: 4632.954 MiB/s
+5	Method: DUMB	Elapsed: 0.65093	MiB: 3000.00000	Copy: 4608.790 MiB/s
+6	Method: DUMB	Elapsed: 0.65009	MiB: 3000.00000	Copy: 4614.717 MiB/s
+7	Method: DUMB	Elapsed: 0.65202	MiB: 3000.00000	Copy: 4601.072 MiB/s
+8	Method: DUMB	Elapsed: 0.64912	MiB: 3000.00000	Copy: 4621.649 MiB/s
+9	Method: DUMB	Elapsed: 0.64558	MiB: 3000.00000	Copy: 4646.948 MiB/s
+AVG	Method: DUMB	Elapsed: 0.64850	MiB: 3000.00000	Copy: 4626.042 MiB/s
+0	Method: MCBLOCK	Elapsed: 0.28639	MiB: 3000.00000	Copy: 10475.409 MiB/s
+1	Method: MCBLOCK	Elapsed: 0.28364	MiB: 3000.00000	Copy: 10576.825 MiB/s
+2	Method: MCBLOCK	Elapsed: 0.28338	MiB: 3000.00000	Copy: 10586.454 MiB/s
+3	Method: MCBLOCK	Elapsed: 0.28472	MiB: 3000.00000	Copy: 10536.779 MiB/s
+4	Method: MCBLOCK	Elapsed: 0.28454	MiB: 3000.00000	Copy: 10543.333 MiB/s
+5	Method: MCBLOCK	Elapsed: 0.28352	MiB: 3000.00000	Copy: 10581.115 MiB/s
+6	Method: MCBLOCK	Elapsed: 0.28297	MiB: 3000.00000	Copy: 10601.868 MiB/s
+7	Method: MCBLOCK	Elapsed: 0.28584	MiB: 3000.00000	Copy: 10495.309 MiB/s
+8	Method: MCBLOCK	Elapsed: 0.28304	MiB: 3000.00000	Copy: 10599.096 MiB/s
+9	Method: MCBLOCK	Elapsed: 0.28349	MiB: 3000.00000	Copy: 10582.347 MiB/s
+AVG	Method: MCBLOCK	Elapsed: 0.28415	MiB: 3000.00000	Copy: 10557.689 MiB/s
+	Command being timed: "testbench/mbw/mbw 3000"
+	User time (seconds): 13.73
+	System time (seconds): 1.85
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.59
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6145724
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1536078
+	Voluntary context switches: 1
+	Involuntary context switches: 81
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 4
+Long uses 8 bytes. Allocating 2*393216000 elements = 6291456000 bytes of memory.
+Using 262144 bytes as blocks for memcpy block copy test.
+Getting down to business... Doing 10 runs per test.
+0	Method: MEMCPY	Elapsed: 0.20577	MiB: 3000.00000	Copy: 14579.243 MiB/s
+1	Method: MEMCPY	Elapsed: 0.20466	MiB: 3000.00000	Copy: 14658.744 MiB/s
+2	Method: MEMCPY	Elapsed: 0.20532	MiB: 3000.00000	Copy: 14611.196 MiB/s
+3	Method: MEMCPY	Elapsed: 0.20482	MiB: 3000.00000	Copy: 14647.007 MiB/s
+4	Method: MEMCPY	Elapsed: 0.20588	MiB: 3000.00000	Copy: 14571.454 MiB/s
+5	Method: MEMCPY	Elapsed: 0.20454	MiB: 3000.00000	Copy: 14667.129 MiB/s
+6	Method: MEMCPY	Elapsed: 0.20480	MiB: 3000.00000	Copy: 14648.080 MiB/s
+7	Method: MEMCPY	Elapsed: 0.20504	MiB: 3000.00000	Copy: 14631.291 MiB/s
+8	Method: MEMCPY	Elapsed: 0.20503	MiB: 3000.00000	Copy: 14632.005 MiB/s
+9	Method: MEMCPY	Elapsed: 0.20584	MiB: 3000.00000	Copy: 14574.427 MiB/s
+AVG	Method: MEMCPY	Elapsed: 0.20517	MiB: 3000.00000	Copy: 14621.978 MiB/s
+0	Method: DUMB	Elapsed: 0.65052	MiB: 3000.00000	Copy: 4611.702 MiB/s
+1	Method: DUMB	Elapsed: 0.64746	MiB: 3000.00000	Copy: 4633.477 MiB/s
+2	Method: DUMB	Elapsed: 0.64525	MiB: 3000.00000	Copy: 4649.390 MiB/s
+3	Method: DUMB	Elapsed: 0.64921	MiB: 3000.00000	Copy: 4621.008 MiB/s
+4	Method: DUMB	Elapsed: 0.64557	MiB: 3000.00000	Copy: 4647.056 MiB/s
+5	Method: DUMB	Elapsed: 0.64430	MiB: 3000.00000	Copy: 4656.216 MiB/s
+6	Method: DUMB	Elapsed: 0.65020	MiB: 3000.00000	Copy: 4613.979 MiB/s
+7	Method: DUMB	Elapsed: 0.64807	MiB: 3000.00000	Copy: 4629.137 MiB/s
+8	Method: DUMB	Elapsed: 0.64610	MiB: 3000.00000	Copy: 4643.244 MiB/s
+9	Method: DUMB	Elapsed: 0.65047	MiB: 3000.00000	Copy: 4612.043 MiB/s
+AVG	Method: DUMB	Elapsed: 0.64771	MiB: 3000.00000	Copy: 4631.671 MiB/s
+0	Method: MCBLOCK	Elapsed: 0.28838	MiB: 3000.00000	Copy: 10402.832 MiB/s
+1	Method: MCBLOCK	Elapsed: 0.28962	MiB: 3000.00000	Copy: 10358.401 MiB/s
+2	Method: MCBLOCK	Elapsed: 0.28885	MiB: 3000.00000	Copy: 10386.193 MiB/s
+3	Method: MCBLOCK	Elapsed: 0.28763	MiB: 3000.00000	Copy: 10429.885 MiB/s
+4	Method: MCBLOCK	Elapsed: 0.28799	MiB: 3000.00000	Copy: 10417.101 MiB/s
+5	Method: MCBLOCK	Elapsed: 0.28996	MiB: 3000.00000	Copy: 10346.112 MiB/s
+6	Method: MCBLOCK	Elapsed: 0.28861	MiB: 3000.00000	Copy: 10394.794 MiB/s
+7	Method: MCBLOCK	Elapsed: 0.28853	MiB: 3000.00000	Copy: 10397.568 MiB/s
+8	Method: MCBLOCK	Elapsed: 0.29025	MiB: 3000.00000	Copy: 10335.810 MiB/s
+9	Method: MCBLOCK	Elapsed: 0.28886	MiB: 3000.00000	Copy: 10385.510 MiB/s
+AVG	Method: MCBLOCK	Elapsed: 0.28887	MiB: 3000.00000	Copy: 10385.341 MiB/s
+	Command being timed: "testbench/mbw/mbw 3000"
+	User time (seconds): 13.84
+	System time (seconds): 1.81
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.66
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6145724
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1536078
+	Voluntary context switches: 1
+	Involuntary context switches: 83
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 5
+Long uses 8 bytes. Allocating 2*393216000 elements = 6291456000 bytes of memory.
+Using 262144 bytes as blocks for memcpy block copy test.
+Getting down to business... Doing 10 runs per test.
+0	Method: MEMCPY	Elapsed: 0.20547	MiB: 3000.00000	Copy: 14600.387 MiB/s
+1	Method: MEMCPY	Elapsed: 0.20479	MiB: 3000.00000	Copy: 14649.224 MiB/s
+2	Method: MEMCPY	Elapsed: 0.20562	MiB: 3000.00000	Copy: 14589.737 MiB/s
+3	Method: MEMCPY	Elapsed: 0.20490	MiB: 3000.00000	Copy: 14641.003 MiB/s
+4	Method: MEMCPY	Elapsed: 0.20489	MiB: 3000.00000	Copy: 14642.360 MiB/s
+5	Method: MEMCPY	Elapsed: 0.20528	MiB: 3000.00000	Copy: 14613.972 MiB/s
+6	Method: MEMCPY	Elapsed: 0.20460	MiB: 3000.00000	Copy: 14662.900 MiB/s
+7	Method: MEMCPY	Elapsed: 0.20577	MiB: 3000.00000	Copy: 14579.314 MiB/s
+8	Method: MEMCPY	Elapsed: 0.20426	MiB: 3000.00000	Copy: 14687.092 MiB/s
+9	Method: MEMCPY	Elapsed: 0.20433	MiB: 3000.00000	Copy: 14682.204 MiB/s
+AVG	Method: MEMCPY	Elapsed: 0.20499	MiB: 3000.00000	Copy: 14634.732 MiB/s
+0	Method: DUMB	Elapsed: 0.64340	MiB: 3000.00000	Copy: 4662.744 MiB/s
+1	Method: DUMB	Elapsed: 0.64470	MiB: 3000.00000	Copy: 4653.327 MiB/s
+2	Method: DUMB	Elapsed: 0.64864	MiB: 3000.00000	Copy: 4625.055 MiB/s
+3	Method: DUMB	Elapsed: 0.64895	MiB: 3000.00000	Copy: 4622.874 MiB/s
+4	Method: DUMB	Elapsed: 0.64346	MiB: 3000.00000	Copy: 4662.302 MiB/s
+5	Method: DUMB	Elapsed: 0.64641	MiB: 3000.00000	Copy: 4640.989 MiB/s
+6	Method: DUMB	Elapsed: 0.64760	MiB: 3000.00000	Copy: 4632.453 MiB/s
+7	Method: DUMB	Elapsed: 0.64727	MiB: 3000.00000	Copy: 4634.822 MiB/s
+8	Method: DUMB	Elapsed: 0.65129	MiB: 3000.00000	Copy: 4606.215 MiB/s
+9	Method: DUMB	Elapsed: 0.64697	MiB: 3000.00000	Copy: 4636.972 MiB/s
+AVG	Method: DUMB	Elapsed: 0.64687	MiB: 3000.00000	Copy: 4637.713 MiB/s
+0	Method: MCBLOCK	Elapsed: 0.28700	MiB: 3000.00000	Copy: 10452.925 MiB/s
+1	Method: MCBLOCK	Elapsed: 0.28641	MiB: 3000.00000	Copy: 10474.385 MiB/s
+2	Method: MCBLOCK	Elapsed: 0.28573	MiB: 3000.00000	Copy: 10499.276 MiB/s
+3	Method: MCBLOCK	Elapsed: 0.28806	MiB: 3000.00000	Copy: 10414.497 MiB/s
+4	Method: MCBLOCK	Elapsed: 0.28617	MiB: 3000.00000	Copy: 10483.462 MiB/s
+5	Method: MCBLOCK	Elapsed: 0.28608	MiB: 3000.00000	Copy: 10486.724 MiB/s
+6	Method: MCBLOCK	Elapsed: 0.28749	MiB: 3000.00000	Copy: 10435.000 MiB/s
+7	Method: MCBLOCK	Elapsed: 0.28717	MiB: 3000.00000	Copy: 10446.701 MiB/s
+8	Method: MCBLOCK	Elapsed: 0.28564	MiB: 3000.00000	Copy: 10502.804 MiB/s
+9	Method: MCBLOCK	Elapsed: 0.28567	MiB: 3000.00000	Copy: 10501.481 MiB/s
+AVG	Method: MCBLOCK	Elapsed: 0.28654	MiB: 3000.00000	Copy: 10469.644 MiB/s
+	Command being timed: "testbench/mbw/mbw 3000"
+	User time (seconds): 13.73
+	System time (seconds): 1.88
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.62
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6145724
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1536077
+	Voluntary context switches: 1
+	Involuntary context switches: 105
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 6
+Long uses 8 bytes. Allocating 2*393216000 elements = 6291456000 bytes of memory.
+Using 262144 bytes as blocks for memcpy block copy test.
+Getting down to business... Doing 10 runs per test.
+0	Method: MEMCPY	Elapsed: 0.20364	MiB: 3000.00000	Copy: 14731.518 MiB/s
+1	Method: MEMCPY	Elapsed: 0.20394	MiB: 3000.00000	Copy: 14710.137 MiB/s
+2	Method: MEMCPY	Elapsed: 0.20360	MiB: 3000.00000	Copy: 14734.557 MiB/s
+3	Method: MEMCPY	Elapsed: 0.20452	MiB: 3000.00000	Copy: 14668.564 MiB/s
+4	Method: MEMCPY	Elapsed: 0.20493	MiB: 3000.00000	Copy: 14639.145 MiB/s
+5	Method: MEMCPY	Elapsed: 0.20412	MiB: 3000.00000	Copy: 14697.093 MiB/s
+6	Method: MEMCPY	Elapsed: 0.20430	MiB: 3000.00000	Copy: 14684.216 MiB/s
+7	Method: MEMCPY	Elapsed: 0.20407	MiB: 3000.00000	Copy: 14700.550 MiB/s
+8	Method: MEMCPY	Elapsed: 0.20438	MiB: 3000.00000	Copy: 14678.612 MiB/s
+9	Method: MEMCPY	Elapsed: 0.20506	MiB: 3000.00000	Copy: 14629.579 MiB/s
+AVG	Method: MEMCPY	Elapsed: 0.20426	MiB: 3000.00000	Copy: 14687.322 MiB/s
+0	Method: DUMB	Elapsed: 0.64682	MiB: 3000.00000	Copy: 4638.097 MiB/s
+1	Method: DUMB	Elapsed: 0.64917	MiB: 3000.00000	Copy: 4621.264 MiB/s
+2	Method: DUMB	Elapsed: 0.64699	MiB: 3000.00000	Copy: 4636.864 MiB/s
+3	Method: DUMB	Elapsed: 0.64930	MiB: 3000.00000	Copy: 4620.346 MiB/s
+4	Method: DUMB	Elapsed: 0.64902	MiB: 3000.00000	Copy: 4622.325 MiB/s
+5	Method: DUMB	Elapsed: 0.64650	MiB: 3000.00000	Copy: 4640.393 MiB/s
+6	Method: DUMB	Elapsed: 0.64881	MiB: 3000.00000	Copy: 4623.871 MiB/s
+7	Method: DUMB	Elapsed: 0.64945	MiB: 3000.00000	Copy: 4619.272 MiB/s
+8	Method: DUMB	Elapsed: 0.64514	MiB: 3000.00000	Copy: 4650.182 MiB/s
+9	Method: DUMB	Elapsed: 0.64626	MiB: 3000.00000	Copy: 4642.095 MiB/s
+AVG	Method: DUMB	Elapsed: 0.64775	MiB: 3000.00000	Copy: 4631.446 MiB/s
+0	Method: MCBLOCK	Elapsed: 0.28545	MiB: 3000.00000	Copy: 10509.721 MiB/s
+1	Method: MCBLOCK	Elapsed: 0.28845	MiB: 3000.00000	Copy: 10400.272 MiB/s
+2	Method: MCBLOCK	Elapsed: 0.28698	MiB: 3000.00000	Copy: 10453.836 MiB/s
+3	Method: MCBLOCK	Elapsed: 0.28631	MiB: 3000.00000	Copy: 10478.116 MiB/s
+4	Method: MCBLOCK	Elapsed: 0.28656	MiB: 3000.00000	Copy: 10468.975 MiB/s
+5	Method: MCBLOCK	Elapsed: 0.28831	MiB: 3000.00000	Copy: 10405.322 MiB/s
+6	Method: MCBLOCK	Elapsed: 0.28525	MiB: 3000.00000	Copy: 10517.090 MiB/s
+7	Method: MCBLOCK	Elapsed: 0.28558	MiB: 3000.00000	Copy: 10504.753 MiB/s
+8	Method: MCBLOCK	Elapsed: 0.28747	MiB: 3000.00000	Copy: 10435.726 MiB/s
+9	Method: MCBLOCK	Elapsed: 0.28558	MiB: 3000.00000	Copy: 10505.084 MiB/s
+AVG	Method: MCBLOCK	Elapsed: 0.28660	MiB: 3000.00000	Copy: 10467.730 MiB/s
+	Command being timed: "testbench/mbw/mbw 3000"
+	User time (seconds): 13.80
+	System time (seconds): 1.81
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.62
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6145724
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1536077
+	Voluntary context switches: 1
+	Involuntary context switches: 107
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 7
+Long uses 8 bytes. Allocating 2*393216000 elements = 6291456000 bytes of memory.
+Using 262144 bytes as blocks for memcpy block copy test.
+Getting down to business... Doing 10 runs per test.
+0	Method: MEMCPY	Elapsed: 0.20758	MiB: 3000.00000	Copy: 14452.051 MiB/s
+1	Method: MEMCPY	Elapsed: 0.20768	MiB: 3000.00000	Copy: 14445.300 MiB/s
+2	Method: MEMCPY	Elapsed: 0.20658	MiB: 3000.00000	Copy: 14522.149 MiB/s
+3	Method: MEMCPY	Elapsed: 0.20643	MiB: 3000.00000	Copy: 14532.490 MiB/s
+4	Method: MEMCPY	Elapsed: 0.20571	MiB: 3000.00000	Copy: 14583.354 MiB/s
+5	Method: MEMCPY	Elapsed: 0.20610	MiB: 3000.00000	Copy: 14556.111 MiB/s
+6	Method: MEMCPY	Elapsed: 0.20774	MiB: 3000.00000	Copy: 14440.850 MiB/s
+7	Method: MEMCPY	Elapsed: 0.20648	MiB: 3000.00000	Copy: 14529.534 MiB/s
+8	Method: MEMCPY	Elapsed: 0.20701	MiB: 3000.00000	Copy: 14491.914 MiB/s
+9	Method: MEMCPY	Elapsed: 0.20689	MiB: 3000.00000	Copy: 14500.249 MiB/s
+AVG	Method: MEMCPY	Elapsed: 0.20682	MiB: 3000.00000	Copy: 14505.255 MiB/s
+0	Method: DUMB	Elapsed: 0.64668	MiB: 3000.00000	Copy: 4639.072 MiB/s
+1	Method: DUMB	Elapsed: 0.64456	MiB: 3000.00000	Copy: 4654.367 MiB/s
+2	Method: DUMB	Elapsed: 0.65154	MiB: 3000.00000	Copy: 4604.447 MiB/s
+3	Method: DUMB	Elapsed: 0.64739	MiB: 3000.00000	Copy: 4633.970 MiB/s
+4	Method: DUMB	Elapsed: 0.64538	MiB: 3000.00000	Copy: 4648.431 MiB/s
+5	Method: DUMB	Elapsed: 0.64690	MiB: 3000.00000	Copy: 4637.502 MiB/s
+6	Method: DUMB	Elapsed: 0.64675	MiB: 3000.00000	Copy: 4638.578 MiB/s
+7	Method: DUMB	Elapsed: 0.64443	MiB: 3000.00000	Copy: 4655.284 MiB/s
+8	Method: DUMB	Elapsed: 0.64628	MiB: 3000.00000	Copy: 4641.922 MiB/s
+9	Method: DUMB	Elapsed: 0.64567	MiB: 3000.00000	Copy: 4646.344 MiB/s
+AVG	Method: DUMB	Elapsed: 0.64656	MiB: 3000.00000	Copy: 4639.951 MiB/s
+0	Method: MCBLOCK	Elapsed: 0.28598	MiB: 3000.00000	Copy: 10490.207 MiB/s
+1	Method: MCBLOCK	Elapsed: 0.28850	MiB: 3000.00000	Copy: 10398.722 MiB/s
+2	Method: MCBLOCK	Elapsed: 0.28670	MiB: 3000.00000	Copy: 10463.754 MiB/s
+3	Method: MCBLOCK	Elapsed: 0.28910	MiB: 3000.00000	Copy: 10376.996 MiB/s
+4	Method: MCBLOCK	Elapsed: 0.28714	MiB: 3000.00000	Copy: 10447.792 MiB/s
+5	Method: MCBLOCK	Elapsed: 0.28708	MiB: 3000.00000	Copy: 10450.231 MiB/s
+6	Method: MCBLOCK	Elapsed: 0.28729	MiB: 3000.00000	Copy: 10442.301 MiB/s
+7	Method: MCBLOCK	Elapsed: 0.28656	MiB: 3000.00000	Copy: 10469.158 MiB/s
+8	Method: MCBLOCK	Elapsed: 0.28506	MiB: 3000.00000	Copy: 10524.211 MiB/s
+9	Method: MCBLOCK	Elapsed: 0.28557	MiB: 3000.00000	Copy: 10505.342 MiB/s
+AVG	Method: MCBLOCK	Elapsed: 0.28690	MiB: 3000.00000	Copy: 10456.696 MiB/s
+	Command being timed: "testbench/mbw/mbw 3000"
+	User time (seconds): 13.68
+	System time (seconds): 1.95
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.64
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6145724
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1536078
+	Voluntary context switches: 1
+	Involuntary context switches: 115
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 8
+Long uses 8 bytes. Allocating 2*393216000 elements = 6291456000 bytes of memory.
+Using 262144 bytes as blocks for memcpy block copy test.
+Getting down to business... Doing 10 runs per test.
+0	Method: MEMCPY	Elapsed: 0.20872	MiB: 3000.00000	Copy: 14373.599 MiB/s
+1	Method: MEMCPY	Elapsed: 0.20800	MiB: 3000.00000	Copy: 14423.424 MiB/s
+2	Method: MEMCPY	Elapsed: 0.20814	MiB: 3000.00000	Copy: 14413.583 MiB/s
+3	Method: MEMCPY	Elapsed: 0.20904	MiB: 3000.00000	Copy: 14351.114 MiB/s
+4	Method: MEMCPY	Elapsed: 0.20805	MiB: 3000.00000	Copy: 14419.680 MiB/s
+5	Method: MEMCPY	Elapsed: 0.20697	MiB: 3000.00000	Copy: 14494.504 MiB/s
+6	Method: MEMCPY	Elapsed: 0.20709	MiB: 3000.00000	Copy: 14486.665 MiB/s
+7	Method: MEMCPY	Elapsed: 0.20723	MiB: 3000.00000	Copy: 14476.808 MiB/s
+8	Method: MEMCPY	Elapsed: 0.20865	MiB: 3000.00000	Copy: 14378.145 MiB/s
+9	Method: MEMCPY	Elapsed: 0.20755	MiB: 3000.00000	Copy: 14454.488 MiB/s
+AVG	Method: MEMCPY	Elapsed: 0.20794	MiB: 3000.00000	Copy: 14427.044 MiB/s
+0	Method: DUMB	Elapsed: 0.64413	MiB: 3000.00000	Copy: 4657.445 MiB/s
+1	Method: DUMB	Elapsed: 0.64538	MiB: 3000.00000	Copy: 4648.395 MiB/s
+2	Method: DUMB	Elapsed: 0.64474	MiB: 3000.00000	Copy: 4653.031 MiB/s
+3	Method: DUMB	Elapsed: 0.64349	MiB: 3000.00000	Copy: 4662.048 MiB/s
+4	Method: DUMB	Elapsed: 0.64471	MiB: 3000.00000	Copy: 4653.269 MiB/s
+5	Method: DUMB	Elapsed: 0.64496	MiB: 3000.00000	Copy: 4651.430 MiB/s
+6	Method: DUMB	Elapsed: 0.64318	MiB: 3000.00000	Copy: 4664.324 MiB/s
+7	Method: DUMB	Elapsed: 0.64475	MiB: 3000.00000	Copy: 4652.981 MiB/s
+8	Method: DUMB	Elapsed: 0.64479	MiB: 3000.00000	Copy: 4652.706 MiB/s
+9	Method: DUMB	Elapsed: 0.64344	MiB: 3000.00000	Copy: 4662.432 MiB/s
+AVG	Method: DUMB	Elapsed: 0.64436	MiB: 3000.00000	Copy: 4655.801 MiB/s
+0	Method: MCBLOCK	Elapsed: 0.28361	MiB: 3000.00000	Copy: 10577.794 MiB/s
+1	Method: MCBLOCK	Elapsed: 0.28582	MiB: 3000.00000	Copy: 10495.933 MiB/s
+2	Method: MCBLOCK	Elapsed: 0.28239	MiB: 3000.00000	Copy: 10623.681 MiB/s
+3	Method: MCBLOCK	Elapsed: 0.28365	MiB: 3000.00000	Copy: 10576.452 MiB/s
+4	Method: MCBLOCK	Elapsed: 0.28528	MiB: 3000.00000	Copy: 10515.984 MiB/s
+5	Method: MCBLOCK	Elapsed: 0.28451	MiB: 3000.00000	Copy: 10544.593 MiB/s
+6	Method: MCBLOCK	Elapsed: 0.28297	MiB: 3000.00000	Copy: 10601.718 MiB/s
+7	Method: MCBLOCK	Elapsed: 0.28341	MiB: 3000.00000	Copy: 10585.222 MiB/s
+8	Method: MCBLOCK	Elapsed: 0.28540	MiB: 3000.00000	Copy: 10511.415 MiB/s
+9	Method: MCBLOCK	Elapsed: 0.28256	MiB: 3000.00000	Copy: 10617.214 MiB/s
+AVG	Method: MCBLOCK	Elapsed: 0.28396	MiB: 3000.00000	Copy: 10564.824 MiB/s
+	Command being timed: "testbench/mbw/mbw 3000"
+	User time (seconds): 13.65
+	System time (seconds): 1.94
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.60
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6145724
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1536077
+	Voluntary context switches: 1
+	Involuntary context switches: 73
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 9
+Long uses 8 bytes. Allocating 2*393216000 elements = 6291456000 bytes of memory.
+Using 262144 bytes as blocks for memcpy block copy test.
+Getting down to business... Doing 10 runs per test.
+0	Method: MEMCPY	Elapsed: 0.20747	MiB: 3000.00000	Copy: 14459.783 MiB/s
+1	Method: MEMCPY	Elapsed: 0.20804	MiB: 3000.00000	Copy: 14420.165 MiB/s
+2	Method: MEMCPY	Elapsed: 0.20609	MiB: 3000.00000	Copy: 14556.606 MiB/s
+3	Method: MEMCPY	Elapsed: 0.20680	MiB: 3000.00000	Copy: 14506.419 MiB/s
+4	Method: MEMCPY	Elapsed: 0.20595	MiB: 3000.00000	Copy: 14566.784 MiB/s
+5	Method: MEMCPY	Elapsed: 0.20599	MiB: 3000.00000	Copy: 14563.672 MiB/s
+6	Method: MEMCPY	Elapsed: 0.20770	MiB: 3000.00000	Copy: 14444.049 MiB/s
+7	Method: MEMCPY	Elapsed: 0.20660	MiB: 3000.00000	Copy: 14520.743 MiB/s
+8	Method: MEMCPY	Elapsed: 0.20689	MiB: 3000.00000	Copy: 14500.109 MiB/s
+9	Method: MEMCPY	Elapsed: 0.20638	MiB: 3000.00000	Copy: 14536.222 MiB/s
+AVG	Method: MEMCPY	Elapsed: 0.20679	MiB: 3000.00000	Copy: 14507.289 MiB/s
+0	Method: DUMB	Elapsed: 0.64837	MiB: 3000.00000	Copy: 4626.966 MiB/s
+1	Method: DUMB	Elapsed: 0.64510	MiB: 3000.00000	Copy: 4650.456 MiB/s
+2	Method: DUMB	Elapsed: 0.64457	MiB: 3000.00000	Copy: 4654.280 MiB/s
+3	Method: DUMB	Elapsed: 0.64646	MiB: 3000.00000	Copy: 4640.637 MiB/s
+4	Method: DUMB	Elapsed: 0.64392	MiB: 3000.00000	Copy: 4658.928 MiB/s
+5	Method: DUMB	Elapsed: 0.64677	MiB: 3000.00000	Copy: 4638.463 MiB/s
+6	Method: DUMB	Elapsed: 0.64343	MiB: 3000.00000	Copy: 4662.505 MiB/s
+7	Method: DUMB	Elapsed: 0.64414	MiB: 3000.00000	Copy: 4657.380 MiB/s
+8	Method: DUMB	Elapsed: 0.64429	MiB: 3000.00000	Copy: 4656.274 MiB/s
+9	Method: DUMB	Elapsed: 0.64515	MiB: 3000.00000	Copy: 4650.060 MiB/s
+AVG	Method: DUMB	Elapsed: 0.64522	MiB: 3000.00000	Copy: 4649.571 MiB/s
+0	Method: MCBLOCK	Elapsed: 0.28329	MiB: 3000.00000	Copy: 10590.004 MiB/s
+1	Method: MCBLOCK	Elapsed: 0.28351	MiB: 3000.00000	Copy: 10581.600 MiB/s
+2	Method: MCBLOCK	Elapsed: 0.28351	MiB: 3000.00000	Copy: 10581.488 MiB/s
+3	Method: MCBLOCK	Elapsed: 0.28557	MiB: 3000.00000	Copy: 10505.305 MiB/s
+4	Method: MCBLOCK	Elapsed: 0.28346	MiB: 3000.00000	Copy: 10583.504 MiB/s
+5	Method: MCBLOCK	Elapsed: 0.28342	MiB: 3000.00000	Copy: 10585.035 MiB/s
+6	Method: MCBLOCK	Elapsed: 0.28524	MiB: 3000.00000	Copy: 10517.422 MiB/s
+7	Method: MCBLOCK	Elapsed: 0.28360	MiB: 3000.00000	Copy: 10578.279 MiB/s
+8	Method: MCBLOCK	Elapsed: 0.28497	MiB: 3000.00000	Copy: 10527.387 MiB/s
+9	Method: MCBLOCK	Elapsed: 0.28296	MiB: 3000.00000	Copy: 10602.243 MiB/s
+AVG	Method: MCBLOCK	Elapsed: 0.28395	MiB: 3000.00000	Copy: 10565.125 MiB/s
+	Command being timed: "testbench/mbw/mbw 3000"
+	User time (seconds): 13.83
+	System time (seconds): 1.75
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.59
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6145724
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1536078
+	Voluntary context switches: 1
+	Involuntary context switches: 85
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Iteration 10
+Long uses 8 bytes. Allocating 2*393216000 elements = 6291456000 bytes of memory.
+Using 262144 bytes as blocks for memcpy block copy test.
+Getting down to business... Doing 10 runs per test.
+0	Method: MEMCPY	Elapsed: 0.20652	MiB: 3000.00000	Copy: 14526.227 MiB/s
+1	Method: MEMCPY	Elapsed: 0.20624	MiB: 3000.00000	Copy: 14546.371 MiB/s
+2	Method: MEMCPY	Elapsed: 0.20612	MiB: 3000.00000	Copy: 14554.770 MiB/s
+3	Method: MEMCPY	Elapsed: 0.20914	MiB: 3000.00000	Copy: 14344.664 MiB/s
+4	Method: MEMCPY	Elapsed: 0.20616	MiB: 3000.00000	Copy: 14551.946 MiB/s
+5	Method: MEMCPY	Elapsed: 0.20650	MiB: 3000.00000	Copy: 14528.197 MiB/s
+6	Method: MEMCPY	Elapsed: 0.20623	MiB: 3000.00000	Copy: 14546.724 MiB/s
+7	Method: MEMCPY	Elapsed: 0.20729	MiB: 3000.00000	Copy: 14472.199 MiB/s
+8	Method: MEMCPY	Elapsed: 0.20751	MiB: 3000.00000	Copy: 14457.135 MiB/s
+9	Method: MEMCPY	Elapsed: 0.20602	MiB: 3000.00000	Copy: 14561.410 MiB/s
+AVG	Method: MEMCPY	Elapsed: 0.20677	MiB: 3000.00000	Copy: 14508.678 MiB/s
+0	Method: DUMB	Elapsed: 0.64007	MiB: 3000.00000	Copy: 4686.958 MiB/s
+1	Method: DUMB	Elapsed: 0.64331	MiB: 3000.00000	Copy: 4663.411 MiB/s
+2	Method: DUMB	Elapsed: 0.64309	MiB: 3000.00000	Copy: 4664.955 MiB/s
+3	Method: DUMB	Elapsed: 0.64199	MiB: 3000.00000	Copy: 4672.999 MiB/s
+4	Method: DUMB	Elapsed: 0.64492	MiB: 3000.00000	Copy: 4651.740 MiB/s
+5	Method: DUMB	Elapsed: 0.64382	MiB: 3000.00000	Copy: 4659.724 MiB/s
+6	Method: DUMB	Elapsed: 0.64288	MiB: 3000.00000	Copy: 4666.479 MiB/s
+7	Method: DUMB	Elapsed: 0.64546	MiB: 3000.00000	Copy: 4647.870 MiB/s
+8	Method: DUMB	Elapsed: 0.64156	MiB: 3000.00000	Copy: 4676.131 MiB/s
+9	Method: DUMB	Elapsed: 0.64169	MiB: 3000.00000	Copy: 4675.184 MiB/s
+AVG	Method: DUMB	Elapsed: 0.64288	MiB: 3000.00000	Copy: 4666.518 MiB/s
+0	Method: MCBLOCK	Elapsed: 0.28491	MiB: 3000.00000	Copy: 10529.678 MiB/s
+1	Method: MCBLOCK	Elapsed: 0.28773	MiB: 3000.00000	Copy: 10426.369 MiB/s
+2	Method: MCBLOCK	Elapsed: 0.28522	MiB: 3000.00000	Copy: 10518.270 MiB/s
+3	Method: MCBLOCK	Elapsed: 0.28564	MiB: 3000.00000	Copy: 10502.841 MiB/s
+4	Method: MCBLOCK	Elapsed: 0.28675	MiB: 3000.00000	Copy: 10462.257 MiB/s
+5	Method: MCBLOCK	Elapsed: 0.28483	MiB: 3000.00000	Copy: 10532.672 MiB/s
+6	Method: MCBLOCK	Elapsed: 0.28605	MiB: 3000.00000	Copy: 10487.677 MiB/s
+7	Method: MCBLOCK	Elapsed: 0.28479	MiB: 3000.00000	Copy: 10533.930 MiB/s
+8	Method: MCBLOCK	Elapsed: 0.28802	MiB: 3000.00000	Copy: 10415.980 MiB/s
+9	Method: MCBLOCK	Elapsed: 0.28513	MiB: 3000.00000	Copy: 10521.406 MiB/s
+AVG	Method: MCBLOCK	Elapsed: 0.28591	MiB: 3000.00000	Copy: 10492.941 MiB/s
+	Command being timed: "testbench/mbw/mbw 3000"
+	User time (seconds): 13.70
+	System time (seconds): 1.87
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.59
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6145728
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1536079
+	Voluntary context switches: 1
+	Involuntary context switches: 110
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

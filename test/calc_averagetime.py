@@ -1,4 +1,5 @@
 import re
+import os
 from datetime import datetime, timedelta
 
 def parse_time(time_str):
@@ -15,7 +16,7 @@ def average_time(times):
     total = sum(times, timedelta())
     return total / len(times)
 
-def main(input_file):
+def process_file(input_file):
     with open(input_file, 'r') as file:
         content = file.read()
     
@@ -28,10 +29,23 @@ def main(input_file):
     # Calculate the average of every three times
     averages = [average_time(times[i:i+3]) for i in range(0, len(times), 3) if len(times[i:i+3]) == 3]
     
-    # Output the results
-    for avg in averages:
-        print(f"Average time: {str(avg)}")
+    # Prepare output directory and file path
+    output_dir = "./averagetime"
+    os.makedirs(output_dir, exist_ok=True)
+    output_file = os.path.join(output_dir, os.path.basename(input_file))
+    
+    # Write the results to the output file
+    with open(output_file, 'w') as file:
+        for avg in averages:
+            file.write(f"Average time: {str(avg)}\n")
+
+def process_directory(directory_path):
+    """遍历目录并对每个文件进行操作"""
+    for root, dirs, files in os.walk(directory_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            process_file(file_path)
 
 if __name__ == "__main__":
-    input_file = "./testoutcome/linpack_dram_result.txt"  # Replace with your input file name
-    main(input_file)
+    directory_path = "./testoutcome/three_times"  # 目标目录路径
+    process_directory(directory_path)

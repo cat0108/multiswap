@@ -12,7 +12,7 @@
 #define SWAPFILE_SIZE (ONEGB * 8) 
 #define REMOTE_BUF_SIZE (ONEGB * 8) /*remote_buf_size 超过 swapfile_size 的部分将不会采用frontswap*/
 //修改此处来调整memory node的数量，需要同步修改serverip和serverport
-#define NUM_SERVER 2
+#define NUM_SERVER 1
 
 //debug模式，非必要不打开，拖慢运行速度
 //#define DEBUG_MODE
@@ -133,7 +133,6 @@ static int sswap_rdma_create_qp(struct rdma_queue *queue)
   init_attr.qp_type = IB_QPT_RC;
   init_attr.send_cq = queue->cq;
   init_attr.recv_cq = queue->cq;
-  /* 这个宏没有定义？*/
   // init_attr.create_flags = IB_QP_EXP_CREATE_ATOMIC_BE_REPLY & 0;
 
   ret = rdma_create_qp(queue->cm_id, rdev->pd, &init_attr);
@@ -170,7 +169,7 @@ static int sswap_rdma_create_queue_ib(struct rdma_queue *q)
 
   /*
   *cq has two types of polling modes: softirq and direct.
-  *direct mode can be handled in the context of the caller, use ib_poll_cq_direct
+  *direct mode can be handled in the context of the caller, use ib_process_cq_direct
   *softirq mode can be handled in the context of a softirq, auto
   */
   if (q->qp_type == QP_READ_ASYNC)
@@ -533,7 +532,8 @@ static void sswap_rdma_read_done(struct ib_cq *cq, struct ib_wc *wc)
 
   if (unlikely(wc->status != IB_WC_SUCCESS))
     pr_err("sswap_rdma_read_done status is not success, it is=%d\n", wc->status);
-
+  //tips:似乎不同步到CPU也没有关系，可能是ib_dma_unmap_page时会将缓存同步到CPU。。。
+  ib_dma_sync_single_for_cpu(ibdev, req->dma, PAGE_SIZE, DMA_FROM_DEVICE);
   ib_dma_unmap_page(ibdev, req->dma, PAGE_SIZE, DMA_FROM_DEVICE);
 
   DEBUG_PRINT("read_done update page");
@@ -570,7 +570,7 @@ inline static int sswap_rdma_post_rdma(struct rdma_queue *q, struct rdma_req *qe
   DEBUG_PRINT("roffset is: %llu\n", roffset);
 
   atomic_inc(&q->pending);
-  //第三个参数在linux6.1下应设置为NULL
+  //第三个参数在linux6.1下应设置为NULL,const struct冲突？
   ret = ib_post_send(q->qp, &rdma_wr.wr, NULL);
   if (unlikely(ret)) {
     pr_err("ib_post_send failed: %d\n", ret);
@@ -604,10 +604,10 @@ static int sswap_rdma_post_recv(struct rdma_queue *q, struct rdma_req *qe,
 {
 
   struct ib_recv_wr wr = {};
-  struct ib_sge sge;//sge实际上是一段内存区域的描述符
+  struct ib_sge sge;//sge才是最小的一个传输单元
   int ret;
 
-  sge.addr = qe->dma;
+  sge.addr = qe->dma;//使用创建映射的DMA地址
   sge.length = bufsize;
   sge.lkey = q->ctrl->rdev->pd->local_dma_lkey;
 
@@ -689,11 +689,11 @@ out:
   return ret;
 }
 
-inline static void sswap_rdma_wait_completion(struct ib_cq *cq,
+inline static void  sswap_rdma_wait_completion(struct ib_cq *cq,
 					      struct rdma_req *qe)
 {
   ndelay(1000);
-  while (!completion_done(&qe->done)) {
+  while (!completion_done(&qe->done)) {//only complete once
     ndelay(250);
     ib_process_cq_direct(cq, 1);
   }
@@ -814,7 +814,7 @@ static int sswap_rdma_recv_remotemr(struct sswap_rdma_ctrl *ctrl)
 
   pr_info("start: %s\n", __FUNCTION__);
   dev = ctrl->rdev->dev;
-  //req就是queue element
+
   ret = get_req_for_buf(&qe, dev, &(ctrl->servermr), sizeof(ctrl->servermr),
 			DMA_FROM_DEVICE);
   if (unlikely(ret))

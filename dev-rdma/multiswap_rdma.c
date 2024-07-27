@@ -12,7 +12,7 @@
 #define SWAPFILE_SIZE (ONEGB * 8) 
 #define REMOTE_BUF_SIZE (ONEGB * 8) /*remote_buf_size 超过 swapfile_size 的部分将不会采用frontswap*/
 //修改此处来调整memory node的数量，需要同步修改serverip和serverport
-#define NUM_SERVER 1
+#define NUM_SERVER 2
 
 //debug模式，非必要不打开，拖慢运行速度
 //#define DEBUG_MODE

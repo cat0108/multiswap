@@ -19,10 +19,11 @@
 #define NUM_SERVERS 2
 
 //四选一
-#define FINE_GRAINED
-//#define COARSE_GRAINED
-// #define USESWAP
+//#define FINE_GRAINED
+#define COARSE_GRAINED
+//#define USESWAP
 //#define USEDRAM
+
 
 #ifndef BACKEND
 #error "Need to define BACKEND flag"
@@ -70,6 +71,7 @@ static int sswap_store(unsigned type, pgoff_t pageid,
   }
   return 0;
 #endif
+
 }
 
 

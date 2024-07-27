@@ -44,7 +44,7 @@ struct rdma_queue {
   int cm_error;
   struct completion cm_done;//完成变量，用于同步
 
-  atomic_t pending;//队列中未处理完的队列数量
+  atomic_t pending;//队列中未处理完的cq数量
 };
 
 struct sswap_rdma_memregion {

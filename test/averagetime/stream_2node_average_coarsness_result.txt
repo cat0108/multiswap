@@ -1,0 +1,5 @@
+Average time: 0:03:01.933333
+Average time: 0:03:01.440000
+Average time: 0:02:42.280000
+Average time: 0:02:35.193333
+Average time: 0:01:59.396667

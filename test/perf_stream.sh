@@ -25,7 +25,7 @@ echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "adding current shell to pagerank_150M"
 echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
-# sudo perf record -g -o ./perfdata/perfstreamrdma.data -- ./testbench/stream/stream_c.exe 
-/usr/bin/time -v ./testbench/stream/stream_c.exe
+sudo perf record -g -o ./perfdata/perfstreamfirst.data -- ./testbench/stream/stream_c.exe 
+
 echo "memory.peak is:"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak

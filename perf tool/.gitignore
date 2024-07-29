@@ -1,8 +1,0 @@
-*.data.old
-*.data
-*.txt
-flame/tmp/*
-*.rdb
-*.svg
-redis-log/*
-redistest.code-workspace

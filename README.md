@@ -7,10 +7,13 @@
 
 南开大学计算机学院
 
-**目标描述**
+**项目概述**
 
-RDMA是一种新型网络技术，CPU可以通过Infiniband RDMA网卡设备对连接的另一个设备上的内存发起访问。我们希望通过RDMA网卡、RDMA交换机构建一个3-5节点的原型系统。该系统应拥有2-3个远程内存节点和1-2个计算节点，我们希望可以在Linux内核层面，探索未来如何在更复杂RDMA拓扑连接上实现更高性能的内存池系统。
+近10年，远程内存作为一种新兴的内存扩展介质，为体系结构领域带来了新鲜的话题。学界与工业界在“如何减小访问远程内存的开销”方面进行了大量的研究工作。从RDMA的引入到使用CXL(Compute Express Link) 进行直接内存访问，从分布式共享内存到分离式内存的主流协议变化。我们采用各种手段，来减少访问远程内存访问导致的性能下降。但是仅考虑计算节点侧性能的研究是远远不够的。
 
+本工作中，我们试图从工程实现如何构建的角度出发，利用swap子系统多设备的原生支持以及frontswap的可扩展性，在内核中基于RDMA实现了远程内存页面传输协议。同时思考多节点混合远程内存池系统MultiswapSys的构建方式，真正利用现有技术搭建一个多节点内存池原型，并探究计算节点以及内存节点各自会遇到的挑战。
+
+我们基于fastswap在linux 6.1上完成了一个多节点MultiswapSys系统原型，实际配置了一个最低拥有一个计算节点与两个内存节点的可扩展内存池集群，模拟数据中心集群中部分机器存在闲置内存的真实情况。尝试构建了低维护开销的内存分配系统，测试了在带宽限制、memory带宽抢占等不通场景下系统性能的表现。同时，针对存在的性能瓶颈问题，给出了我们的建议。
 
 ### 项目导师
 
@@ -35,22 +38,37 @@ RDMA是一种新型网络技术，CPU可以通过Infiniband RDMA网卡设备对�
 ```shell
 ├─ 6.1kernel        # submodule:增加patch后的Linux6.1内核
 ├─ dev-rdma         # RDMA驱动
-│  ├─ fastswap.c    # frontswap_ops接口实现
-│  ├─ fastswap_dram.c   # DRAM BACKEND
-│  ├─ fastswap_dram.h   
-│  ├─ fastswap_rdma.c   # RDMA BACKEND
-│  ├─ fastswap_rdma.h
-│  ├─ insmod.sh     # 安装脚本
-│  ├─ Makefile
-│  └─ rmmod.sh      # 卸载脚本
+│  ├─ Makefile       
+│  ├─ insdram.sh     # 安装DRAM BACKEND
+│  ├─ insmod.sh      # 安装RDMA BACKEND
+│  ├─ multiswap.c    # multiswap
+│  ├─ multiswap_dram.c  # DRAM BACKEND
+│  ├─ multiswap_dram.h
+│  ├─ multiswap_rdma.c  # RDMA BACKEND
+│  ├─ multiswap_rdma.h
+│  ├─ rmdram.sh      # 移除DRAM BACKEND
+│  └─ rmmod.sh       # 移除RDMA BACKEND
 ├─ farmemserver     # 远程内存服务端
 │  ├─ client.c      # 用户态客户端连接测试
 │  ├─ Makefile
 │  └─ rmserver.c    # server程序
 ├─ README.md
 └─ test
-   ├─ memory_limit_test.sh  # 测试脚本
-   └─ pagewalker.c      # 测试frontswap正确性程序
+   ├─ memory_limit_test.sh  # 测试正确性脚本
+   ├─ pagewalker.c      # 测试正确性程序
+   ├── data_test        # 性能测试脚本
+   ├── averagetime      # 数据处理后结果
+   ├── plot 
+   ├── testbench     # benchmark
+   │   ├── kmeans     
+   │   ├── quicksort
+   │   ├── linpack
+   │   ├── mbw      
+   │   ├── stream
+   │   └──tensorflow
+   └── testoutcome # 测试结果原始数据
+   
+
 ```
 
 ### 项目开发设计文档

@@ -30,7 +30,7 @@ echo "adding current shell to pagerank_150M"
 for i in {1..3}; do
     echo "Iteration $i"
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
-    /usr/bin/time -v ./testbench/stream/stream_c.exe
+    /usr/bin/time -v ../testbench/stream/stream_c.exe
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done

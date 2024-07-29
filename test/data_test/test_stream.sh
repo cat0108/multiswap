@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# exec &> ./testoutcome/stream_dram_result.txt
-# exec &> ./testoutcome/stream_swapfile_result.txt
-# exec &> ./testoutcome/stream_nolimit_result.txt
-# exec &> ./testoutcome/stream_rdma_result.txt
-# exec &> ./testoutcome/stream_2nodeaverage_result.txt
-exec &> ./testoutcome/stream_2node_average_coarsness_result.txt
+# exec &> ../testoutcome/stream_dram_result.txt
+# exec &> ../testoutcome/stream_swapfile_result.txt
+# exec &> ../testoutcome/stream_nolimit_result.txt
+# exec &> ../testoutcome/stream_rdma_result.txt
+# exec &> ../testoutcome/stream_2nodeaverage_result.txt
+exec &> ../testoutcome/stream_2node_average_coarsness_result.txt
 
 echo $$ >> /sys/fs/cgroup/cgroup.procs
 sleep 1
@@ -38,7 +38,7 @@ echo "adding current shell to pagerank_150M"
 for i in {1..3}; do
     echo "Iteration $i"
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
-    /usr/bin/time -v ./testbench/stream/stream_c.exe
+    /usr/bin/time -v ../testbench/stream/stream_c.exe
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
@@ -55,7 +55,7 @@ echo "adding current shell to pagerank_150M"
 for i in {1..3}; do
     echo "Iteration $i"
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
-    /usr/bin/time -v ./testbench/stream/stream_c.exe
+    /usr/bin/time -v ../testbench/stream/stream_c.exe
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
@@ -72,7 +72,7 @@ echo "adding current shell to pagerank_150M"
 for i in {1..3}; do
     echo "Iteration $i"
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
-    /usr/bin/time -v ./testbench/stream/stream_c.exe
+    /usr/bin/time -v ../testbench/stream/stream_c.exe
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
@@ -90,7 +90,7 @@ echo "adding current shell to pagerank_150M"
 for i in {1..3}; do
     echo "Iteration $i"
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
-    /usr/bin/time -v ./testbench/stream/stream_c.exe
+    /usr/bin/time -v ../testbench/stream/stream_c.exe
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
@@ -107,7 +107,7 @@ echo "adding current shell to pagerank_150M"
 for i in {1..3}; do
     echo "Iteration $i"
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
-    /usr/bin/time -v ./testbench/stream/stream_c.exe
+    /usr/bin/time -v ../testbench/stream/stream_c.exe
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
@@ -116,5 +116,5 @@ done
 # echo "不限制内存"
 # for i in {1..3}; do
 #     echo "Iteration $i"
-#     /usr/bin/time -v ./testbench/stream/stream_c.exe
+#     /usr/bin/time -v ../testbench/stream/stream_c.exe
 # done

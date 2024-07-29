@@ -7,12 +7,12 @@ arch=xeon64
 
 #!/bin/bash
 
-# exec &> ./testoutcome/linpack_dram_result.txt
-# exec &> ./testoutcome/linpack_swapfile_result.txt
-# exec &> ./testoutcome/linpack_nolimit_result.txt
-exec &> ./testoutcome/linpack_rdma_result.txt
-# exec &> ./testoutcome/linpack_2nodeaverage_result.txt
-# exec &> ./testoutcome/linpack_2node_average_coarsness_result.txt
+# exec &> ../testoutcome/linpack_dram_result.txt
+# exec &> ../testoutcome/linpack_swapfile_result.txt
+# exec &> ../testoutcome/linpack_nolimit_result.txt
+exec &> ../testoutcome/linpack_rdma_result.txt
+# exec &> ../testoutcome/linpack_2nodeaverage_result.txt
+# exec &> ../testoutcome/linpack_2node_average_coarsness_result.txt
 
 echo $$ >> /sys/fs/cgroup/cgroup.procs
 sleep 1
@@ -53,9 +53,9 @@ for i in {1..3}; do
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
     {
     echo "开始执行 xlinpack_xeon64: $(date)"
-    /usr/bin/time -v $DIR/testbench/linpack/xlinpack_$arch $DIR/testbench/linpack/lininput_$arch
+    /usr/bin/time -v $DIR/../testbench/linpack/xlinpack_$arch $DIR/../testbench/linpack/lininput_$arch
     echo "执行完成: $(date)"
-    } | tee $DIR/testbench/linpack/lin_$arch.txt   
+    } | tee $DIR/../testbench/linpack/lin_$arch.txt   
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
@@ -74,9 +74,9 @@ for i in {1..3}; do
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
     {
     echo "开始执行 xlinpack_xeon64: $(date)"
-    /usr/bin/time -v $DIR/testbench/linpack/xlinpack_$arch $DIR/testbench/linpack/lininput_$arch
+    /usr/bin/time -v $DIR/../testbench/linpack/xlinpack_$arch $DIR/../testbench/linpack/lininput_$arch
     echo "执行完成: $(date)"
-    } | tee $DIR/testbench/linpack/lin_$arch.txt  
+    } | tee $DIR/../testbench/linpack/lin_$arch.txt  
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
@@ -95,9 +95,9 @@ for i in {1..3}; do
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
     {
     echo "开始执行 xlinpack_xeon64: $(date)"
-    /usr/bin/time -v $DIR/testbench/linpack/xlinpack_$arch $DIR/testbench/linpack/lininput_$arch
+    /usr/bin/time -v $DIR/../testbench/linpack/xlinpack_$arch $DIR/../testbench/linpack/lininput_$arch
     echo "执行完成: $(date)"
-    } | tee $DIR/testbench/linpack/lin_$arch.txt  
+    } | tee $DIR/../testbench/linpack/lin_$arch.txt  
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
@@ -117,9 +117,9 @@ for i in {1..3}; do
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
     {
     echo "开始执行 xlinpack_xeon64: $(date)"
-    /usr/bin/time -v $DIR/testbench/linpack/xlinpack_$arch $DIR/testbench/linpack/lininput_$arch
+    /usr/bin/time -v $DIR/../testbench/linpack/xlinpack_$arch $DIR/../testbench/linpack/lininput_$arch
     echo "执行完成: $(date)"
-    } | tee $DIR/testbench/linpack/lin_$arch.txt  
+    } | tee $DIR/../testbench/linpack/lin_$arch.txt  
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
@@ -138,9 +138,9 @@ for i in {1..3}; do
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
     {
     echo "开始执行 xlinpack_xeon64: $(date)"
-    /usr/bin/time -v $DIR/testbench/linpack/xlinpack_$arch $DIR/testbench/linpack/lininput_$arch
+    /usr/bin/time -v $DIR/../testbench/linpack/xlinpack_$arch $DIR/../testbench/linpack/lininput_$arch
     echo "执行完成: $(date)"
-    } | tee $DIR/testbench/linpack/lin_$arch.txt  
+    } | tee $DIR/../testbench/linpack/lin_$arch.txt  
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
@@ -151,7 +151,7 @@ done
 #     echo "Iteration $i"
 #     {
 #     echo "开始执行 xlinpack_xeon64: $(date)"
-#     /usr/bin/time -v $DIR/testbench/linpack/xlinpack_$arch $DIR/testbench/linpack/lininput_$arch
+#     /usr/bin/time -v $DIR/../testbench/linpack/xlinpack_$arch $DIR/../testbench/linpack/lininput_$arch
 #     echo "执行完成: $(date)"
 #     } | tee $DIR/testbench/linpack/lin_$arch.txt 
 # done

@@ -25,12 +25,12 @@ fi
 
 # 1073741824
 # 内存 2,052,824
-# exec > >(tee -a $DIR/testoutcome/tensorflow_dram_result.txt) 2>&1
-# exec > >(tee -a $DIR/testoutcome/tensorflow_swapfile_result.txt) 2>&1
-# exec > >(tee -a $DIR/testoutcome/tensorflow_nolimit_result.txt) 2>&1
-# exec > >(tee -a $DIR/testoutcome/tensorflow_rdma_result.txt) 2>&1
-# exec > >(tee -a $DIR/testoutcome/tensorflow_2nodeaverage_result.txt) 2>&1
-exec > >(tee -a $DIR/testoutcome/tensorflow_2node_average_coarsness_result.txt) 2>&1
+# exec > >(tee -a $DIR/../testoutcome/tensorflow_dram_result.txt) 2>&1
+# exec > >(tee -a $DIR/../testoutcome/tensorflow_swapfile_result.txt) 2>&1
+# exec > >(tee -a $DIR/../testoutcome/tensorflow_nolimit_result.txt) 2>&1
+# exec > >(tee -a $DIR/../testoutcome/tensorflow_rdma_result.txt) 2>&1
+# exec > >(tee -a $DIR/../testoutcome/tensorflow_2nodeaverage_result.txt) 2>&1
+exec > >(tee -a $DIR/../testoutcome/tensorflow_2node_average_coarsness_result.txt) 2>&1
 
 
 # echo "50% swapfile"

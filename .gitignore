@@ -1,3 +1,4 @@
 ./perf tool
 ./test/perfdata
 ./test/flame
+./test/calc_plot

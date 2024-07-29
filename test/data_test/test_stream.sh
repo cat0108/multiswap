@@ -1,12 +1,11 @@
 #!/bin/bash
 
-# exec &> ./testoutcome/quicksort_dram_result.txt
-# exec &> ./testoutcome/quicksort_swapfile_result.txt
-# exec &> ./testoutcome/quicksort_nolimit_result.txt
-# exec &> ./testoutcome/quicksort_rdma_result.txt
-# exec &> ./testoutcome/quicksort_2nodeaverageternary_cycle_result.txt
-
-exec &> ./testoutcome/quicksort_2node_average_coarsness_result.txt
+# exec &> ./testoutcome/stream_dram_result.txt
+# exec &> ./testoutcome/stream_swapfile_result.txt
+# exec &> ./testoutcome/stream_nolimit_result.txt
+# exec &> ./testoutcome/stream_rdma_result.txt
+# exec &> ./testoutcome/stream_2nodeaverage_result.txt
+exec &> ./testoutcome/stream_2node_average_coarsness_result.txt
 
 echo $$ >> /sys/fs/cgroup/cgroup.procs
 sleep 1
@@ -25,91 +24,97 @@ else
     echo "cgroup yuri/pagerank_150M already exists"
 fi
 
+#4196372
 
-
-# echo "50% dram"
 # echo "50% swapfile"
+# echo "50% dram"
 # echo "50% rdma"
+# echo "50% 2nodeaverage"
 echo "50% 2nodeaveragecoarsness"
-echo 4294967296 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
+echo 2148542464 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "adding current shell to pagerank_150M"
-for i in {1..10}; do
+for i in {1..3}; do
     echo "Iteration $i"
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
-    /usr/bin/time -v ./testbench/quicksort/quicksort 8191
+    /usr/bin/time -v ./testbench/stream/stream_c.exe
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
 
-# echo "60% dram"
 # echo "60% swapfile"
+# echo "60% dram"
 # echo "60% rdma"
+# echo "60% 2nodeaverage"
 echo "60% 2nodeaveragecoarsness"
-echo 5153960755 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
+echo 2578250956 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "adding current shell to pagerank_150M"
-for i in {1..10}; do
+for i in {1..3}; do
     echo "Iteration $i"
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
-    /usr/bin/time -v ./testbench/quicksort/quicksort 8191
+    /usr/bin/time -v ./testbench/stream/stream_c.exe
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
 
-# echo "70% dram"
 # echo "70% swapfile"
+# echo "70% dram"
 # echo "70% rdma"
+# echo "70% 2nodeaverage"
 echo "70% 2nodeaveragecoarsness"
-echo 6012954214 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
+echo 3007959449 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "adding current shell to pagerank_150M"
-for i in {1..10}; do
+for i in {1..3}; do
     echo "Iteration $i"
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
-    /usr/bin/time -v ./testbench/quicksort/quicksort 8191
+    /usr/bin/time -v ./testbench/stream/stream_c.exe
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
 
-# echo "80% dram"
+
 # echo "80% swapfile"
+# echo "80% dram"
 # echo "80% rdma"
+# echo "80% 2nodeaverage"
 echo "80% 2nodeaveragecoarsness"
-echo 6871947673 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
+echo 3437667942 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "adding current shell to pagerank_150M"
-for i in {1..10}; do
+for i in {1..3}; do
     echo "Iteration $i"
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
-    /usr/bin/time -v ./testbench/quicksort/quicksort 8191
+    /usr/bin/time -v ./testbench/stream/stream_c.exe
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
 
-# echo "90% dram"
 # echo "90% swapfile"
+# echo "90% dram"
 # echo "90% rdma"
+# echo "90% 2nodeaverage"
 echo "90% 2nodeaveragecoarsness"
-echo 6871947673 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
+echo 3867376435 > /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "adding current shell to pagerank_150M"
-for i in {1..10}; do
+for i in {1..3}; do
     echo "Iteration $i"
     echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
-    /usr/bin/time -v ./testbench/quicksort/quicksort 8191
+    /usr/bin/time -v ./testbench/stream/stream_c.exe
     echo "memory.peak is:"
     cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak
 done
 
 
 # echo "不限制内存"
-# for i in {1..10}; do
+# for i in {1..3}; do
 #     echo "Iteration $i"
-#     /usr/bin/time -v ./testbench/quicksort/quicksort 8191
+#     /usr/bin/time -v ./testbench/stream/stream_c.exe
 # done

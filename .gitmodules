@@ -2,11 +2,9 @@
 	path = 6.1kernel
 	url = https://github.com/cat0108/rdma-6.1kernel.git
 	branch = 6.1kernel
-	
-[submodule "tensorflow/benchmarks"]
-	path = test/testbench/tensorflow/benchmarks
-	url = https://github.com/tensorflow/benchmarks.git
-	branch = cnn_tf_v1.14_compatible
+
+
 [submodule "test/testbench/tensorflow/benchmarks"]
 	path = test/testbench/tensorflow/benchmarks
 	url = https://github.com/tensorflow/benchmarks.git
+	branch = cnn_tf_v1.14_compatible

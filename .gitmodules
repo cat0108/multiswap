@@ -7,3 +7,6 @@
 	path = test/testbench/tensorflow/benchmarks
 	url = https://github.com/tensorflow/benchmarks.git
 	branch = cnn_tf_v1.14_compatible
+[submodule "test/testbench/tensorflow/benchmarks"]
+	path = test/testbench/tensorflow/benchmarks
+	url = https://github.com/tensorflow/benchmarks.git

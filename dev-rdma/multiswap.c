@@ -19,8 +19,8 @@
 #define NUM_SERVERS 2
 
 //四选一
-//#define FINE_GRAINED
-#define COARSE_GRAINED
+#define FINE_GRAINED
+//#define COARSE_GRAINED
 //#define USESWAP
 //#define USEDRAM
 
@@ -39,6 +39,20 @@
 #error "BACKEND can only be 1 (DRAM) or 2 (RDMA)"
 #endif
 
+#define RATING 2
+
+
+static int schedule_node(pgoff_t pageid)
+{
+  if(pageid % RATING == RATING - 1)
+  {
+    return 1;
+  }
+  else
+  {
+   return 0;
+  }
+}
 
 static int sswap_store(unsigned type, pgoff_t pageid,
         struct page *page)
@@ -55,8 +69,7 @@ static int sswap_store(unsigned type, pgoff_t pageid,
   return 0;
 #endif
 #ifdef FINE_GRAINED
-  pgoff_t roffset = pageid / NUM_SERVERS;
-  if (sswap_rdma_write(page, roffset << PAGE_SHIFT, pageid % NUM_SERVERS)) {
+  if (sswap_rdma_write(page, pageid << PAGE_SHIFT, schedule_node(pageid))) {
     pr_err("could not store page remotely\n");
     return -1;
   }
@@ -90,8 +103,7 @@ static int sswap_load(unsigned type, pgoff_t pageid, struct page *page)
 #endif
 
 #ifdef FINE_GRAINED
-  pgoff_t roffset = pageid / NUM_SERVERS;
-  if (unlikely(sswap_rdma_read_sync(page, roffset << PAGE_SHIFT, pageid % NUM_SERVERS))) {
+  if (unlikely(sswap_rdma_read_sync(page, pageid << PAGE_SHIFT, schedule_node(pageid)))) {
     pr_err("could not read page remotely\n");
     return -1;
   }
@@ -156,6 +168,8 @@ static int __init init_sswap(void)
 static void __exit exit_sswap(void)
 {
   pr_info("unloading sswap\n");
+  //打印count信息
+  //printk("page_count[0]=%llu, page_count[1]=%llu\n", page_counting[0], page_counting[1]);
 }
 
 module_init(init_sswap);

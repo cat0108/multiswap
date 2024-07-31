@@ -918,7 +918,7 @@ static int sswap_rdma_create_gctrl_list(int num)
       return -ENODEV;
     }
 
-    list_add(&entry->list, &gctrl_list);
+    list_add_tail(&entry->list, &gctrl_list);
   }
 
   return 0;

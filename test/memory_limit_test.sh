@@ -21,7 +21,8 @@ echo "set memory.max to"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.max
 echo "adding current shell to pagerank_150M"
 echo $$ | sudo tee /sys/fs/cgroup/yuri/pagerank_150M/cgroup.procs
-gcc pagewalker.c -lm -O0 -o pagewalker
+gcc pagewalker.c -lm -O0 -fopenmp -o pagewalker
+
 ./pagewalker
 echo "memory.peak is:"
 cat /sys/fs/cgroup/yuri/pagerank_150M/memory.peak

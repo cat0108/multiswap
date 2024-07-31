@@ -27,6 +27,10 @@ RDMA是一种新型网络技术，CPU可以通过Infiniband RDMA网卡设备对�
 
 [环境配置](https://gitlab.eduxiji.net/T202410055992676/project2210132-233922/-/blob/dev-rdma/环境配置.md)
 
+[实验演示视频链接](https://pan.baidu.com/s/1EJ1njrqT90GTfurbrV312g?pwd=gd82)
+
+
+
 
 # 硬件支持
 第五代RDMA网卡：Nvidia Mellanox ConnectX-5 RoCE

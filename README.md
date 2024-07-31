@@ -22,7 +22,7 @@ RDMA是一种新型网络技术，CPU可以通过Infiniband RDMA网卡设备对�
 基于上述搭建的系统环境，我们分为了系统实现正确性与有效性两方面进行测试。在正确性测试方面，我们让负载产生内存压力以强制触发swap机制，证明了所实现远程内存节点的正确性。在有效性测试方面，我们首先在不限制带宽的情况下使一个计算节点匹配一个或两个内存节点分别进行测试，将特定工作集运行时长缩短了50%以上，同时在Kmeans、tensorflow等十分具有现实意义的测试集上进行相同测试，使其性能也获得了显著提升。然后对两个内存节点的带宽做了不同的限制，针对测试集运行稳定时每秒的吞吐量以及运行总时间，通过实现页面调度策略，成功地将在带宽限制下的系统性能提升了25%以上。最后以此说明了我们本项研究工作的必要性，为未来大规模数据中心和高性能计算环境中的远程内存技术应用提供了有价值的参考。
 
 ### 项目开发设计文档
-[项目设计文档](https://gitlab.eduxiji.net/T202410055992676/project2210132-233922/-/blob/dev-rdma/设计文档.pdf)
+[项目设计文档](https://gitlab.eduxiji.net/T202410055992676/project2210132-233922/-/blob/dev-rdma/开发文档.pdf)
 
 # 硬件支持
 第五代RDMA网卡：Nvidia Mellanox ConnectX-5 RoCE
@@ -49,7 +49,7 @@ RDMA是一种新型网络技术，CPU可以通过Infiniband RDMA网卡设备对�
 
 ### 项目目录
 ```shell
-├─ 6.1kernel        # submodule:增加patch后的Linux6.1内核
+├─ 6.1kernel        # submodule:增加补丁后的Linux6.1内核
 ├─ dev-rdma         # RDMA驱动，计算节点配置
 │  ├─ Makefile       
 │  ├─ insdram.sh     # 安装DRAM BACKEND

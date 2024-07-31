@@ -33,6 +33,17 @@ RDMA是一种新型网络技术，CPU可以通过Infiniband RDMA网卡设备对�
 以太网交换机：NVIDIA Mellanox SN2700
 ![alt text](./image/Switch.jpg)
 
+连接所用线缆：Mellanox MCP1600 IB EDR 100G DAC铜缆
+![alt text](./image/网线.jpg)
+
+计算节点CPU型号：Intel(R) Core(TM) i5-8400 CPU @ 2.80GHz 6核
+
+内存节点CPU型号：Intel(R) Core(TM) i5-8400 CPU @ 2.80GHz 6核
+
+计算节点内存(32GB)：kingston KF3200C16D4/16GX * 2
+
+远程内存节点内存(32GB)：kingston KF548C38-16 * 2
+
 # 开发环境
 |     | Linux kernel  | Nvidia MLNX OFED driver  | OS  |
 |:---------:|:--------:|:--------:|:--------:|

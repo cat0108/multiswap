@@ -39,7 +39,7 @@
 #error "BACKEND can only be 1 (DRAM) or 2 (RDMA)"
 #endif
 
-#define RATING 2
+#define RATING 3
 
 
 static int schedule_node(pgoff_t pageid)

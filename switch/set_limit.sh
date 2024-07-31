@@ -1,4 +1,5 @@
 # node1
+nv set acl example1 type ipv4
 nv set acl example1 rule 10 action police
 nv set acl example1 rule 10 action police mode packet
 nv set acl example1 rule 10 action police burst 1548000

@@ -9,6 +9,7 @@
 #include <linux/page-flags.h>
 #include <linux/memcontrol.h>
 #include <linux/smp.h>
+#include "remote_schedule.h"
 
 #ifndef ONEGB
 #define ONEGB (1024UL*1024*1024)
@@ -19,10 +20,11 @@
 #define NUM_SERVERS 2
 
 //四选一
-#define FINE_GRAINED
+//#define FINE_GRAINED
 //#define COARSE_GRAINED
 //#define USESWAP
 //#define USEDRAM
+#define USE_SCHEDULE
 
 
 #ifndef BACKEND
@@ -38,6 +40,7 @@
 #else
 #error "BACKEND can only be 1 (DRAM) or 2 (RDMA)"
 #endif
+
 
 #define RATING 3
 
@@ -85,6 +88,16 @@ static int sswap_store(unsigned type, pgoff_t pageid,
   return 0;
 #endif
 
+#ifdef USE_SCHEDULE
+  unsigned int rtype;
+  u64 roffset;
+  roffset = sswap_scheduler_write(&rtype, pageid);
+  if (sswap_rdma_write(page, roffset,rtype)) {
+    pr_err("could not store page in dram\n");
+    return -1;
+  }
+  return 0;
+#endif
 }
 
 
@@ -114,6 +127,17 @@ static int sswap_load(unsigned type, pgoff_t pageid, struct page *page)
   unsigned int dev = ((pageid << PAGE_SHIFT) > ONEGB * 4) ? 1 : 0;
   if (unlikely(sswap_rdma_read_sync(page, pageid << PAGE_SHIFT, dev))) {
     pr_err("could not read page remotely\n");
+    return -1;
+  }
+  return 0;
+#endif
+
+#ifdef USE_SCHEDULE
+  unsigned int rtype;
+  u64 roffset;
+  roffset = sswap_scheduler_read(&rtype, pageid);
+  if (unlikely(sswap_rdma_read_sync(page, roffset, rtype))) {
+    pr_err("could not read page in dram\n");
     return -1;
   }
   return 0;

@@ -27,7 +27,11 @@ clean:
 	$(MAKE) -C $(KDIR) M=$$PWD clean
 endif
 
-obj-m  := multiswap.o
+
+obj-m  := multiswap.o remote_schedule.o
+
+
+
 ifeq ($(BACKEND),RDMA)
 	obj-m += multiswap_rdma.o
 	CFLAGS_multiswap.o = -DBACKEND=2

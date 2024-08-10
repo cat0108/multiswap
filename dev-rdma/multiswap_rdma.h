@@ -1,4 +1,4 @@
-#if !defined(_SSWAP_RDMA_H)
+#ifndef _SSWAP_RDMA_H
 #define _SSWAP_RDMA_H
 
 #include <rdma/ib_verbs.h>

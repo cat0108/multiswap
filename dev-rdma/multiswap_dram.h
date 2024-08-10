@@ -1,4 +1,4 @@
-#if !defined(_SSWAP_DRAM_H)
+#ifndef _SSWAP_DRAM_H
 #define _SSWAP_DRAM_H
 
 #include <linux/module.h>

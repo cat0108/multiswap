@@ -9,8 +9,10 @@
 #define ONEGB (1024UL*1024*1024)
 #endif
 #define SWAPFILE_SIZE (ONEGB * 8) 
-#define REMOTE_BUF_SIZE (ONEGB * 8) /*remote_buf_size 超过 swapfile_size 的部分将不会采用frontswap*/
 
+#ifndef REMOTE_BUF_SIZE
+#define REMOTE_BUF_SIZE (ONEGB * 8) /*remote_buf_size 超过 swapfile_size 的部分将不会采用frontswap*/
+#endif
 //#define DEBUG_MODE
 
 #ifdef DEBUG_MODE

@@ -100,29 +100,28 @@ static unsigned long sswap_select_slot(unsigned int type, struct remote_mapping_
     for(i = 0; i < nr_remote_maps[type]; i++)
     {
         map = temp + i;
+
+        spin_lock_irq(&map->w_lock);
         if(map->free_pages != 0)
-            break;
+        {
+            slot = find_first_zero_bit(map->mapping, nr_pages);
+
+            flags->bits.mapping_success = 1;
+            //set bit, update bitmap
+            set_bit(slot, map->mapping);
+            map->free_pages--;
+            spin_unlock_irq(&map->w_lock);
+            return slot + offset;
+        }
+        spin_unlock_irq(&map->w_lock);
+
         offset += nr_pages;
     }
     
-    if(i == nr_remote_maps[type])
-    {
-        pr_info("all remote bitmap is full\n");
-        flags->bits.mapping_full = 1;
-        return 0;
-    }
+    pr_info("all remote bitmap is full\n");
+    flags->bits.mapping_full = 1;
+    return 0;
 
-    spin_lock_irq(&map->w_lock);
-
-    slot = find_first_zero_bit(map->mapping, nr_pages);
-
-    flags->bits.mapping_success = 1;
-    //set bit, update bitmap
-    set_bit(slot, map->mapping);
-    map->free_pages--;
-    spin_unlock_irq(&map->w_lock);
-
-    return slot + offset;
 }
 
 
@@ -145,7 +144,7 @@ u64 sswap_add_mapping(unsigned int type, pgoff_t pageid, struct remote_mapping_f
     //if old mapping exists, we should delete it in bitmap first
     if((entry = xa_load(&address_space->i_pages, pageid)) != NULL)
     {
-        pr_info("replace old mappings\n");
+        //pr_info("replace old mappings\n");
         old_msg = xa_to_value(entry);
         old_type = REMOTE_TYPE(old_msg);
         slot = REMOTE_SLOT(old_msg);
@@ -156,7 +155,7 @@ u64 sswap_add_mapping(unsigned int type, pgoff_t pageid, struct remote_mapping_f
         clear_bit(slot, remote_map[old_type][offset].mapping);
         remote_map[old_type][offset].free_pages++;
         spin_unlock_irq(&remote_map[old_type][offset].w_lock);
-        pr_info("replace old mappings complete\n");
+        //pr_info("replace old mappings complete\n");
     }
 
     slot = sswap_select_slot(type, flags);
@@ -223,7 +222,17 @@ u64 sswap_scheduler_read(unsigned int *type, unsigned long pageid)
 }
 EXPORT_SYMBOL(sswap_scheduler_read);
 
-//this function is used to select a slot for writing, we schedule in it.
+
+//todo:add schedule algorithm here
+/**
+* sswap_scheduler_write: this function is used to select a slot for writing, 
+* we schedule in it.
+* @type: the remote node id.
+* @pageid: the page to be writed.
+* Return: the roffset in remote node.
+* todo: add schedule algorithm here, decide which node to write, the only thing you
+* need to do is to appoint a node.
+*/
 u64 sswap_scheduler_write(unsigned int *type, pgoff_t pageid)
 {
     struct remote_mapping_flags flags;

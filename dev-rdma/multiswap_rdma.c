@@ -268,6 +268,10 @@ static int sswap_rdma_conn_established(struct rdma_queue *q)
   return 0;
 }
 
+/**
+* sswap_rdma_cm_handler: event handler function after cm_id triggered the corresponding event.
+* during the connect process, addr_resolved -> route_resolved ->established
+*/
 static int sswap_rdma_cm_handler(struct rdma_cm_id *cm_id,
     struct rdma_cm_event *ev)
 {

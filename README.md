@@ -63,10 +63,8 @@ RDMA是一种新型网络技术，CPU可以通过Infiniband RDMA网卡设备对�
 ![alt text](./image/系统实物图.png)
 
 
-**License**
-- GPLv2 (https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
-### 项目目录
+# 项目目录
 ```shell
 ├─ 6.1kernel        # submodule:增加补丁后的Linux6.1内核
 ├─ dev-rdma         # RDMA驱动，计算节点配置
@@ -78,6 +76,8 @@ RDMA是一种新型网络技术，CPU可以通过Infiniband RDMA网卡设备对�
 │  ├─ multiswap_dram.h
 │  ├─ multiswap_rdma.c  # RDMA BACKEND
 │  ├─ multiswap_rdma.h
+│  ├─ remote_schedule.c # scheduler module
+│  ├─ remote_schedule.h
 │  ├─ rmdram.sh      # 移除DRAM BACKEND
 │  └─ rmmod.sh       # 移除RDMA BACKEND
 ├─ farmemserver     # 远程内存服务端，远程内存节点配置
@@ -103,4 +103,32 @@ RDMA是一种新型网络技术，CPU可以通过Infiniband RDMA网卡设备对�
    ├─ Makefile
    └─ server.c
 ```
+
+# License
+- GPLv2 (https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+
+# 参考文献
+
+[1]: Emmanuel Amaro, Christopher Branner-Augmon, Zhihong Luo, Amy Ousterhout, Marcos K
+ Aguilera, Aurojit Panda, Sylvia Ratnasamy, and Scott Shenker. Can far memory improve job
+ throughput? In Proceedings of the Fifteenth European Conference on Computer Systems, pages
+ 1–16, 2020.
+
+[2]: Linus Torvalds. Nvme over fabrics rdma host code. https://github.com/torvalds/linux/blob/master/drivers/nvme/host/rdma.c, 2024.
+
+[3]: Linux Documentation. Linux kernel 6.1 documentation online. https://www.kernel.org/doc/html/v6.1/, 2024.
+
+[4]: Linux Man Pages. Linux man pages online. https://linux.die.net/man/, 2024.
+
+[5]: Matthew Wilcox. Linux Xarray. https://www.kernel.org/doc/html/latest/core-api/xarray.
+ html, 2024.
+
+[6]:  nvidia. Nvidia mlnx ofed docs.https://docs.nvidia.com/nvidia-mlnx-ofed-documentation-v23-07.pdf, 2024.
+
+[7]: nvidia. Nvidia networking docs. https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-59/System-Configuration/, 2024.
+
+[8]: Chenxi Wang, Haoran Ma, Shi Liu, Yifan Qiao, Jonathan Eyolfson, Christian Navasca, Shan
+Lu, and Guoqing Harry Xu. {MemLiner}: Lining up tracing and application for a {Far-Memory
+Friendly} runtime. In 16th USENIX Symposium on Operating Systems Design and Implementation
+(OSDI 22), pages 35–53, 2022.
 

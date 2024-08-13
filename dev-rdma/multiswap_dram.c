@@ -29,9 +29,8 @@ int sswap_rdma_write(struct page *page, u64 roffset, unsigned int dev)
 	if(roffset >= REMOTE_BUF_SIZE)
 		return -1;
 	void *page_vaddr;
-	page_vaddr = kmap_atomic(page);
+	page_vaddr = page_address(page);
 	copy_page((void *) (drambuf + roffset), page_vaddr);
-	kunmap_atomic(page_vaddr);
 	DEBUG_PRINT("write over\n");
 	return 0;
 }
@@ -48,10 +47,8 @@ int sswap_rdma_read_sync(struct page *page, u64 roffset, unsigned int dev)
 	VM_BUG_ON_PAGE(!PageSwapCache(page), page);
 	VM_BUG_ON_PAGE(!PageLocked(page), page);
 	VM_BUG_ON_PAGE(PageUptodate(page), page);
-
-	page_vaddr = kmap_atomic(page);
+	page_vaddr = page_address(page);
 	copy_page(page_vaddr, (void *) (drambuf + roffset));
-	kunmap_atomic(page_vaddr);
 
 	SetPageUptodate(page);
 	unlock_page(page);

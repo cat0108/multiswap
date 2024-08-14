@@ -264,7 +264,7 @@ int on_connection(struct queue *q)
 
     TEST_NZ(ibv_post_send(q->qp, &wr, &bad_wr));
 
-    // TODO: poll here
+    // TODO: normally, we should poll here, but we only send once.
   }
 
   q->state = queue::CONNECTED;

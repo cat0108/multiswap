@@ -542,13 +542,14 @@ static void sswap_rdma_read_done(struct ib_cq *cq, struct ib_wc *wc)
   if (unlikely(wc->status != IB_WC_SUCCESS))
     pr_err("sswap_rdma_read_done status is not success, it is=%d\n", wc->status);
   //tips:似乎不同步到CPU也没有关系，可能是ib_dma_unmap_page时会将缓存同步到CPU。。。
+  //8.11:确认了，在unmap之前若不需要触碰数据，不需要sync
   ib_dma_sync_single_for_cpu(ibdev, req->dma, PAGE_SIZE, DMA_FROM_DEVICE);
   ib_dma_unmap_page(ibdev, req->dma, PAGE_SIZE, DMA_FROM_DEVICE);
 
   DEBUG_PRINT("read_done update page");
   SetPageUptodate(req->page);
   unlock_page(req->page);
-  complete(&req->done);
+  //complete(&req->done);
   atomic_dec(&q->pending);
   kmem_cache_free(req_cache, req);
   DEBUG_PRINT("read_done update success");
